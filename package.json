@@ -15,6 +15,7 @@
     "verify": "npm run typecheck && npm run lint && npm run check:i18n && npm test",
     "prisma:validate": "prisma validate",
     "prisma:format": "prisma format",
+    "postinstall": "prisma generate",
     "prepare": "husky"
   },
   "lint-staged": {
