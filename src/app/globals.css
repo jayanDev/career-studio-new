@@ -7,7 +7,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  /* San Francisco — Apple's native system stack. Renders true SF on Apple
+     devices and a clean system fallback elsewhere (SF can't be web-embedded
+     for licensing reasons). Applied app-wide via the font-sans token. */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -168,4 +172,333 @@
   .card-elevated:hover {
     @apply shadow-md;
   }
+}
+
+/* ============================================================
+   Career Studio — glassmorphism marketing system
+   Royal blue + white · soft depth · SF font · expressive motion.
+   Scoped under .cs-home / .cs-chrome so it never leaks into the app shell.
+   ============================================================ */
+:root {
+  --blue-50: #eff4ff;
+  --blue-100: #dbe6ff;
+  --blue-200: #bfd3ff;
+  --blue-300: #93b4ff;
+  --blue-400: #608cfb;
+  --blue-500: #3b6bf2;
+  --blue-600: #2563eb;
+  --blue-700: #1d4fd0;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a8a;
+  --cs-accent: #06b6d4;
+
+  --ink: #0b1220;
+  --ink-soft: #2a3850;
+  --slate-ink: #5a6b86;
+  --slate-soft: #8493ab;
+  --line: #e4eaf5;
+  --cs-bg-tint: #f4f7ff;
+
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-bg-strong: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.75);
+  --glass-blur: 22px;
+
+  --sh-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --sh-md: 0 12px 32px rgba(15, 23, 42, 0.08);
+  --sh-glass: 0 16px 50px -12px rgba(37, 99, 235, 0.18);
+  --sh-lg: 0 30px 80px -22px rgba(37, 99, 235, 0.3);
+  --sh-glow: 0 10px 40px -8px rgba(37, 99, 235, 0.45);
+
+  --cs-radius-xl: 28px;
+  --cs-radius-lg: 22px;
+  --cs-radius-md: 16px;
+  --cs-radius-sm: 12px;
+
+  --cs-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --cs-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion: 1;
+}
+
+/* ---------- Shared glass chrome (nav + footer live outside .cs-home) ---------- */
+.glass-surface {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  backdrop-filter: blur(20px) saturate(170%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--sh-glass);
+}
+.brand-mark {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--blue-500), var(--blue-700));
+  box-shadow: var(--sh-glow);
+}
+.brand-mark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%);
+  transform: translateX(-120%);
+  animation: cs-shine calc(4.5s / var(--motion)) ease-in-out infinite;
+}
+@keyframes cs-shine {
+  0%, 60% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+
+/* ============================================================
+   .cs-home — full marketing page
+   ============================================================ */
+.cs-home {
+  position: relative;
+  color: var(--ink);
+  line-height: 1.6;
+}
+.cs-home .container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.cs-home section { position: relative; }
+.cs-home .section-pad { padding: clamp(72px, 11vw, 132px) 0; }
+
+/* animated background */
+.cs-bg-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 700px at 78% -8%, var(--blue-50), transparent 60%),
+    radial-gradient(900px 600px at 8% 4%, #f0f5ff, transparent 55%);
+}
+.cs-bg-field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(circle at 50% 30%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(circle at 50% 30%, #000 0%, transparent 75%);
+}
+.cs-home .blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.55;
+  will-change: transform;
+}
+.cs-home .blob.b1 { width: 520px; height: 520px; top: -120px; right: -80px; background: radial-gradient(circle, #76a4ff, transparent 70%); }
+.cs-home .blob.b2 { width: 460px; height: 460px; top: 38%; left: -160px; background: radial-gradient(circle, #a9c6ff, transparent 70%); }
+.cs-home .blob.b3 { width: 600px; height: 600px; bottom: -10%; right: -10%; background: radial-gradient(circle, #c7dbff, transparent 70%); opacity: 0.45; }
+.cs-home > *:not(.cs-bg-field) { position: relative; z-index: 1; }
+
+/* typography */
+.cs-home h1, .cs-home h2, .cs-home h3 { line-height: 1.05; letter-spacing: -0.035em; font-weight: 700; color: var(--ink); }
+.cs-home h1 { font-size: clamp(2.7rem, 6.2vw, 5rem); }
+.cs-home h2.section-title { font-size: clamp(2rem, 4.4vw, 3.4rem); letter-spacing: -0.03em; }
+.cs-home .lead { font-size: clamp(1.05rem, 1.5vw, 1.28rem); color: var(--slate-ink); line-height: 1.65; font-weight: 400; }
+.cs-home .section-head { max-width: 680px; }
+.cs-home .section-head .lead { margin-top: 20px; }
+.cs-home .gradient-text {
+  background: linear-gradient(110deg, var(--blue-600), var(--cs-accent) 60%, var(--blue-500));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+
+/* buttons */
+.cs-home .btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 1rem; font-weight: 600;
+  padding: 15px 26px; border-radius: 14px; border: 1px solid transparent;
+  cursor: pointer; white-space: nowrap;
+  transition: transform .35s var(--cs-ease-spring), box-shadow .35s var(--cs-ease), background .25s;
+}
+.cs-home .btn svg { width: 18px; height: 18px; }
+.cs-home .btn-primary { color: #fff; background: linear-gradient(180deg, var(--blue-500), var(--blue-700)); box-shadow: var(--sh-glow); }
+.cs-home .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 50px -8px rgba(37, 99, 235, 0.6); }
+.cs-home .btn-ghost {
+  color: var(--blue-800); background: var(--glass-bg-strong); border-color: var(--glass-border);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: var(--sh-sm);
+}
+.cs-home .btn-ghost:hover { transform: translateY(-3px); box-shadow: var(--sh-md); background: #fff; }
+.cs-home .btn-lg { padding: 18px 34px; font-size: 1.08rem; }
+
+.cs-home .glass {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(170%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(170%);
+  border: 1px solid var(--glass-border); box-shadow: var(--sh-glass);
+}
+
+/* hero */
+.cs-home .hero { padding: clamp(40px, 6vw, 84px) 0 clamp(60px, 8vw, 110px); }
+.cs-home .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.cs-home .hero-copy h1 { margin: 0 0 24px; }
+.cs-home .hero-copy .lead { max-width: 520px; }
+.cs-home .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin: 34px 0 22px; }
+.cs-home .hero-trust { display: flex; flex-wrap: wrap; gap: 20px; color: var(--slate-ink); font-size: 0.95rem; }
+.cs-home .hero-trust span { display: inline-flex; align-items: center; gap: 8px; }
+.cs-home .hero-trust svg { width: 17px; height: 17px; color: var(--blue-600); }
+.cs-home .hero-visual { position: relative; height: 100%; min-height: 460px; perspective: 1400px; }
+.cs-home .float-stage { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .3s var(--cs-ease); }
+.cs-home .resume-card {
+  position: absolute; top: 50%; left: 50%; width: min(360px, 86%);
+  transform: translate(-50%, -50%) rotateY(-12deg) rotateX(6deg);
+  border-radius: var(--cs-radius-lg); padding: 26px;
+  background: rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: blur(20px) saturate(160%); backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.9); box-shadow: var(--sh-lg);
+  animation: cs-floatCard calc(7s / var(--motion)) ease-in-out infinite;
+}
+@keyframes cs-floatCard {
+  0%, 100% { transform: translate(-50%, -50%) rotateY(-12deg) rotateX(6deg) translateY(0); }
+  50% { transform: translate(-50%, -54%) rotateY(-9deg) rotateX(4deg) translateY(-10px); }
+}
+.cs-home .rc-head { display: flex; align-items: center; gap: 13px; margin-bottom: 20px; }
+.cs-home .rc-avatar { width: 52px; height: 52px; border-radius: 14px; flex: none; background: linear-gradient(145deg, var(--blue-400), var(--blue-700)); box-shadow: var(--sh-sm); }
+.cs-home .rc-name { height: 11px; width: 120px; border-radius: 6px; background: var(--ink); opacity: .82; margin-bottom: 8px; }
+.cs-home .rc-role { height: 8px; width: 84px; border-radius: 6px; background: var(--blue-300); }
+.cs-home .rc-line { height: 8px; border-radius: 6px; background: var(--line); margin-bottom: 11px; }
+.cs-home .rc-line.short { width: 62%; }
+.cs-home .rc-section-label { height: 9px; width: 70px; border-radius: 6px; background: var(--blue-500); margin: 22px 0 14px; }
+.cs-home .rc-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.cs-home .rc-chip { height: 22px; padding: 0 12px; border-radius: 999px; background: var(--blue-50); border: 1px solid var(--blue-100); display: flex; align-items: center; }
+.cs-home .rc-chip i { display: block; height: 7px; width: 34px; border-radius: 4px; background: var(--blue-400); }
+.cs-home .fchip {
+  position: absolute; z-index: 5; display: flex; align-items: center; gap: 11px;
+  padding: 12px 16px; border-radius: 16px; background: var(--glass-bg-strong);
+  -webkit-backdrop-filter: blur(16px) saturate(170%); backdrop-filter: blur(16px) saturate(170%);
+  border: 1px solid var(--glass-border); box-shadow: var(--sh-glass);
+  font-weight: 600; font-size: 0.92rem; color: var(--ink); white-space: nowrap;
+}
+.cs-home .fchip small { display: block; font-size: 0.72rem; font-weight: 500; color: var(--slate-ink); }
+.cs-home .fchip .ic { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; flex: none; }
+.cs-home .fchip .ic svg { width: 18px; height: 18px; }
+.cs-home .fchip.score { top: 6%; left: -6%; animation: cs-floatA calc(6s / var(--motion)) ease-in-out infinite; }
+.cs-home .fchip.keys { bottom: 16%; left: -10%; animation: cs-floatB calc(7.5s / var(--motion)) ease-in-out infinite; }
+.cs-home .fchip.skill { bottom: 4%; right: -2%; animation: cs-floatA calc(6.8s / var(--motion)) ease-in-out infinite; }
+.cs-home .ic.green { background: #e7f8ef; color: #15a05c; }
+.cs-home .ic.blue { background: var(--blue-50); color: var(--blue-600); }
+.cs-home .ic.cyan { background: #e3f8fb; color: var(--cs-accent); }
+@keyframes cs-floatA { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes cs-floatB { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(12px); } }
+.cs-home .ats-ring {
+  position: absolute; top: -4%; right: -4%; z-index: 6; width: 116px; height: 116px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--glass-bg-strong);
+  -webkit-backdrop-filter: blur(16px) saturate(170%); backdrop-filter: blur(16px) saturate(170%);
+  border: 1px solid var(--glass-border); box-shadow: var(--sh-glass);
+  animation: cs-floatB calc(6.4s / var(--motion)) ease-in-out infinite;
+}
+.cs-home .ats-ring svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.cs-home .ats-ring .track { fill: none; stroke: var(--blue-100); stroke-width: 9; }
+.cs-home .ats-ring .prog { fill: none; stroke: url(#ringGrad); stroke-width: 9; stroke-linecap: round; stroke-dasharray: 311; stroke-dashoffset: 311; transition: stroke-dashoffset 1.6s var(--cs-ease); }
+.cs-home .ats-ring .num { text-align: center; line-height: 1; }
+.cs-home .ats-ring .num b { font-size: 1.7rem; font-weight: 700; color: var(--blue-700); letter-spacing: -0.03em; }
+.cs-home .ats-ring .num span { display: block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-ink); margin-top: 2px; }
+
+/* stats */
+.cs-home .stats { margin-top: clamp(20px, 4vw, 48px); }
+.cs-home .stats-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border-radius: var(--cs-radius-lg); overflow: hidden; padding: clamp(26px, 4vw, 42px) clamp(20px, 4vw, 48px); }
+.cs-home .stat { text-align: center; padding: 8px 14px; }
+.cs-home .stat .num { font-size: clamp(2.2rem, 4.5vw, 3.3rem); font-weight: 700; letter-spacing: -0.04em; color: var(--blue-700); }
+.cs-home .stat .label { font-size: 0.95rem; color: var(--slate-ink); margin-top: 4px; }
+.cs-home .stat + .stat { border-left: 1px solid var(--line); }
+
+/* bento tools */
+.cs-home .tools-grid { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 1fr; gap: 18px; margin-top: clamp(40px, 6vw, 64px); }
+.cs-home .tool {
+  position: relative; grid-column: span 2; border-radius: var(--cs-radius-lg); padding: 30px; overflow: hidden;
+  background: var(--glass-bg); -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%); backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+  border: 1px solid var(--glass-border); box-shadow: var(--sh-glass);
+  transition: transform .45s var(--cs-ease), box-shadow .45s var(--cs-ease); cursor: pointer;
+  display: flex; flex-direction: column; gap: 14px; min-height: 200px; color: inherit;
+}
+.cs-home .tool::before { content: ""; position: absolute; inset: 0; background: radial-gradient(420px 240px at var(--mx, 80%) var(--my, 0%), rgba(37, 99, 235, 0.12), transparent 60%); opacity: 0; transition: opacity .4s; pointer-events: none; }
+.cs-home .tool:hover { transform: translateY(-6px); box-shadow: var(--sh-lg); }
+.cs-home .tool:hover::before { opacity: 1; }
+.cs-home .tool.feature { grid-column: span 3; }
+.cs-home .tool .ticon { width: 50px; height: 50px; border-radius: 14px; display: grid; place-items: center; background: linear-gradient(145deg, var(--blue-50), #fff); border: 1px solid var(--blue-100); color: var(--blue-600); box-shadow: var(--sh-sm); }
+.cs-home .tool .ticon svg { width: 24px; height: 24px; }
+.cs-home .tool h3 { font-size: 1.32rem; letter-spacing: -0.02em; }
+.cs-home .tool p { color: var(--slate-ink); font-size: 0.98rem; margin-top: -4px; }
+.cs-home .tool .arrow { margin-top: auto; display: inline-flex; align-items: center; gap: 7px; color: var(--blue-600); font-weight: 600; font-size: 0.92rem; transition: gap .3s var(--cs-ease); }
+.cs-home .tool:hover .arrow { gap: 13px; }
+.cs-home .tool .arrow svg { width: 16px; height: 16px; }
+
+/* feature band */
+.cs-home .feature-band { background: linear-gradient(180deg, transparent, var(--cs-bg-tint) 30%, var(--cs-bg-tint) 70%, transparent); }
+.cs-home .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: clamp(40px, 6vw, 60px); }
+.cs-home .feature { border-radius: var(--cs-radius-lg); padding: 32px; background: var(--glass-bg-strong); -webkit-backdrop-filter: blur(16px) saturate(160%); backdrop-filter: blur(16px) saturate(160%); border: 1px solid var(--glass-border); box-shadow: var(--sh-glass); }
+.cs-home .feature .num-badge { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-weight: 700; font-size: 1.05rem; color: #fff; background: linear-gradient(145deg, var(--blue-500), var(--blue-700)); box-shadow: var(--sh-glow); margin-bottom: 20px; }
+.cs-home .feature h3 { font-size: 1.32rem; margin-bottom: 12px; letter-spacing: -0.02em; }
+.cs-home .feature p { color: var(--slate-ink); font-size: 1rem; }
+
+/* pricing */
+.cs-home .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: clamp(40px, 6vw, 60px); align-items: stretch; }
+.cs-home .price-card { position: relative; border-radius: var(--cs-radius-xl); padding: 34px 30px 30px; background: var(--glass-bg); -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%); backdrop-filter: blur(var(--glass-blur)) saturate(160%); border: 1px solid var(--glass-border); box-shadow: var(--sh-glass); display: flex; flex-direction: column; transition: transform .4s var(--cs-ease), box-shadow .4s var(--cs-ease); }
+.cs-home .price-card:hover { transform: translateY(-6px); box-shadow: var(--sh-lg); }
+.cs-home .price-card.popular { background: linear-gradient(170deg, var(--blue-700), var(--blue-900)); border-color: var(--blue-700); box-shadow: var(--sh-lg); color: #fff; }
+.cs-home .price-card.popular .tier, .cs-home .price-card.popular .desc { color: rgba(255, 255, 255, 0.82); }
+.cs-home .price-card.popular .amount { color: #fff; }
+.cs-home .price-card.popular .feat-list li { color: rgba(255, 255, 255, 0.92); }
+.cs-home .price-card.popular .feat-list svg { color: #9fc0ff; }
+.cs-home .pop-badge { position: absolute; top: 20px; right: 20px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.18); color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); }
+.cs-home .tier { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-600); }
+.cs-home .amount { font-size: clamp(2.2rem, 4vw, 2.9rem); font-weight: 700; letter-spacing: -0.04em; margin: 14px 0 6px; }
+.cs-home .amount small { font-size: 1rem; font-weight: 500; color: var(--slate-ink); }
+.cs-home .desc { color: var(--slate-ink); font-size: 0.98rem; min-height: 48px; }
+.cs-home .feat-list { list-style: none; margin: 22px 0 26px; padding: 0; display: grid; gap: 12px; }
+.cs-home .feat-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.96rem; color: var(--ink-soft); }
+.cs-home .feat-list svg { width: 18px; height: 18px; color: var(--blue-600); flex: none; margin-top: 2px; }
+.cs-home .price-card .btn { margin-top: auto; justify-content: center; width: 100%; }
+.cs-home .price-card.popular .btn-primary { background: #fff; color: var(--blue-800); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+.cs-home .price-card.popular .btn-primary:hover { background: var(--blue-50); }
+.cs-home .price-card .btn-ghost { background: var(--blue-50); border-color: var(--blue-100); color: var(--blue-800); }
+
+/* closing CTA */
+.cs-home .cta-wrap { padding: clamp(48px, 7vw, 92px) 0; }
+.cs-home .cta-card { position: relative; overflow: hidden; border-radius: var(--cs-radius-xl); padding: clamp(48px, 7vw, 90px) clamp(32px, 6vw, 80px); background: linear-gradient(150deg, var(--blue-700), var(--blue-900) 70%); box-shadow: var(--sh-lg); text-align: center; }
+.cs-home .cta-card h2 { color: #fff; max-width: 720px; margin: 0 auto 18px; }
+.cs-home .cta-card p { color: rgba(255, 255, 255, 0.85); font-size: 1.15rem; max-width: 540px; margin: 0 auto 32px; }
+.cs-home .cta-card .btn-primary { background: #fff; color: var(--blue-800); }
+.cs-home .cta-card .btn-primary:hover { background: var(--blue-50); }
+.cs-home .cta-glow { position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none; }
+.cs-home .cta-glow.g1 { width: 360px; height: 360px; top: -120px; left: -60px; background: rgba(118, 164, 255, 0.5); }
+.cs-home .cta-glow.g2 { width: 420px; height: 420px; bottom: -160px; right: -80px; background: rgba(6, 182, 212, 0.35); }
+
+/* scroll reveal */
+.cs-home .reveal { opacity: 0; }
+.cs-home .reveal.in { animation: cs-revealUp .8s var(--cs-ease) forwards; }
+.cs-home .reveal.shown { opacity: 1 !important; transform: none !important; animation: none !important; }
+@keyframes cs-revealUp { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
+.cs-home .reveal[data-d="1"].in { animation-delay: .08s; }
+.cs-home .reveal[data-d="2"].in { animation-delay: .16s; }
+.cs-home .reveal[data-d="3"].in { animation-delay: .24s; }
+.cs-home .reveal[data-d="4"].in { animation-delay: .32s; }
+
+@media (max-width: 980px) {
+  .cs-home .hero-grid { grid-template-columns: 1fr; }
+  .cs-home .hero-visual { min-height: 420px; order: -1; margin-bottom: 10px; }
+  .cs-home .fchip.score { left: 0; }
+  .cs-home .fchip.keys { left: 2%; }
+  .cs-home .fchip.skill { right: 0; }
+  .cs-home .ats-ring { right: 0; }
+  .cs-home .tool, .cs-home .tool.feature { grid-column: span 3; }
+  .cs-home .features, .cs-home .pricing { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .cs-home .tools-grid { grid-template-columns: 1fr; }
+  .cs-home .tool, .cs-home .tool.feature { grid-column: 1 / -1; }
+  .cs-home .stats-inner { grid-template-columns: 1fr; gap: 0; }
+  .cs-home .stat + .stat { border-left: none; border-top: 1px solid var(--line); }
+  .cs-home .hero-cta .btn { flex: 1; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-home *, .cs-home *::before, .cs-home *::after, .brand-mark::before { animation: none !important; transition-duration: .01ms !important; }
 }
