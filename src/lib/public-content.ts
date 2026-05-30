@@ -152,10 +152,9 @@ export const pricingPlans: PricingPlan[] = [
     period: "per month",
     description: "For active job seekers applying across several roles.",
     badge: "Most popular",
-    cta: "Join waitlist",
-    href: "#",
+    cta: "Get Pro",
+    href: "/auth/sign-up",
     highlighted: true,
-    disabled: true,
     features: [
       "All premium career tools",
       "Unlimited ATS scoring and fixing",
@@ -169,10 +168,9 @@ export const pricingPlans: PricingPlan[] = [
     price: "Rs. 8,990",
     period: "per month",
     description: "High-touch support for senior and specialist searches.",
-    badge: "Coming soon",
-    cta: "Coming soon",
-    href: "#",
-    disabled: true,
+    badge: "Premium",
+    cta: "Go Executive",
+    href: "/auth/sign-up",
     features: [
       "Expert resume review",
       "1-on-1 career consultation",
@@ -228,29 +226,33 @@ export const toolShowcaseItems: ToolShowcaseItem[] = [
     title: "Graphical CV Builder",
     description:
       "Design visual CVs for creative and portfolio-led roles with safer export controls.",
-    badge: "Coming soon",
-    status: "coming-soon",
+    href: "/gcv",
+    badge: "Free",
+    status: "active",
   },
   {
     title: "Salary Finder",
     description:
       "Compare LKR salary bands and cost-of-living differences across Colombo, Kandy, Galle, Jaffna, and more.",
-    badge: "Coming soon",
-    status: "coming-soon",
+    href: "/salary",
+    badge: "Free",
+    status: "active",
   },
   {
     title: "Career GPS",
     description:
       "Generate a step-by-step roadmap with weekly milestones, course links, and interview prep tasks.",
-    badge: "Coming soon",
-    status: "coming-soon",
+    href: "/career-gps",
+    badge: "Free",
+    status: "active",
   },
   {
     title: "Job Tracker",
     description:
       "Track applications from saved to offer with reminders, notes, and interview-stage analytics.",
-    badge: "Coming soon",
-    status: "coming-soon",
+    href: "/job-tracker",
+    badge: "Free",
+    status: "active",
   },
 ];
 
@@ -276,16 +278,16 @@ export const resourceCards: ResourceCard[] = [
     description:
       "Structured question sets for behavioral, technical, situational, competency, and local industry interviews.",
     count: "27 questions",
-    badge: "Coming soon",
-    disabled: true,
+    badge: "Free",
+    href: "/interview",
   },
   {
     title: "Labour Law & Rights",
     description:
       "Plain-English resources for offers, contracts, leave, notice periods, and workplace rights in Sri Lanka.",
-    count: "In review",
-    badge: "Coming soon",
-    disabled: true,
+    count: "Guides",
+    badge: "Free",
+    href: "/resources",
   },
 ];
 

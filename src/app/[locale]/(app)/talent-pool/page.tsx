@@ -191,7 +191,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
           </Button>
           <Button asChild variant="outline" size="sm" className="gap-2 border-neutral-200 hover:bg-neutral-50 rounded-lg">
             <Link href={`/${locale}/talent-pool/analytics`}>
-              <BarChart3 className="size-4 text-orange-600" />
+              <BarChart3 className="size-4 text-blue-600" />
               <span className="font-medium">Analytics & Insights</span>
             </Link>
           </Button>

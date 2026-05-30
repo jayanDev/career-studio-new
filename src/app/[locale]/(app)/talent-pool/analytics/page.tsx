@@ -113,7 +113,7 @@ export default async function AnalyticsPage({ params }: { params: Promise<{ loca
           <span className="text-neutral-900 font-medium">Analytics & Insights</span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-neutral-900 flex items-center gap-3">
-          <BarChart3 className="size-8 text-orange-600" />
+          <BarChart3 className="size-8 text-blue-600" />
           Analytics & Market Insights
         </h1>
         <p className="text-neutral-600 max-w-2xl">
