@@ -42,7 +42,7 @@ export default async function AtsComparePage({ params, searchParams }: ComparePa
     return (
       <div className="space-y-4">
         <h1 className="text-3xl font-semibold tracking-tight text-neutral-950">Compare scans</h1>
-        <p className="rounded-md border border-rose-300 bg-rose-50 p-3 text-sm text-rose-900">
+        <p className="rounded-md border border-blue-300 bg-blue-50 p-3 text-sm text-blue-900">
           {error instanceof Error ? error.message : "Could not load comparison"}
         </p>
         <Button asChild variant="outline">

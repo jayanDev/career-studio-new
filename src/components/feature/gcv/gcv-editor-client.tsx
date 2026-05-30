@@ -146,7 +146,7 @@ export function GcvEditorClient({
                     key={template.key}
                     type="button"
                     onClick={() => selectTemplate(template.key)}
-                    className={`rounded-md border p-3 text-left text-sm transition ${theme.template === template.key ? "border-teal-700 bg-teal-50" : "hover:bg-neutral-50"}`}
+                    className={`rounded-md border p-3 text-left text-sm transition ${theme.template === template.key ? "border-blue-700 bg-blue-50" : "hover:bg-neutral-50"}`}
                   >
                     <div className="flex items-start justify-between gap-2">
                       <span className="font-medium text-neutral-950">{template.name}</span>
@@ -417,7 +417,7 @@ export function GcvEditorClient({
 
         <Card className="bg-white">
           <CardContent className="flex flex-wrap gap-2 p-4">
-            <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">
+            <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">
               <Save className="size-4" />
               {labels.save}
             </Button>
@@ -465,7 +465,7 @@ export function GcvEditorClient({
         <Card className="bg-white">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Eye className="size-4 text-teal-700" />
+              <Eye className="size-4 text-blue-700" />
               Design Assistant
             </CardTitle>
           </CardHeader>
@@ -481,10 +481,10 @@ export function GcvEditorClient({
               Estimated pages: <span className="font-semibold">{design.pageCountEstimate}</span>
             </div>
             {design.issues.map((issue) => (
-              <p key={issue} className="rounded-md bg-amber-50 p-2 text-xs leading-5 text-amber-900">{issue}</p>
+              <p key={issue} className="rounded-md bg-sky-50 p-2 text-xs leading-5 text-sky-900">{issue}</p>
             ))}
             {design.suggestions.map((suggestion) => (
-              <p key={suggestion} className="rounded-md bg-teal-50 p-2 text-xs leading-5 text-teal-900">{suggestion}</p>
+              <p key={suggestion} className="rounded-md bg-blue-50 p-2 text-xs leading-5 text-blue-900">{suggestion}</p>
             ))}
           </CardContent>
         </Card>
@@ -492,7 +492,7 @@ export function GcvEditorClient({
         <Card className="bg-white">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Palette className="size-4 text-teal-700" />
+              <Palette className="size-4 text-blue-700" />
               Print & Share
             </CardTitle>
           </CardHeader>

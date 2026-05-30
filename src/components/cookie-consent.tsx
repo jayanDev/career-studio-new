@@ -73,7 +73,7 @@ export function CookieConsentBanner({ locale = "en" }: { locale?: string }) {
             Career Studio uses essential cookies to keep you signed in and your work saved. We&apos;d
             like to use a small set of optional analytics cookies to understand which tools help
             our users most — they&apos;re never shared with advertisers. See our{" "}
-            <Link href={`/${locale}/privacy`} className="font-medium text-teal-700 underline-offset-2 hover:underline">
+            <Link href={`/${locale}/privacy`} className="font-medium text-blue-700 underline-offset-2 hover:underline">
               privacy policy
             </Link>{" "}
             for details.
@@ -93,7 +93,7 @@ export function CookieConsentBanner({ locale = "en" }: { locale?: string }) {
             type="button"
             size="sm"
             onClick={() => decide("accepted")}
-            className="bg-teal-700 text-xs text-white hover:bg-teal-800"
+            className="bg-blue-700 text-xs text-white hover:bg-blue-800"
           >
             Accept all
           </Button>

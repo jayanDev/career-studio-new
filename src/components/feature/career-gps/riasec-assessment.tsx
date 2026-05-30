@@ -35,10 +35,10 @@ const SCALE = [
 const TONE: Record<RiasecType, string> = {
   R: "bg-stone-100 text-stone-800",
   I: "bg-sky-100 text-sky-800",
-  A: "bg-rose-100 text-rose-800",
-  S: "bg-emerald-100 text-emerald-800",
-  E: "bg-amber-100 text-amber-800",
-  C: "bg-indigo-100 text-indigo-800",
+  A: "bg-blue-100 text-blue-800",
+  S: "bg-blue-100 text-blue-800",
+  E: "bg-sky-100 text-sky-800",
+  C: "bg-blue-100 text-blue-800",
 };
 
 export function RiasecAssessment({
@@ -65,7 +65,7 @@ export function RiasecAssessment({
         className="flex w-full items-center justify-between p-4 text-left"
       >
         <div className="flex items-center gap-3">
-          <Sparkles className="size-4 text-teal-700" />
+          <Sparkles className="size-4 text-blue-700" />
           <div>
             <div className="text-sm font-semibold text-neutral-950">
               Take a 24-question Holland (RIASEC) assessment
@@ -82,7 +82,7 @@ export function RiasecAssessment({
             </Badge>
           ) : null}
           {result.code && answeredCount >= 6 ? (
-            <Badge className="rounded-md bg-teal-700 text-white">{result.code}</Badge>
+            <Badge className="rounded-md bg-blue-700 text-white">{result.code}</Badge>
           ) : null}
           {open ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
         </div>
@@ -112,7 +112,7 @@ export function RiasecAssessment({
                         key={s.value}
                         className={`cursor-pointer rounded-md border px-2 py-2 text-center text-[11px] transition ${
                           selected
-                            ? "border-teal-600 bg-teal-50 text-teal-900"
+                            ? "border-blue-600 bg-blue-50 text-blue-900"
                             : "border-neutral-200 text-neutral-600 hover:border-neutral-400"
                         }`}
                       >
@@ -135,18 +135,18 @@ export function RiasecAssessment({
           </ol>
 
           {answeredCount >= 6 ? (
-            <div className="rounded-md border border-teal-200 bg-teal-50 p-3">
-              <div className="text-xs uppercase tracking-wide text-teal-800">Your Holland code</div>
+            <div className="rounded-md border border-blue-200 bg-blue-50 p-3">
+              <div className="text-xs uppercase tracking-wide text-blue-800">Your Holland code</div>
               <div className="mt-1 flex items-baseline gap-3">
-                <span className="text-3xl font-semibold text-teal-900">{result.code}</span>
-                <span className="text-xs text-teal-800">
+                <span className="text-3xl font-semibold text-blue-900">{result.code}</span>
+                <span className="text-xs text-blue-800">
                   {result.ranked
                     .slice(0, 3)
                     .map((r) => `${RIASEC_TYPE_LABELS[r.type].label} (${r.score})`)
                     .join(" · ")}
                 </span>
               </div>
-              <p className="mt-1 text-[11px] text-teal-800/80">
+              <p className="mt-1 text-[11px] text-blue-800/80">
                 This will flow into the plan generation as your dominant interests.
               </p>
             </div>

@@ -46,13 +46,13 @@ export function DeleteAccountCard({ accountEmail }: { accountEmail: string }) {
   }
 
   return (
-    <Card className="border-rose-200 bg-rose-50/30">
+    <Card className="border-blue-200 bg-blue-50/30">
       <CardHeader className="flex flex-row items-center gap-2">
-        <AlertTriangle className="size-4 text-rose-700" />
-        <CardTitle className="text-rose-900">Delete account</CardTitle>
+        <AlertTriangle className="size-4 text-blue-700" />
+        <CardTitle className="text-blue-900">Delete account</CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
-        <p className="text-sm leading-6 text-rose-900/80">
+        <p className="text-sm leading-6 text-blue-900/80">
           Permanently deletes your account and every resume, cover letter, ATS scan, LinkedIn audit,
           career plan, talent profile, recruiter project, subscription, and message tied to it. This
           cannot be undone.
@@ -62,15 +62,15 @@ export function DeleteAccountCard({ accountEmail }: { accountEmail: string }) {
           <Button
             type="button"
             variant="outline"
-            className="border-rose-300 text-rose-900 hover:bg-rose-100"
+            className="border-blue-300 text-blue-900 hover:bg-blue-100"
             onClick={() => setOpen(true)}
           >
             Start deletion
           </Button>
         ) : (
-          <div className="space-y-3 rounded-md border border-rose-200 bg-white p-3">
+          <div className="space-y-3 rounded-md border border-blue-200 bg-white p-3">
             <div>
-              <Label className="text-xs font-semibold uppercase tracking-wide text-rose-900">
+              <Label className="text-xs font-semibold uppercase tracking-wide text-blue-900">
                 Type your email to confirm
               </Label>
               <Input
@@ -97,7 +97,7 @@ export function DeleteAccountCard({ accountEmail }: { accountEmail: string }) {
               />
             </div>
 
-            {error ? <p className="text-xs text-rose-700">{error}</p> : null}
+            {error ? <p className="text-xs text-blue-700">{error}</p> : null}
 
             <div className="flex items-center justify-end gap-2">
               <Button
@@ -117,7 +117,7 @@ export function DeleteAccountCard({ accountEmail }: { accountEmail: string }) {
                 type="button"
                 onClick={submit}
                 disabled={!ready || isPending}
-                className="bg-rose-700 text-white hover:bg-rose-800 disabled:opacity-50"
+                className="bg-blue-700 text-white hover:bg-blue-800 disabled:opacity-50"
               >
                 {isPending ? <Loader2 className="size-3.5 animate-spin" /> : null}
                 Permanently delete account

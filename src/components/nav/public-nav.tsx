@@ -23,7 +23,7 @@ export async function PublicNav({ locale }: { locale: Locale }) {
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
         <Link href={prefix} className="flex items-center gap-2 font-semibold">
-          <span className="flex size-9 items-center justify-center rounded-md bg-teal-700 text-white">
+          <span className="flex size-9 items-center justify-center rounded-md bg-blue-700 text-white">
             <BriefcaseBusiness className="size-5" />
           </span>
           <span>{t("Career Studio")}</span>

@@ -150,12 +150,12 @@ export default async function MentorshipPage({ params }: MentorshipPageProps) {
                       ))}
                     </div>
                     {alreadyRequested ? (
-                      <Badge className="mt-4 rounded-md bg-amber-600">{t("requested")}</Badge>
+                      <Badge className="mt-4 rounded-md bg-sky-600">{t("requested")}</Badge>
                     ) : (
                       <form action={requestAction} className="mt-4 space-y-3">
                         <input type="hidden" name="mentorId" value={mentor.id} />
                         <Textarea name="message" placeholder={t("requestPlaceholder")} required />
-                        <Button type="submit" size="sm" className="bg-teal-700 text-white hover:bg-teal-800">
+                        <Button type="submit" size="sm" className="bg-blue-700 text-white hover:bg-blue-800">
                           {t("requestMentorship")}
                         </Button>
                       </form>
@@ -182,7 +182,7 @@ export default async function MentorshipPage({ params }: MentorshipPageProps) {
                     {sessionItem.startTime.toLocaleString("en-LK")} - {sessionItem.endTime.toLocaleTimeString("en-LK")}
                   </p>
                   {sessionItem.meetingLink ? (
-                    <a href={sessionItem.meetingLink} className="mt-2 inline-block text-sm font-medium text-teal-700 hover:text-teal-800">
+                    <a href={sessionItem.meetingLink} className="mt-2 inline-block text-sm font-medium text-blue-700 hover:text-blue-800">
                       {t("meetingLink")}
                     </a>
                   ) : null}
@@ -207,9 +207,9 @@ export default async function MentorshipPage({ params }: MentorshipPageProps) {
                 <Textarea name="availability" defaultValue={availabilityNotes(myProfile?.availability)} placeholder={t("availabilityPlaceholder")} />
                 <label className="flex items-center justify-between rounded-md border bg-neutral-50 p-3 text-sm">
                   <span>{t("activeMentor")}</span>
-                  <input name="isActive" type="checkbox" defaultChecked={myProfile?.isActive ?? true} className="size-4 accent-teal-700" />
+                  <input name="isActive" type="checkbox" defaultChecked={myProfile?.isActive ?? true} className="size-4 accent-blue-700" />
                 </label>
-                <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">{t("saveProfile")}</Button>
+                <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">{t("saveProfile")}</Button>
               </form>
             </CardContent>
           </Card>
@@ -229,7 +229,7 @@ export default async function MentorshipPage({ params }: MentorshipPageProps) {
                   {request.status === MentorshipRequestStatus.pending ? (
                     <div className="mt-3 flex gap-2">
                       <form action={respondMentorshipRequestAction.bind(null, locale, request.id, MentorshipRequestStatus.accepted)}>
-                        <Button type="submit" size="sm" className="bg-teal-700 text-white hover:bg-teal-800">{t("accept")}</Button>
+                        <Button type="submit" size="sm" className="bg-blue-700 text-white hover:bg-blue-800">{t("accept")}</Button>
                       </form>
                       <form action={respondMentorshipRequestAction.bind(null, locale, request.id, MentorshipRequestStatus.declined)}>
                         <Button type="submit" size="sm" variant="outline">{t("decline")}</Button>
@@ -258,7 +258,7 @@ export default async function MentorshipPage({ params }: MentorshipPageProps) {
                 <Input name="endTime" type="datetime-local" defaultValue={defaultEnd} />
                 <Input name="meetingLink" placeholder={t("meetingLinkPlaceholder")} />
                 <Textarea name="notes" placeholder={t("sessionNotes")} />
-                <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800" disabled={acceptedIncoming.length === 0}>
+                <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800" disabled={acceptedIncoming.length === 0}>
                   {t("schedule")}
                 </Button>
               </form>
@@ -274,7 +274,7 @@ function StatCard({ icon: Icon, label, value }: { icon: typeof GraduationCap; la
   return (
     <Card className="bg-white">
       <CardContent className="flex items-center gap-4 p-5">
-        <div className="flex size-11 items-center justify-center rounded-md bg-teal-100 text-teal-800">
+        <div className="flex size-11 items-center justify-center rounded-md bg-blue-100 text-blue-800">
           <Icon className="size-5" />
         </div>
         <div>

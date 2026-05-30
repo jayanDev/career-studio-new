@@ -70,7 +70,7 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
 
   return (
     <article className="bg-white">
-      <header className="border-b bg-gradient-to-br from-white via-amber-50 to-teal-50">
+      <header className="border-b bg-gradient-to-br from-white via-sky-50 to-blue-50">
         <div className="mx-auto max-w-4xl px-4 py-14">
           <Button asChild variant="ghost" className="-ml-3 mb-6">
             <Link href={`/${locale}/resources`}>
@@ -81,7 +81,7 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
           <div className="flex flex-wrap gap-2">
             <Badge variant="outline" className="rounded-md">{resource.type}</Badge>
             {category ? <Badge variant="outline" className="rounded-md">{category.name}</Badge> : null}
-            {resource.isPremium ? <Badge className="rounded-md bg-amber-600">{t("premium")}</Badge> : null}
+            {resource.isPremium ? <Badge className="rounded-md bg-sky-600">{t("premium")}</Badge> : null}
           </div>
           <h1 className="mt-5 text-4xl font-semibold tracking-tight text-neutral-950 md:text-5xl">{resource.title}</h1>
           <p className="mt-5 text-lg leading-8 text-neutral-600">{resource.description}</p>
@@ -97,7 +97,7 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
             )}
             {resource.fileUrl && !locked ? (
               <form action={trackResourceDownloadAction.bind(null, locale, resource.id)}>
-                <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">
+                <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">
                   <Download className="size-4" />
                   {t("download")}
                 </Button>
@@ -109,13 +109,13 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
 
       <div className="mx-auto max-w-4xl px-4 py-12">
         {locked ? (
-          <Card className="border-amber-200 bg-amber-50">
+          <Card className="border-sky-200 bg-sky-50">
             <CardContent className="flex items-start gap-4 p-6">
-              <LockKeyhole className="mt-1 size-5 text-amber-700" />
+              <LockKeyhole className="mt-1 size-5 text-sky-700" />
               <div>
                 <h2 className="font-semibold text-neutral-950">{t("premiumRequired")}</h2>
                 <p className="mt-2 text-sm leading-6 text-neutral-700">{t("premiumRequiredBody")}</p>
-                <Button asChild className="mt-4 bg-teal-700 text-white hover:bg-teal-800">
+                <Button asChild className="mt-4 bg-blue-700 text-white hover:bg-blue-800">
                   <Link href={`/${locale}/billing?upgrade=pro&from=/${locale}/resources/${resource.slug}`}>{t("upgrade")}</Link>
                 </Button>
               </div>

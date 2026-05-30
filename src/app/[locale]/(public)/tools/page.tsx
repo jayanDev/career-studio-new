@@ -34,7 +34,7 @@ export default async function ToolsPage({ params }: LocaleParams) {
 
   return (
     <div className="bg-white">
-      <section className="border-b bg-gradient-to-br from-teal-50 via-white to-orange-50">
+      <section className="border-b bg-gradient-to-br from-blue-50 via-white to-orange-50">
         <div className="mx-auto max-w-7xl px-4 py-16">
           <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
         </div>
@@ -50,7 +50,7 @@ export default async function ToolsPage({ params }: LocaleParams) {
               <Card key={tool.title} className={isActive ? "bg-white" : "bg-neutral-50 opacity-80"}>
                 <CardHeader>
                   <div className="flex items-start justify-between gap-3">
-                    <div className="flex size-11 items-center justify-center rounded-md bg-teal-100 text-teal-800">
+                    <div className="flex size-11 items-center justify-center rounded-md bg-blue-100 text-blue-800">
                       <Icon className="size-5" />
                     </div>
                     <Badge variant={isActive ? "secondary" : "outline"} className="rounded-md">
@@ -84,7 +84,7 @@ export default async function ToolsPage({ params }: LocaleParams) {
         <div className="rounded-xl border bg-neutral-950 px-6 py-10 text-white md:px-10">
           <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-200">{t("proEyebrow")}</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">{t("proEyebrow")}</p>
               <h2 className="mt-3 text-3xl font-semibold">{t("proTitle")}</h2>
               <p className="mt-3 max-w-2xl text-neutral-300">{t("proDescription")}</p>
             </div>

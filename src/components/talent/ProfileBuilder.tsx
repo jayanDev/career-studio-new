@@ -202,10 +202,10 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
   return (
     <div className="mx-auto max-w-6xl space-y-8">
       {/* Hero Header Card */}
-      <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-r from-teal-900/10 via-background to-teal-950/5 p-6 backdrop-blur">
+      <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-r from-blue-900/10 via-background to-blue-950/5 p-6 backdrop-blur">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-4">
-            <div className="relative flex size-20 items-center justify-center rounded-full bg-teal-100 ring-4 ring-teal-50/50 text-teal-800 font-bold text-2xl">
+            <div className="relative flex size-20 items-center justify-center rounded-full bg-blue-100 ring-4 ring-blue-50/50 text-blue-800 font-bold text-2xl">
               {profile.profileImage ? (
                 <img src={profile.profileImage} alt={baseInfo.headline} className="size-full rounded-full object-cover" />
               ) : (
@@ -220,7 +220,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                   {privacy.visibility === "public" ? <Globe className="size-3" /> : <Lock className="size-3" />}
                   {privacy.visibility}
                 </Badge>
-                {baseInfo.isOpenToWork && <Badge className="bg-teal-700 hover:bg-teal-800">Open to Work</Badge>}
+                {baseInfo.isOpenToWork && <Badge className="bg-blue-700 hover:bg-blue-800">Open to Work</Badge>}
               </div>
             </div>
           </div>
@@ -228,9 +228,9 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
             <div className="text-right">
               <div className="text-xs text-muted-foreground">Profile Strength</div>
               <div className="flex items-center gap-2">
-                <span className="text-xl font-bold text-teal-700">{profile.completionScore}%</span>
+                <span className="text-xl font-bold text-blue-700">{profile.completionScore}%</span>
                 <div className="h-2 w-24 overflow-hidden rounded-full bg-slate-200">
-                  <div className="h-full bg-teal-600 transition-all duration-500" style={{ width: `${profile.completionScore}%` }} />
+                  <div className="h-full bg-blue-600 transition-all duration-500" style={{ width: `${profile.completionScore}%` }} />
                 </div>
               </div>
             </div>
@@ -257,10 +257,10 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
               <Button
                 key={tab.id}
                 variant={activeTab === tab.id ? "secondary" : "ghost"}
-                className={`w-full justify-start gap-3 rounded-lg py-2 ${activeTab === tab.id ? "bg-teal-50 text-teal-900 font-semibold" : "text-muted-foreground"}`}
+                className={`w-full justify-start gap-3 rounded-lg py-2 ${activeTab === tab.id ? "bg-blue-50 text-blue-900 font-semibold" : "text-muted-foreground"}`}
                 onClick={() => setActiveTab(tab.id)}
               >
-                <tab.icon className="size-4 shrink-0 text-teal-700" />
+                <tab.icon className="size-4 shrink-0 text-blue-700" />
                 <span>{tab.label}</span>
               </Button>
             ))}
@@ -275,8 +275,8 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <span>General Information</span>
-                  <Button variant="outline" size="sm" onClick={triggerHeadlineAi} disabled={isAiLoading} className="gap-1.5 border-teal-200 text-teal-800 hover:bg-teal-50">
-                    <Sparkles className="size-3.5 fill-teal-100" />
+                  <Button variant="outline" size="sm" onClick={triggerHeadlineAi} disabled={isAiLoading} className="gap-1.5 border-blue-200 text-blue-800 hover:bg-blue-50">
+                    <Sparkles className="size-3.5 fill-blue-100" />
                     <span>AI Headlines</span>
                   </Button>
                 </CardTitle>
@@ -345,7 +345,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <Label htmlFor="bio">About Summary</Label>
-                    <Button variant="ghost" size="xs" onClick={triggerAboutAi} disabled={isAiLoading} className="text-teal-800 gap-1">
+                    <Button variant="ghost" size="xs" onClick={triggerAboutAi} disabled={isAiLoading} className="text-blue-800 gap-1">
                       <Sparkles className="size-3" />
                       <span>Write with AI</span>
                     </Button>
@@ -368,7 +368,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                     />
                     <Label htmlFor="isOpenToWork" className="cursor-pointer">Actively Open to Opportunities</Label>
                   </div>
-                  <Button className="bg-teal-700 text-white hover:bg-teal-800 gap-2" onClick={handleSaveBaseInfo}>
+                  <Button className="bg-blue-700 text-white hover:bg-blue-800 gap-2" onClick={handleSaveBaseInfo}>
                     <Save className="size-4" />
                     <span>Save Changes</span>
                   </Button>
@@ -385,7 +385,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                   <CardTitle>Experience Timeline</CardTitle>
                   <CardDescription>Manage your career history records displayed on your public profile.</CardDescription>
                 </div>
-                <Button onClick={() => { setEditExp({}); setIsExpOpen(true); }} className="bg-teal-700 text-white hover:bg-teal-800 gap-1">
+                <Button onClick={() => { setEditExp({}); setIsExpOpen(true); }} className="bg-blue-700 text-white hover:bg-blue-800 gap-1">
                   <Plus className="size-4" />
                   <span>Add Experience</span>
                 </Button>
@@ -394,7 +394,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                 {profile.experiences.map((exp) => (
                   <div key={exp.id} className="flex items-start justify-between rounded-xl border p-4 hover:bg-slate-50 transition-colors">
                     <div className="flex gap-3">
-                      <div className="mt-1 flex size-9 items-center justify-center rounded-lg bg-teal-100 text-teal-800">
+                      <div className="mt-1 flex size-9 items-center justify-center rounded-lg bg-blue-100 text-blue-800">
                         <Briefcase className="size-4" />
                       </div>
                       <div>
@@ -432,7 +432,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                   <CardTitle>Education History</CardTitle>
                   <CardDescription>Add academic credentials, university degrees, and other certifications.</CardDescription>
                 </div>
-                <Button onClick={() => { setEditEdu({}); setIsEduOpen(true); }} className="bg-teal-700 text-white hover:bg-teal-800 gap-1">
+                <Button onClick={() => { setEditEdu({}); setIsEduOpen(true); }} className="bg-blue-700 text-white hover:bg-blue-800 gap-1">
                   <Plus className="size-4" />
                   <span>Add Education</span>
                 </Button>
@@ -441,7 +441,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                 {profile.educations.map((edu) => (
                   <div key={edu.id} className="flex items-start justify-between rounded-xl border p-4 hover:bg-slate-50 transition-colors">
                     <div className="flex gap-3">
-                      <div className="mt-1 flex size-9 items-center justify-center rounded-lg bg-teal-100 text-teal-800">
+                      <div className="mt-1 flex size-9 items-center justify-center rounded-lg bg-blue-100 text-blue-800">
                         <GraduationCap className="size-4" />
                       </div>
                       <div>
@@ -450,7 +450,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                         <p className="text-xs text-muted-foreground">
                           {new Date(edu.startDate).getFullYear()} - {edu.isOngoing ? "Ongoing" : edu.endDate ? new Date(edu.endDate).getFullYear() : ""}
                         </p>
-                        {edu.gpa && <p className="mt-1 text-xs font-semibold text-teal-700">GPA: {edu.gpa}</p>}
+                        {edu.gpa && <p className="mt-1 text-xs font-semibold text-blue-700">GPA: {edu.gpa}</p>}
                       </div>
                     </div>
                     <div className="flex gap-2">
@@ -478,7 +478,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                   <CardTitle>Skills Inventory</CardTitle>
                   <CardDescription>Declare keywords, soft skills, and tools. Highlight up to 5 featured skills.</CardDescription>
                 </div>
-                <Button onClick={() => { setEditSkill({}); setIsSkillOpen(true); }} className="bg-teal-700 text-white hover:bg-teal-800 gap-1">
+                <Button onClick={() => { setEditSkill({}); setIsSkillOpen(true); }} className="bg-blue-700 text-white hover:bg-blue-800 gap-1">
                   <Plus className="size-4" />
                   <span>Add Skill</span>
                 </Button>
@@ -489,13 +489,13 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                     <Badge 
                       key={skill.name} 
                       variant={skill.isTop ? "default" : "outline"} 
-                      className={`gap-1.5 py-1 px-3 ${skill.isTop ? "bg-teal-700 hover:bg-teal-800" : ""}`}
+                      className={`gap-1.5 py-1 px-3 ${skill.isTop ? "bg-blue-700 hover:bg-blue-800" : ""}`}
                     >
                       <span>{skill.name}</span>
                       <span className="text-[10px] opacity-70">({skill.proficiency})</span>
                       <button 
                         onClick={() => toggleTopSkill(skill.name, !skill.isTop)}
-                        className="hover:text-teal-200 transition-colors ml-1"
+                        className="hover:text-blue-200 transition-colors ml-1"
                         title={skill.isTop ? "Unpin skill" : "Pin as top skill"}
                       >
                         ★
@@ -525,7 +525,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                   <CardTitle>Projects Portfolio</CardTitle>
                   <CardDescription>Showcase academic, professional, freelance, or personal design/code projects.</CardDescription>
                 </div>
-                <Button onClick={() => { setEditProj({}); setIsProjOpen(true); }} className="bg-teal-700 text-white hover:bg-teal-800 gap-1">
+                <Button onClick={() => { setEditProj({}); setIsProjOpen(true); }} className="bg-blue-700 text-white hover:bg-blue-800 gap-1">
                   <Plus className="size-4" />
                   <span>Add Project</span>
                 </Button>
@@ -572,7 +572,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                   <CardTitle>Services Offered</CardTitle>
                   <CardDescription>Promote freelance services, coaching consulting or design offerings.</CardDescription>
                 </div>
-                <Button onClick={() => { setEditServ({}); setIsServOpen(true); }} className="bg-teal-700 text-white hover:bg-teal-800 gap-1">
+                <Button onClick={() => { setEditServ({}); setIsServOpen(true); }} className="bg-blue-700 text-white hover:bg-blue-800 gap-1">
                   <Plus className="size-4" />
                   <span>Add Service</span>
                 </Button>
@@ -582,7 +582,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                   <div key={serv.id} className="rounded-xl border p-4 bg-slate-50 flex justify-between items-start">
                     <div>
                       <h4 className="font-semibold">{serv.title}</h4>
-                      {serv.pricing && <p className="text-xs text-teal-800 font-bold mt-1">Starting from: {serv.pricing}</p>}
+                      {serv.pricing && <p className="text-xs text-blue-800 font-bold mt-1">Starting from: {serv.pricing}</p>}
                       <p className="text-xs text-muted-foreground mt-2">{serv.description}</p>
                     </div>
                     <div className="flex gap-1">
@@ -610,7 +610,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                   <CardTitle>Professional Certifications</CardTitle>
                   <CardDescription>Verify your credibility by detailing certifications or badges.</CardDescription>
                 </div>
-                <Button onClick={() => { setEditCert({}); setIsCertOpen(true); }} className="bg-teal-700 text-white hover:bg-teal-800 gap-1">
+                <Button onClick={() => { setEditCert({}); setIsCertOpen(true); }} className="bg-blue-700 text-white hover:bg-blue-800 gap-1">
                   <Plus className="size-4" />
                   <span>Add Certification</span>
                 </Button>
@@ -648,7 +648,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                   <CardTitle>Awards & Achievements</CardTitle>
                   <CardDescription>Record awards, honors, competitions or employee performance recognitions.</CardDescription>
                 </div>
-                <Button onClick={() => { setEditAward({}); setIsAwardOpen(true); }} className="bg-teal-700 text-white hover:bg-teal-800 gap-1">
+                <Button onClick={() => { setEditAward({}); setIsAwardOpen(true); }} className="bg-blue-700 text-white hover:bg-blue-800 gap-1">
                   <Plus className="size-4" />
                   <span>Add Award</span>
                 </Button>
@@ -658,7 +658,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                   <div key={award.id} className="flex justify-between items-center rounded-xl border p-4 bg-slate-55 hover:bg-slate-50">
                     <div>
                       <h4 className="font-semibold">{award.title}</h4>
-                      <p className="text-xs text-teal-850 font-bold">{award.issuer}</p>
+                      <p className="text-xs text-blue-850 font-bold">{award.issuer}</p>
                       <p className="text-xs text-muted-foreground mt-2">{award.description}</p>
                     </div>
                     <div className="flex gap-2">
@@ -718,7 +718,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                           }
                         }}
                       />
-                      <Button className="bg-teal-700 hover:bg-teal-800 text-white pointer-events-none">
+                      <Button className="bg-blue-700 hover:bg-blue-800 text-white pointer-events-none">
                         Select PDF Resume
                       </Button>
                     </div>
@@ -726,9 +726,9 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                 </div>
 
                 {profile.cvPath && (
-                  <div className="flex items-center justify-between rounded-xl border p-4 bg-teal-50/30">
+                  <div className="flex items-center justify-between rounded-xl border p-4 bg-blue-50/30">
                     <div className="flex items-center gap-3">
-                      <FileText className="size-8 text-teal-800" />
+                      <FileText className="size-8 text-blue-800" />
                       <div>
                         <h4 className="font-semibold text-sm">{profile.cvFilename || "Candidate_CV.pdf"}</h4>
                         <p className="text-xs text-muted-foreground">PDF CV is active in Talent Pool</p>
@@ -812,7 +812,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                 </div>
 
                 <div className="flex justify-end border-t pt-4">
-                  <Button className="bg-teal-700 text-white hover:bg-teal-800 gap-2" onClick={handleSavePrivacy}>
+                  <Button className="bg-blue-700 text-white hover:bg-blue-800 gap-2" onClick={handleSavePrivacy}>
                     <Save className="size-4" />
                     <span>Save Privacy Settings</span>
                   </Button>
@@ -827,8 +827,8 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
       <Dialog open={isHeadlineDialogOpen} onOpenChange={setIsHeadlineDialogOpen}>
         <DialogContent className="max-w-md bg-white">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-1.5 text-teal-850">
-              <Sparkles className="size-5 fill-teal-100" />
+            <DialogTitle className="flex items-center gap-1.5 text-blue-850">
+              <Sparkles className="size-5 fill-blue-100" />
               <span>AI Suggested Headlines</span>
             </DialogTitle>
             <DialogDescription>Pick a professional headline option generated based on your profile.</DialogDescription>
@@ -837,7 +837,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
             {aiHeadlines.map((headline, idx) => (
               <button
                 key={idx}
-                className="w-full text-left p-3 rounded-lg border hover:bg-teal-50/50 hover:border-teal-300 transition-all font-medium text-sm text-slate-800"
+                className="w-full text-left p-3 rounded-lg border hover:bg-blue-50/50 hover:border-blue-300 transition-all font-medium text-sm text-slate-800"
                 onClick={() => {
                   setBaseInfo(prev => ({ ...prev, headline }));
                   setIsHeadlineDialogOpen(false);
@@ -935,7 +935,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
                       textEl.value = bullets.map(b => `• ${b}`).join("\n");
                     });
                   }} 
-                  className="text-teal-800 gap-1"
+                  className="text-blue-800 gap-1"
                 >
                   <Sparkles className="size-3" />
                   <span>Polish with AI</span>
@@ -945,7 +945,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
             </div>
             <div className="flex justify-end gap-2">
               <DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose>
-              <Button type="submit" className="bg-teal-700 text-white">Save</Button>
+              <Button type="submit" className="bg-blue-700 text-white">Save</Button>
             </div>
           </form>
         </DialogContent>
@@ -1019,7 +1019,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
             </div>
             <div className="flex justify-end gap-2">
               <DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose>
-              <Button type="submit" className="bg-teal-700 text-white">Save</Button>
+              <Button type="submit" className="bg-blue-700 text-white">Save</Button>
             </div>
           </form>
         </DialogContent>
@@ -1072,7 +1072,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
             </div>
             <div className="flex justify-end gap-2">
               <DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose>
-              <Button type="submit" className="bg-teal-700 text-white">Add</Button>
+              <Button type="submit" className="bg-blue-700 text-white">Add</Button>
             </div>
           </form>
         </DialogContent>
@@ -1148,7 +1148,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
             </div>
             <div className="flex justify-end gap-2">
               <DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose>
-              <Button type="submit" className="bg-teal-700 text-white">Save Project</Button>
+              <Button type="submit" className="bg-blue-700 text-white">Save Project</Button>
             </div>
           </form>
         </DialogContent>
@@ -1193,7 +1193,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
             </div>
             <div className="flex justify-end gap-2">
               <DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose>
-              <Button type="submit" className="bg-teal-700 text-white">Save</Button>
+              <Button type="submit" className="bg-blue-700 text-white">Save</Button>
             </div>
           </form>
         </DialogContent>
@@ -1243,7 +1243,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
             </div>
             <div className="flex justify-end gap-2">
               <DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose>
-              <Button type="submit" className="bg-teal-700 text-white">Save</Button>
+              <Button type="submit" className="bg-blue-700 text-white">Save</Button>
             </div>
           </form>
         </DialogContent>
@@ -1287,7 +1287,7 @@ export function ProfileBuilder({ initialProfile, locale }: ProfileBuilderProps) 
             </div>
             <div className="flex justify-end gap-2">
               <DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose>
-              <Button type="submit" className="bg-teal-700 text-white">Save</Button>
+              <Button type="submit" className="bg-blue-700 text-white">Save</Button>
             </div>
           </form>
         </DialogContent>

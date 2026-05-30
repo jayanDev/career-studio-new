@@ -33,7 +33,7 @@ export function GeneratingPoller({ sessionId }: { sessionId: string }) {
 
   return (
     <div className="flex flex-col items-center justify-center p-12 text-center rounded-lg border border-dashed bg-white">
-      <Loader2 className="size-10 animate-spin text-teal-700" />
+      <Loader2 className="size-10 animate-spin text-blue-700" />
       <h2 className="mt-4 text-lg font-semibold text-neutral-950">Generating your Career GPS Roadmap...</h2>
       <p className="mt-2 text-sm text-neutral-600">Our AI is analyzing your profile, evaluating skill gaps, and plotting pathways.</p>
       <p className="mt-1 text-xs text-neutral-500">This usually takes about 10-15 seconds.</p>

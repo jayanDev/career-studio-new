@@ -26,7 +26,7 @@ export function MockInterviewChat({ targetRole }: { targetRole: string }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" className="w-full flex items-center justify-center gap-2 border-teal-200 text-teal-800 hover:bg-teal-50">
+        <Button variant="outline" className="w-full flex items-center justify-center gap-2 border-blue-200 text-blue-800 hover:bg-blue-50">
           <MessageSquare className="size-4" />
           Mock Interview
         </Button>
@@ -44,7 +44,7 @@ export function MockInterviewChat({ targetRole }: { targetRole: string }) {
             <div key={m.id} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
               <div className={`max-w-[85%] rounded-lg p-3 text-sm ${
                 m.role === "user" 
-                  ? "bg-teal-700 text-white rounded-br-none" 
+                  ? "bg-blue-700 text-white rounded-br-none" 
                   : "bg-white border text-neutral-800 rounded-bl-none shadow-sm"
               }`}>
                 {m.content}
@@ -73,7 +73,7 @@ export function MockInterviewChat({ targetRole }: { targetRole: string }) {
               className="flex-1"
               disabled={isLoading}
             />
-            <Button type="submit" size="icon" disabled={isLoading || !input.trim()} className="bg-teal-700 hover:bg-teal-800 text-white">
+            <Button type="submit" size="icon" disabled={isLoading || !input.trim()} className="bg-blue-700 hover:bg-blue-800 text-white">
               <Send className="size-4" />
             </Button>
           </form>

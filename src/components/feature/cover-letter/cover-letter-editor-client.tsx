@@ -231,7 +231,7 @@ export function CoverLetterEditorClient({ locale, letter, initialContent, saved,
             <CardHeader>
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <CardTitle>Cover Letter Sections</CardTitle>
-                <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">
+                <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">
                   <Save className="size-4" />
                   Save version
                 </Button>
@@ -377,7 +377,7 @@ export function CoverLetterEditorClient({ locale, letter, initialContent, saved,
             <CardContent className="space-y-4">
               <div className="flex items-end justify-between gap-3">
                 <div className="text-4xl font-semibold text-neutral-950">{score.score}</div>
-                <Badge className="rounded-md bg-teal-700 text-white">{score.label}</Badge>
+                <Badge className="rounded-md bg-blue-700 text-white">{score.label}</Badge>
               </div>
               <Progress value={score.score} className="h-2" />
               <p className="text-xs text-neutral-600">
@@ -402,7 +402,7 @@ export function CoverLetterEditorClient({ locale, letter, initialContent, saved,
               <p className="text-sm text-neutral-600">{score.matchedKeywords.length} of {score.matchedKeywords.length + score.missingKeywords.length} priority keywords mentioned.</p>
               <div className="flex flex-wrap gap-1.5">
                 {score.matchedKeywords.slice(0, 10).map((keyword) => (
-                  <Badge key={keyword} className="rounded-md bg-emerald-100 text-emerald-800">{keyword}</Badge>
+                  <Badge key={keyword} className="rounded-md bg-blue-100 text-blue-800">{keyword}</Badge>
                 ))}
                 {score.missingKeywords.map((item) => (
                   <Badge key={item.keyword} variant="outline" className="rounded-md border-red-200 text-red-700">{item.keyword}</Badge>
@@ -420,7 +420,7 @@ export function CoverLetterEditorClient({ locale, letter, initialContent, saved,
             </CardHeader>
             <CardContent className="space-y-2">
               {[...score.suggestions, ...score.grammarIssues].slice(0, 8).map((suggestion) => (
-                <p key={suggestion} className="rounded-md bg-amber-50 p-2 text-xs leading-5 text-amber-900">{suggestion}</p>
+                <p key={suggestion} className="rounded-md bg-sky-50 p-2 text-xs leading-5 text-sky-900">{suggestion}</p>
               ))}
               {!score.suggestions.length && !score.grammarIssues.length ? (
                 <p className="text-sm text-neutral-600">No major issues found.</p>
@@ -431,7 +431,7 @@ export function CoverLetterEditorClient({ locale, letter, initialContent, saved,
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <BookOpen className="size-4 text-teal-700" />
+                <BookOpen className="size-4 text-blue-700" />
                 Sentence Library
               </CardTitle>
             </CardHeader>
@@ -449,7 +449,7 @@ export function CoverLetterEditorClient({ locale, letter, initialContent, saved,
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <BriefcaseBusiness className="size-4 text-teal-700" />
+                <BriefcaseBusiness className="size-4 text-blue-700" />
                 Company Research
               </CardTitle>
             </CardHeader>
@@ -459,7 +459,7 @@ export function CoverLetterEditorClient({ locale, letter, initialContent, saved,
                   key={item}
                   type="button"
                   onClick={() => setBodyText((current) => [current, item.replace("Verify this against the current role before sending.", "").trim()].filter(Boolean).join("\n\n"))}
-                  className="w-full rounded-md bg-neutral-50 p-2 text-left text-xs leading-5 text-neutral-700 hover:bg-teal-50"
+                  className="w-full rounded-md bg-neutral-50 p-2 text-left text-xs leading-5 text-neutral-700 hover:bg-blue-50"
                 >
                   {item}
                 </button>
@@ -597,7 +597,7 @@ function LibraryGroup({ title, items, onInsert }: { title: string; items: string
             key={item}
             type="button"
             onClick={() => onInsert(item)}
-            className="w-full rounded-md bg-neutral-50 p-2 text-left text-xs leading-5 text-neutral-600 hover:bg-teal-50"
+            className="w-full rounded-md bg-neutral-50 p-2 text-left text-xs leading-5 text-neutral-600 hover:bg-blue-50"
           >
             {item}
           </button>

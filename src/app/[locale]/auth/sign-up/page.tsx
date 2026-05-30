@@ -94,23 +94,23 @@ export default async function SignUpPage({ params, searchParams }: AuthPageProps
               <input type="checkbox" name="terms" required className="mt-1 size-4 rounded border-neutral-300" />
               <span>
                 {t("termsPrefix")}{" "}
-                <Link href={`/${locale}/terms`} className="font-medium text-teal-800 hover:underline">
+                <Link href={`/${locale}/terms`} className="font-medium text-blue-800 hover:underline">
                   {t("terms")}
                 </Link>{" "}
                 {t("and")}{" "}
-                <Link href={`/${locale}/privacy`} className="font-medium text-teal-800 hover:underline">
+                <Link href={`/${locale}/privacy`} className="font-medium text-blue-800 hover:underline">
                   {t("privacy")}
                 </Link>
               </span>
             </label>
-            <Button type="submit" className="w-full bg-teal-700 text-white hover:bg-teal-800">
+            <Button type="submit" className="w-full bg-blue-700 text-white hover:bg-blue-800">
               {t("createAccountSendLink")}
               <ArrowRight className="size-4" />
             </Button>
           </form>
           <p className="text-center text-sm text-neutral-600">
             {t("alreadyHaveAccount")}{" "}
-            <Link href={`/${locale}/auth/sign-in`} className="font-medium text-teal-800 hover:underline">
+            <Link href={`/${locale}/auth/sign-in`} className="font-medium text-blue-800 hover:underline">
               {t("signIn")}
             </Link>
           </p>

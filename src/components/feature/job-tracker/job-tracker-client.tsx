@@ -103,7 +103,7 @@ export function JobTrackerClient({
                       <div className="flex items-center gap-2">
                         {application.companyName}
                         {application.jobUrl ? (
-                          <a href={application.jobUrl} className="text-teal-700" target="_blank" rel="noreferrer">
+                          <a href={application.jobUrl} className="text-blue-700" target="_blank" rel="noreferrer">
                             <ExternalLink className="size-3.5" />
                           </a>
                         ) : null}
@@ -179,7 +179,7 @@ function KanbanColumn({
   const { setNodeRef, isOver } = useDroppable({ id: status, disabled });
 
   return (
-    <section ref={setNodeRef} className={`min-h-72 min-w-72 rounded-lg border bg-neutral-50 p-3 ${isOver ? "ring-2 ring-teal-500" : ""}`}>
+    <section ref={setNodeRef} className={`min-h-72 min-w-72 rounded-lg border bg-neutral-50 p-3 ${isOver ? "ring-2 ring-blue-500" : ""}`}>
       <div className="mb-3 flex items-center justify-between">
         <h3 className="font-semibold text-neutral-950">{jobStatusMeta[status].label}</h3>
         <Badge variant="outline" className="rounded-md">{applications.length}</Badge>
@@ -213,12 +213,12 @@ function KanbanCard({ application }: { application: JobApplicationCard }) {
     if (diffDays < 0) {
       return {
         label: "Follow-up Overdue",
-        className: "bg-rose-50 text-rose-700 border-rose-200 animate-pulse font-semibold",
+        className: "bg-blue-50 text-blue-700 border-blue-200 animate-pulse font-semibold",
       };
     } else if (diffDays === 0) {
       return {
         label: "Follow-up Today",
-        className: "bg-amber-50 text-amber-800 border-amber-300 font-semibold animate-pulse",
+        className: "bg-sky-50 text-sky-800 border-sky-300 font-semibold animate-pulse",
       };
     } else if (diffDays <= 3) {
       return {

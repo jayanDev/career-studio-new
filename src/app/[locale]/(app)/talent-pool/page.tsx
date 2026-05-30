@@ -50,7 +50,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
     return (
       <div className="mx-auto max-w-2xl py-12 space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <div className="text-center space-y-3">
-          <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-100 to-emerald-100 text-teal-800 shadow-sm border border-teal-200">
+          <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-blue-100 text-blue-800 shadow-sm border border-blue-200">
             <Briefcase className="size-8" />
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-neutral-900 mt-4">Join as a Recruiter</h1>
@@ -68,8 +68,8 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
             <div className="p-6 md:p-8 space-y-6 bg-white">
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="bg-teal-50 p-2 rounded-full mt-0.5">
-                    <Search className="size-5 text-teal-600 shrink-0" />
+                  <div className="bg-blue-50 p-2 rounded-full mt-0.5">
+                    <Search className="size-5 text-blue-600 shrink-0" />
                   </div>
                   <div>
                     <div className="font-semibold text-neutral-900">Advanced Boolean Search</div>
@@ -96,7 +96,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
                 </div>
               </div>
               <div className="pt-6 border-t border-neutral-100 flex justify-center">
-                <Button asChild className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white w-full h-12 text-base rounded-xl shadow-lg hover:shadow-teal-500/25 transition-all">
+                <Button asChild className="bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white w-full h-12 text-base rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all">
                   <Link href={`/${locale}/talent-pool/company`}>
                     Set Up Recruiter Identity
                   </Link>
@@ -162,7 +162,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
         <div>
           <h1 className="text-3xl font-semibold tracking-tight text-neutral-950 flex items-center gap-3">
             <span>Find Candidates</span>
-            <Badge variant="outline" className="border-teal-200 bg-teal-50 text-teal-800 text-sm py-0.5">
+            <Badge variant="outline" className="border-blue-200 bg-blue-50 text-blue-800 text-sm py-0.5">
               {candidates.length} Profiles
             </Badge>
           </h1>
@@ -185,7 +185,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
           </Button>
           <Button asChild variant="outline" size="sm" className="gap-2 border-neutral-200 hover:bg-neutral-50 rounded-lg">
             <Link href={`/${locale}/talent-pool/company`}>
-              <ShieldCheck className="size-4 text-emerald-600" />
+              <ShieldCheck className="size-4 text-blue-600" />
               <span className="font-medium">Company Identity</span>
             </Link>
           </Button>
@@ -200,12 +200,12 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
 
       {/* Recruiter verification status banner */}
       {!recruiter.isVerified && (
-        <Card className="border-amber-200 bg-amber-50 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-xl shadow-sm">
+        <Card className="border-sky-200 bg-sky-50 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-xl shadow-sm">
           <div className="flex items-start gap-3">
-            <Clock className="size-5 text-amber-600 shrink-0 mt-0.5" />
+            <Clock className="size-5 text-sky-600 shrink-0 mt-0.5" />
             <div>
-              <h4 className="font-semibold text-sm text-amber-900">Verification Pending</h4>
-              <p className="text-xs text-amber-800/80 mt-1 max-w-3xl leading-relaxed">
+              <h4 className="font-semibold text-sm text-sky-900">Verification Pending</h4>
+              <p className="text-xs text-sky-800/80 mt-1 max-w-3xl leading-relaxed">
                 Your recruiter profile is under review by our moderation team. You can explore the candidate database and create pipelines, but you cannot dispatch contact requests until verified.
               </p>
             </div>
@@ -215,7 +215,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
 
       <div className="grid gap-3 md:grid-cols-3">
         {recruiterPlans.map((plan) => (
-          <Card key={plan.slug} className={`bg-white ${plan.slug === "starter" ? "border-teal-200" : "border-neutral-200"}`}>
+          <Card key={plan.slug} className={`bg-white ${plan.slug === "starter" ? "border-blue-200" : "border-neutral-200"}`}>
             <CardContent className="p-4">
               <div className="flex items-start justify-between gap-3">
                 <div>
@@ -243,10 +243,10 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
                   name="query" 
                   placeholder='Boolean Search: e.g. "React" AND "Node.js" OR "Python"' 
                   defaultValue={queryStr || ""}
-                  className="h-14 pl-12 rounded-xl text-lg bg-neutral-50/50 border-neutral-200 focus-visible:ring-teal-500/20 focus-visible:border-teal-500"
+                  className="h-14 pl-12 rounded-xl text-lg bg-neutral-50/50 border-neutral-200 focus-visible:ring-blue-500/20 focus-visible:border-blue-500"
                 />
               </div>
-              <Button type="submit" className="h-14 px-8 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-medium text-base shrink-0 shadow-sm gap-2">
+              <Button type="submit" className="h-14 px-8 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-medium text-base shrink-0 shadow-sm gap-2">
                 <Search className="size-5" /> Search
               </Button>
             </div>
@@ -259,7 +259,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
             />
             <div className="flex flex-wrap gap-2">
               {slIndustrySearchPacks.map((item) => (
-                <Button key={item.slug} asChild variant={pack === item.slug ? "default" : "outline"} size="sm" className={pack === item.slug ? "bg-teal-700 text-white" : ""}>
+                <Button key={item.slug} asChild variant={pack === item.slug ? "default" : "outline"} size="sm" className={pack === item.slug ? "bg-blue-700 text-white" : ""}>
                   <Link href={`/${locale}/talent-pool?pack=${item.slug}`}>{item.name}</Link>
                 </Button>
               ))}
@@ -315,7 +315,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
                       <select
                         id="district"
                         name="district"
-                        className="flex h-10 w-full rounded-lg border border-input bg-background pl-9 pr-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-teal-500"
+                        className="flex h-10 w-full rounded-lg border border-input bg-background pl-9 pr-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500"
                         defaultValue={district || ""}
                       >
                         <option value="">All Island</option>
@@ -358,7 +358,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
                     <select
                       id="careerLevel"
                       name="careerLevel"
-                      className="flex h-10 w-full rounded-lg border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-teal-500"
+                      className="flex h-10 w-full rounded-lg border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500"
                       defaultValue={careerLevel || ""}
                     >
                       <option value="">Any Experience Level</option>
@@ -429,7 +429,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
                       name="isOpenToWork" 
                       value="true" 
                       defaultChecked={isOpenToWork} 
-                      className="size-4 rounded border-neutral-300 accent-teal-600 focus:ring-teal-500 transition-all" 
+                      className="size-4 rounded border-neutral-300 accent-blue-600 focus:ring-blue-500 transition-all" 
                     />
                     <span className="group-hover:text-neutral-900 transition-colors">Actively Open to Work</span>
                   </label>
@@ -439,7 +439,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
                       name="verifiedOnly" 
                       value="true" 
                       defaultChecked={verifiedOnly} 
-                      className="size-4 rounded border-neutral-300 accent-teal-600 focus:ring-teal-500 transition-all" 
+                      className="size-4 rounded border-neutral-300 accent-blue-600 focus:ring-blue-500 transition-all" 
                     />
                     <span className="group-hover:text-neutral-900 transition-colors">Verified Profiles Only</span>
                   </label>
@@ -449,14 +449,14 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
                       name="remote" 
                       value="true" 
                       defaultChecked={remote} 
-                      className="size-4 rounded border-neutral-300 accent-teal-600 focus:ring-teal-500 transition-all" 
+                      className="size-4 rounded border-neutral-300 accent-blue-600 focus:ring-blue-500 transition-all" 
                     />
                     <span className="group-hover:text-neutral-900 transition-colors">Remote / hybrid friendly</span>
                   </label>
                 </div>
 
                 <div className="pt-2">
-                  <Button type="submit" className="w-full bg-teal-700 hover:bg-teal-800 text-white h-11 rounded-lg font-medium shadow-sm">
+                  <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white h-11 rounded-lg font-medium shadow-sm">
                     Apply Filters
                   </Button>
                 </div>
@@ -469,12 +469,12 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
         <main className="space-y-5">
           {candidates.length > 0 ? (
             candidates.map((cand) => (
-              <Card key={cand.id} className="bg-white border-neutral-200 hover:border-teal-300 hover:shadow-md transition-all duration-300 group rounded-xl overflow-hidden">
+              <Card key={cand.id} className="bg-white border-neutral-200 hover:border-blue-300 hover:shadow-md transition-all duration-300 group rounded-xl overflow-hidden">
                 <CardContent className="p-6 md:p-7 flex flex-col md:flex-row justify-between gap-6">
                   {/* Info block */}
                   <div className="flex gap-5">
                     {/* User profile picture */}
-                    <div className="size-16 rounded-2xl bg-gradient-to-br from-teal-50 to-emerald-50 text-teal-800 text-xl font-bold flex items-center justify-center shrink-0 border border-teal-100/50 overflow-hidden shadow-sm">
+                    <div className="size-16 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-50 text-blue-800 text-xl font-bold flex items-center justify-center shrink-0 border border-blue-100/50 overflow-hidden shadow-sm">
                       {cand.visibility !== "anonymous" && cand.profileImage ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img src={cand.profileImage} alt={cand.headline} className="size-full object-cover" />
@@ -487,7 +487,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
 
                     <div className="space-y-1.5">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h4 className="text-lg font-bold text-neutral-900 group-hover:text-teal-800 transition-colors">
+                        <h4 className="text-lg font-bold text-neutral-900 group-hover:text-blue-800 transition-colors">
                           {publicCandidateName(cand.user.firstName, cand.user.lastName, cand.visibility)}
                         </h4>
                         {cand.visibility === "anonymous" && (
@@ -501,7 +501,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
                           </span>
                         )}
                         {cand.isOpenToWork && (
-                          <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 border-none font-semibold px-2 py-0.5 text-[10px] uppercase tracking-wider">
+                          <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200 border-none font-semibold px-2 py-0.5 text-[10px] uppercase tracking-wider">
                             Open to Work
                           </Badge>
                         )}
@@ -545,10 +545,10 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
                   <div className="flex flex-col justify-between items-end gap-4 shrink-0 md:border-l md:border-neutral-100 md:pl-8">
                     <div className="text-right bg-neutral-50 px-3 py-2 rounded-lg border border-neutral-100">
                       <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">{cand.aiMatchScore !== null ? "AI Match" : "Confidence"}</p>
-                      <span className="text-xl font-black text-teal-700">{cand.aiMatchScore ?? cand.candidateConfidence}%</span>
+                      <span className="text-xl font-black text-blue-700">{cand.aiMatchScore ?? cand.candidateConfidence}%</span>
                     </div>
                     {cand.matchReasons.length ? (
-                      <div className="max-w-48 rounded-lg border border-teal-100 bg-teal-50 p-2 text-left text-[10px] text-teal-900">
+                      <div className="max-w-48 rounded-lg border border-blue-100 bg-blue-50 p-2 text-left text-[10px] text-blue-900">
                         <div className="font-bold uppercase tracking-wider">Why matched</div>
                         <div className="mt-1">{cand.matchReasons.slice(0, 3).join(", ")}</div>
                       </div>
@@ -556,7 +556,7 @@ export default async function TalentPoolPage({ params, searchParams }: TalentPoo
 
                     <div className="flex flex-col gap-2 w-full mt-auto">
                       {cand.customSlug ? (
-                        <Button asChild className="bg-teal-700 hover:bg-teal-800 text-white gap-2 w-full shadow-sm" size="sm">
+                        <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white gap-2 w-full shadow-sm" size="sm">
                           <Link href={`/${locale}/talent/${cand.customSlug}`}>
                             <span>View Profile</span>
                             <ChevronRight className="size-3.5 opacity-70" />

@@ -123,7 +123,7 @@ export default async function AnalyticsPage({ params }: { params: Promise<{ loca
 
       <div className="space-y-6">
         <h2 className="text-xl font-bold text-neutral-800 flex items-center gap-2 border-b pb-2">
-          <Send className="size-5 text-teal-600" />
+          <Send className="size-5 text-blue-600" />
           Your Outreach Performance
         </h2>
         
@@ -147,7 +147,7 @@ export default async function AnalyticsPage({ params }: { params: Promise<{ loca
           <Card className="bg-white border-neutral-200 shadow-sm">
             <CardContent className="p-6">
               <p className="text-sm font-medium text-neutral-500 mb-1">Acceptance Rate</p>
-              <h3 className="text-3xl font-black text-teal-700">{acceptanceRate}%</h3>
+              <h3 className="text-3xl font-black text-blue-700">{acceptanceRate}%</h3>
               <Progress value={acceptanceRate} className="h-1.5 mt-3" />
             </CardContent>
           </Card>
@@ -155,7 +155,7 @@ export default async function AnalyticsPage({ params }: { params: Promise<{ loca
           <Card className="bg-white border-neutral-200 shadow-sm">
             <CardContent className="p-6">
               <p className="text-sm font-medium text-neutral-500 mb-1">Pending Replies</p>
-              <h3 className="text-3xl font-black text-amber-600">{pending}</h3>
+              <h3 className="text-3xl font-black text-sky-600">{pending}</h3>
               <p className="text-xs text-neutral-400 mt-2">Awaiting candidate action</p>
             </CardContent>
           </Card>
@@ -164,7 +164,7 @@ export default async function AnalyticsPage({ params }: { params: Promise<{ loca
 
       <div className="space-y-6 pt-6">
         <h2 className="text-xl font-bold text-neutral-800 flex items-center gap-2 border-b pb-2">
-          <Activity className="size-5 text-indigo-600" />
+          <Activity className="size-5 text-blue-600" />
           Talent Market Intelligence
         </h2>
         
@@ -172,7 +172,7 @@ export default async function AnalyticsPage({ params }: { params: Promise<{ loca
           <Card className="bg-white border-neutral-200 shadow-sm">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <Code2 className="size-5 text-indigo-500" /> Top Skills in Demand
+                <Code2 className="size-5 text-blue-500" /> Top Skills in Demand
               </CardTitle>
               <CardDescription>Most frequent skills among {totalMarket} active candidates.</CardDescription>
             </CardHeader>
@@ -201,19 +201,19 @@ export default async function AnalyticsPage({ params }: { params: Promise<{ loca
             <Card className="bg-white border-neutral-200 shadow-sm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <Banknote className="size-5 text-emerald-500" /> Average Salary Expectations
+                  <Banknote className="size-5 text-blue-500" /> Average Salary Expectations
                 </CardTitle>
                 <CardDescription>Based on parsed data from active profiles.</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+                <div className="flex items-center gap-4 p-4 bg-blue-50 rounded-xl border border-blue-100">
                   <div className="size-12 bg-white rounded-full flex items-center justify-center shrink-0">
-                    <LineChart className="size-6 text-emerald-600" />
+                    <LineChart className="size-6 text-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-emerald-900">Platform Average</p>
-                    <p className="text-2xl font-black text-emerald-700">{avgSalary > 0 ? formattedSalary : "N/A"}</p>
-                    <p className="text-xs text-emerald-800/70 mt-0.5">Based on {salaryCount} profiles with declared expected salaries.</p>
+                    <p className="text-sm font-semibold text-blue-900">Platform Average</p>
+                    <p className="text-2xl font-black text-blue-700">{avgSalary > 0 ? formattedSalary : "N/A"}</p>
+                    <p className="text-xs text-blue-800/70 mt-0.5">Based on {salaryCount} profiles with declared expected salaries.</p>
                   </div>
                 </div>
               </CardContent>
@@ -221,19 +221,19 @@ export default async function AnalyticsPage({ params }: { params: Promise<{ loca
 
             <Card className="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white shadow-md">
               <CardContent className="p-6">
-                <Target className="size-8 text-amber-400 mb-4" />
+                <Target className="size-8 text-sky-400 mb-4" />
                 <h3 className="text-xl font-bold mb-2">How to improve your response rate?</h3>
                 <ul className="space-y-2 text-sm text-neutral-300">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="size-4 text-emerald-400 mt-0.5 shrink-0" />
+                    <CheckCircle className="size-4 text-blue-400 mt-0.5 shrink-0" />
                     <span>Personalize your message using the <strong>AI Draft</strong> tool.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="size-4 text-emerald-400 mt-0.5 shrink-0" />
+                    <CheckCircle className="size-4 text-blue-400 mt-0.5 shrink-0" />
                     <span>Ensure your <strong>Company Identity</strong> profile is fully verified.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="size-4 text-emerald-400 mt-0.5 shrink-0" />
+                    <CheckCircle className="size-4 text-blue-400 mt-0.5 shrink-0" />
                     <span>Target candidates whose <strong>Career Level</strong> aligns with your budget.</span>
                   </li>
                 </ul>
@@ -251,7 +251,7 @@ export default async function AnalyticsPage({ params }: { params: Promise<{ loca
         <Card className="bg-white border-neutral-200 shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
-              <Users className="size-5 text-teal-600" /> Hiring Strategy Signals
+              <Users className="size-5 text-blue-600" /> Hiring Strategy Signals
             </CardTitle>
             <CardDescription>Anonymised Talent Insights-style signals from open candidates.</CardDescription>
           </CardHeader>

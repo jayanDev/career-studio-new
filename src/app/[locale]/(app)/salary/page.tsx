@@ -101,7 +101,7 @@ export default async function SalaryPage({ params }: SalaryPageProps) {
                   <div className="font-medium text-neutral-950">{row.jobTitle}</div>
                   <div className="text-xs text-neutral-500">{row.city}</div>
                 </div>
-                <div className="text-sm font-semibold text-teal-700">{formatCurrency(Number(row.salaryMedian))}</div>
+                <div className="text-sm font-semibold text-blue-700">{formatCurrency(Number(row.salaryMedian))}</div>
               </div>
             ))}
           </CardContent>
@@ -118,7 +118,7 @@ export default async function SalaryPage({ params }: SalaryPageProps) {
                   <div className="font-medium text-neutral-950">{calculation.jobTitle}</div>
                   <div className="text-xs text-neutral-500">{calculation.location}</div>
                 </div>
-                <div className="text-sm font-semibold text-teal-700">{formatCurrency(Number(calculation.salaryMedian))}</div>
+                <div className="text-sm font-semibold text-blue-700">{formatCurrency(Number(calculation.salaryMedian))}</div>
               </div>
             ))}
             {calculations.length === 0 ? <p className="text-sm text-neutral-500">{t("emptyHistory")}</p> : null}
@@ -133,7 +133,7 @@ function InfoCard({ icon: Icon, title, body }: { icon: typeof BadgeDollarSign; t
   return (
     <Card className="bg-white">
       <CardContent className="p-5">
-        <div className="flex size-11 items-center justify-center rounded-md bg-teal-100 text-teal-800">
+        <div className="flex size-11 items-center justify-center rounded-md bg-blue-100 text-blue-800">
           <Icon className="size-5" />
         </div>
         <h2 className="mt-4 font-semibold text-neutral-950">{title}</h2>

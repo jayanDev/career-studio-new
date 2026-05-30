@@ -29,7 +29,7 @@ export default async function DiplomasPage({ params }: LocaleParams) {
 
   return (
     <div className="bg-white">
-      <section className="border-b bg-gradient-to-br from-white via-amber-50 to-teal-50">
+      <section className="border-b bg-gradient-to-br from-white via-sky-50 to-blue-50">
         <div className="mx-auto max-w-7xl px-4 py-16">
           <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
           <div className="mt-8">

@@ -69,7 +69,7 @@ export default async function SavedSearchesPage({ params }: SavedSearchesPagePro
               <p className="text-neutral-500 mb-6 max-w-sm">
                 Save your frequently used searches to quickly find matching candidates and receive daily email alerts.
               </p>
-              <Button asChild className="bg-teal-700 hover:bg-teal-800 text-white">
+              <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white">
                 <Link href={`/${locale}/talent-pool`}>Browse Talent Pool</Link>
               </Button>
             </CardContent>
@@ -78,7 +78,7 @@ export default async function SavedSearchesPage({ params }: SavedSearchesPagePro
           recruiter.savedSearches.map((search) => {
             const url = `/${locale}/talent-pool?${search.filtersJson}`;
             return (
-              <Card key={search.id} className="bg-white border-neutral-200 hover:border-teal-300 transition-all duration-300 group rounded-xl overflow-hidden shadow-sm">
+              <Card key={search.id} className="bg-white border-neutral-200 hover:border-blue-300 transition-all duration-300 group rounded-xl overflow-hidden shadow-sm">
                 <CardContent className="p-6 flex flex-col md:flex-row justify-between gap-6">
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
@@ -102,7 +102,7 @@ export default async function SavedSearchesPage({ params }: SavedSearchesPagePro
                     <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-700 hover:bg-red-50">
                       <Trash2 className="size-4" />
                     </Button>
-                    <Button asChild className="bg-teal-700 hover:bg-teal-800 text-white gap-2 shadow-sm w-full sm:w-auto">
+                    <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white gap-2 shadow-sm w-full sm:w-auto">
                       <Link href={url}>
                         Run Search <ArrowRight className="size-4" />
                       </Link>

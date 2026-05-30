@@ -65,7 +65,7 @@ export default async function NotificationsPage({ params }: NotificationsPagePro
           <h1 className="text-3xl font-semibold tracking-tight text-neutral-950">{t("title")}</h1>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-neutral-600">{t("subtitle")}</p>
         </div>
-        <Badge variant="outline" className="w-fit rounded-md border-teal-200 text-teal-700">
+        <Badge variant="outline" className="w-fit rounded-md border-blue-200 text-blue-700">
           {unread} {t("unread")}
         </Badge>
       </div>
@@ -74,7 +74,7 @@ export default async function NotificationsPage({ params }: NotificationsPagePro
         <Card className="bg-white">
           <CardHeader className="flex flex-row items-center justify-between gap-3">
             <CardTitle className="flex items-center gap-2">
-              <Bell className="size-5 text-teal-700" />
+              <Bell className="size-5 text-blue-700" />
               {t("activity")}
             </CardTitle>
             <form action={markAllAction}>
@@ -86,7 +86,7 @@ export default async function NotificationsPage({ params }: NotificationsPagePro
           </CardHeader>
           <CardContent className="space-y-3">
             {notifications.map((notification) => (
-              <article key={notification.id} className={`rounded-md border p-4 ${notification.isRead ? "bg-white" : "bg-teal-50"}`}>
+              <article key={notification.id} className={`rounded-md border p-4 ${notification.isRead ? "bg-white" : "bg-blue-50"}`}>
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <div className="flex flex-wrap items-center gap-2">
@@ -95,7 +95,7 @@ export default async function NotificationsPage({ params }: NotificationsPagePro
                     </div>
                     <p className="mt-2 text-sm leading-6 text-neutral-600">{notification.message}</p>
                     {notification.actionUrl ? (
-                      <a href={notification.actionUrl} className="mt-2 inline-block text-sm font-medium text-teal-700 hover:text-teal-800">
+                      <a href={notification.actionUrl} className="mt-2 inline-block text-sm font-medium text-blue-700 hover:text-blue-800">
                         {t("open")}
                       </a>
                     ) : null}
@@ -115,7 +115,7 @@ export default async function NotificationsPage({ params }: NotificationsPagePro
         <Card className="bg-white">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Mail className="size-5 text-teal-700" />
+              <Mail className="size-5 text-blue-700" />
               {t("preferences")}
             </CardTitle>
           </CardHeader>
@@ -124,10 +124,10 @@ export default async function NotificationsPage({ params }: NotificationsPagePro
               {preferenceFields.map((field) => (
                 <label key={field.name} className="flex items-center justify-between rounded-md border bg-neutral-50 p-3">
                   <span>{field.label}</span>
-                  <input name={field.name} type="checkbox" defaultChecked={field.checked} className="size-4 accent-teal-700" />
+                  <input name={field.name} type="checkbox" defaultChecked={field.checked} className="size-4 accent-blue-700" />
                 </label>
               ))}
-              <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">{t("savePreferences")}</Button>
+              <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">{t("savePreferences")}</Button>
             </form>
           </CardContent>
         </Card>

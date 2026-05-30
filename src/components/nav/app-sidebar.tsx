@@ -58,7 +58,7 @@ export async function AppSidebar({ locale, planTier }: { locale: Locale; planTie
   return (
     <aside className="hidden min-h-screen w-72 shrink-0 border-r bg-card lg:block">
       <div className="flex h-16 items-center gap-2 px-5">
-        <span className="flex size-9 items-center justify-center rounded-md bg-teal-700 text-white">
+        <span className="flex size-9 items-center justify-center rounded-md bg-blue-700 text-white">
           <BriefcaseBusiness className="size-5" />
         </span>
         <span className="font-semibold">{t("Career Studio")}</span>

@@ -69,9 +69,9 @@ export default async function PublicLinkedInAuditPage({ params, searchParams }: 
             <h1 className="mt-3 text-2xl font-bold text-slate-950">{audit.targetRole || "LinkedIn profile"}</h1>
             <p className="mt-1 text-sm text-slate-600">Privacy-safe public report. Raw profile text and contact details are hidden.</p>
           </div>
-          <div className="rounded-full border-4 border-teal-500 bg-teal-50 px-5 py-4 text-center">
-            <div className="text-3xl font-extrabold text-teal-700">{overall}</div>
-            <div className="text-[10px] font-bold uppercase text-teal-700">/100</div>
+          <div className="rounded-full border-4 border-blue-500 bg-blue-50 px-5 py-4 text-center">
+            <div className="text-3xl font-extrabold text-blue-700">{overall}</div>
+            <div className="text-[10px] font-bold uppercase text-blue-700">/100</div>
           </div>
         </div>
 
@@ -114,13 +114,13 @@ export default async function PublicLinkedInAuditPage({ params, searchParams }: 
               {parsed.benchmark.gaps.slice(0, 4).map((gap) => (
                 <p key={gap}>{gap}</p>
               ))}
-              <p className="pt-2 text-xs text-teal-700">Next audit target: {parsed.benchmark.reaudit_recommended_on || "30 days"}</p>
+              <p className="pt-2 text-xs text-blue-700">Next audit target: {parsed.benchmark.reaudit_recommended_on || "30 days"}</p>
             </CardContent>
           </Card>
         </div>
 
         <div className="text-center text-xs text-slate-500">
-          <Link href="/" className="font-semibold text-teal-700">Career Studio</Link>
+          <Link href="/" className="font-semibold text-blue-700">Career Studio</Link>
         </div>
       </div>
     </main>

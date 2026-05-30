@@ -34,14 +34,14 @@ function percentage(used: number, limit: number) {
 
 function quotaColor(value: number) {
   if (value < 50) {
-    return "bg-teal-600";
+    return "bg-blue-600";
   }
 
   if (value < 80) {
-    return "bg-amber-500";
+    return "bg-sky-500";
   }
 
-  return "bg-rose-600";
+  return "bg-blue-600";
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -130,7 +130,7 @@ export default async function SettingsPage({ params, searchParams }: SettingsPag
       </div>
 
       {saved ? (
-        <Alert className="border-teal-200 bg-teal-50 text-teal-950">
+        <Alert className="border-blue-200 bg-blue-50 text-blue-950">
           <AlertDescription>{t(`saved.${savedKey}`)}</AlertDescription>
         </Alert>
       ) : null}
@@ -156,7 +156,7 @@ export default async function SettingsPage({ params, searchParams }: SettingsPag
             </CardHeader>
             <CardContent>
               <div className="mb-6 flex items-center gap-4">
-                <div className="flex size-16 items-center justify-center rounded-full bg-teal-100 text-xl font-semibold text-teal-900">
+                <div className="flex size-16 items-center justify-center rounded-full bg-blue-100 text-xl font-semibold text-blue-900">
                   {initials}
                 </div>
                 <div>
@@ -186,7 +186,7 @@ export default async function SettingsPage({ params, searchParams }: SettingsPag
                   <Input id="linkedinUrl" name="linkedinUrl" defaultValue={profile.linkedinUrl} placeholder="https://linkedin.com/in/..." />
                 </div>
                 <div className="md:col-span-2">
-                  <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">
+                  <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">
                     {t("saveProfile")}
                   </Button>
                 </div>
@@ -212,14 +212,14 @@ export default async function SettingsPage({ params, searchParams }: SettingsPag
               <div className="grid gap-3 md:grid-cols-2">
                 <div className="rounded-md border bg-neutral-50 p-4">
                   <div className="flex items-center gap-2 text-sm font-medium text-neutral-950">
-                    <CalendarDays className="size-4 text-teal-700" />
+                    <CalendarDays className="size-4 text-blue-700" />
                     {t("memberSince")}
                   </div>
                   <div className="mt-2 text-sm text-neutral-600">{user.dateJoined.toLocaleDateString("en-LK")}</div>
                 </div>
                 <div className="rounded-md border bg-neutral-50 p-4">
                   <div className="flex items-center gap-2 text-sm font-medium text-neutral-950">
-                    <KeyRound className="size-4 text-teal-700" />
+                    <KeyRound className="size-4 text-blue-700" />
                     {t("accountId")}
                   </div>
                   <div className="mt-2 break-all font-mono text-xs text-neutral-600">{user.id}</div>
@@ -249,7 +249,7 @@ export default async function SettingsPage({ params, searchParams }: SettingsPag
                     <div key={quota.label}>
                       <div className="mb-2 flex items-center justify-between gap-3 text-sm">
                         <span className="inline-flex items-center gap-2 font-medium text-neutral-800">
-                          <Icon className="size-4 text-teal-700" />
+                          <Icon className="size-4 text-blue-700" />
                           {quota.label}
                         </span>
                         <span className="text-neutral-500">
@@ -283,7 +283,7 @@ export default async function SettingsPage({ params, searchParams }: SettingsPag
               <div className="mt-5 rounded-md border border-dashed bg-neutral-50 p-4">
                 <div className="text-xs font-medium uppercase tracking-[0.18em] text-neutral-500">{t("referralCode")}</div>
                 <div className="mt-2 flex flex-wrap items-center gap-3">
-                  <code className="rounded-md bg-white px-3 py-2 text-lg font-semibold tracking-[0.18em] text-teal-900">
+                  <code className="rounded-md bg-white px-3 py-2 text-lg font-semibold tracking-[0.18em] text-blue-900">
                     {profile.referralCode}
                   </code>
                   <Badge variant="outline" className="rounded-md">
@@ -295,18 +295,18 @@ export default async function SettingsPage({ params, searchParams }: SettingsPag
             </CardContent>
           </Card>
 
-          <Card id="danger" className="border-rose-200 bg-white">
+          <Card id="danger" className="border-blue-200 bg-white">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-rose-700">
+              <CardTitle className="flex items-center gap-2 text-blue-700">
                 <AlertTriangle className="size-5" />
                 {t("dangerTitle")}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <div className="flex flex-col gap-3 rounded-md border border-amber-200 bg-amber-50 p-4 md:flex-row md:items-center md:justify-between">
+              <div className="flex flex-col gap-3 rounded-md border border-sky-200 bg-sky-50 p-4 md:flex-row md:items-center md:justify-between">
                 <span>
                   <span className="flex items-center gap-2 font-medium text-neutral-950">
-                    <Shield className="size-4 text-amber-700" />
+                    <Shield className="size-4 text-sky-700" />
                     {t("signOutTitle")}
                   </span>
                   <span className="mt-1 block text-sm text-neutral-600">{t("signOutBody")}</span>

@@ -23,10 +23,10 @@ function formatDate(iso: string) {
 }
 
 const bandClass: Record<AtsHistoryEntry["bandKey"], string> = {
-  excellent: "bg-emerald-600",
-  good: "bg-teal-700",
-  fair: "bg-amber-600",
-  poor: "bg-rose-600",
+  excellent: "bg-blue-600",
+  good: "bg-blue-700",
+  fair: "bg-sky-600",
+  poor: "bg-blue-600",
 };
 
 export function ScoreHistoryChart({ entries }: { entries: AtsHistoryEntry[] }) {
@@ -156,11 +156,11 @@ function ScansTable({ entries }: { entries: AtsHistoryEntry[] }) {
               {[...entries].reverse().map((e) => {
                 const isSel = selected.includes(e.id);
                 return (
-                  <tr key={e.id} className={`border-b last:border-b-0 ${isSel ? "bg-teal-50/50" : ""}`}>
+                  <tr key={e.id} className={`border-b last:border-b-0 ${isSel ? "bg-blue-50/50" : ""}`}>
                     <td className="py-2">
                       <input
                         type="checkbox"
-                        className="size-4 accent-teal-700"
+                        className="size-4 accent-blue-700"
                         checked={isSel}
                         onChange={(event) => toggle(e.id, event.target.checked)}
                         aria-label={`Select ${e.filename} for comparison`}
@@ -177,7 +177,7 @@ function ScansTable({ entries }: { entries: AtsHistoryEntry[] }) {
                     </td>
                     <td className="text-right">
                       <a
-                        className="text-teal-700 hover:underline"
+                        className="text-blue-700 hover:underline"
                         href={`/api/ats/${e.id}/export/pdf`}
                         target="_blank"
                         rel="noreferrer"
@@ -208,7 +208,7 @@ function Stat({
   tone?: "good" | "bad" | "neutral";
 }) {
   const valueClass =
-    tone === "good" ? "text-emerald-700" : tone === "bad" ? "text-rose-700" : "text-neutral-900";
+    tone === "good" ? "text-blue-700" : tone === "bad" ? "text-blue-700" : "text-neutral-900";
   return (
     <div className="rounded-md border bg-neutral-50 p-3">
       <div className="text-xs uppercase tracking-wide text-neutral-500">{label}</div>

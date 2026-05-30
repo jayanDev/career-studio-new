@@ -85,18 +85,18 @@ export default async function SignInPage({ params, searchParams }: AuthPageProps
               <Label htmlFor="email">{t("emailLabel")}</Label>
               <Input id="email" name="email" type="email" placeholder={t("emailPlaceholder")} required />
             </div>
-            <Button type="submit" className="w-full bg-teal-700 text-white hover:bg-teal-800">
+            <Button type="submit" className="w-full bg-blue-700 text-white hover:bg-blue-800">
               <Mail className="size-4" />
               {t("sendSignInLink")}
             </Button>
           </form>
           <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-neutral-600">
-            <Link href={`/${locale}/auth/reset`} className="font-medium text-teal-800 hover:underline">
+            <Link href={`/${locale}/auth/reset`} className="font-medium text-blue-800 hover:underline">
               {t("resetLink")}
             </Link>
             <span>
               {t("newHere")}{" "}
-              <Link href={`/${locale}/auth/sign-up`} className="font-medium text-teal-800 hover:underline">
+              <Link href={`/${locale}/auth/sign-up`} className="font-medium text-blue-800 hover:underline">
                 {t("createAccount")}
               </Link>
             </span>

@@ -15,7 +15,7 @@ export function CourseTabs({ locale, current }: { locale: string; current: strin
             key={tab.href}
             asChild
             variant={isActive ? "default" : "outline"}
-            className={cn("h-9 rounded-md px-3 text-sm", isActive ? "bg-teal-700 text-white" : "bg-white")}
+            className={cn("h-9 rounded-md px-3 text-sm", isActive ? "bg-blue-700 text-white" : "bg-white")}
           >
             <Link href={`/${locale}${tab.href}`}>{tab.label}</Link>
           </Badge>

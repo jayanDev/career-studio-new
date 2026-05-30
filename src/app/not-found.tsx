@@ -19,7 +19,7 @@ export default function NotFound() {
           The link may be wrong, the resource was removed, or the owner revoked public access.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <Button asChild className="bg-teal-700 text-white hover:bg-teal-800">
+          <Button asChild className="bg-blue-700 text-white hover:bg-blue-800">
             <Link href="/">Back to home</Link>
           </Button>
           <Button asChild variant="outline">

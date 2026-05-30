@@ -86,12 +86,12 @@ export default async function CoverLetterPage({ params }: CoverLetterPageProps) 
             </div>
             <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
               <div className="space-y-3">
-                <div className="rounded-md border border-teal-100 bg-teal-50 p-3">
-                  <div className="flex items-center gap-2 text-sm font-medium text-teal-950">
+                <div className="rounded-md border border-blue-100 bg-blue-50 p-3">
+                  <div className="flex items-center gap-2 text-sm font-medium text-blue-950">
                     <WandSparkles className="size-4" />
                     One-click tailored flow
                   </div>
-                  <p className="mt-1 text-xs leading-5 text-teal-800">Pick a saved resume, paste a JD or URL, and generate a tailored letter without the long wizard.</p>
+                  <p className="mt-1 text-xs leading-5 text-blue-800">Pick a saved resume, paste a JD or URL, and generate a tailored letter without the long wizard.</p>
                   <select name="resumeId" className="mt-3 h-9 w-full rounded-md border bg-white px-3 text-sm">
                     <option value="">Use manual profile text</option>
                     {resumes.map((resume) => (
@@ -209,7 +209,7 @@ export default async function CoverLetterPage({ params }: CoverLetterPageProps) 
               </div>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">
+              <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">
                 <WandSparkles className="size-4" />
                 {t("generate")}
               </Button>
@@ -244,7 +244,7 @@ export default async function CoverLetterPage({ params }: CoverLetterPageProps) 
           <Card key={letter.id} className="bg-white">
             <CardHeader>
               <div className="flex items-start justify-between gap-3">
-                <FileText className="size-6 text-teal-700" />
+                <FileText className="size-6 text-blue-700" />
                 <Badge variant="outline" className="rounded-md">
                   {letter.tone}
                 </Badge>

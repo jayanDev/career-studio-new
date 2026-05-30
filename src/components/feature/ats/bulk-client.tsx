@@ -88,7 +88,7 @@ export function BulkClient() {
         <Card className="bg-white">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>CVs ({files.length}/25)</CardTitle>
-            <Button type="button" onClick={analyse} disabled={isPending} className="bg-teal-700 text-white hover:bg-teal-800">
+            <Button type="button" onClick={analyse} disabled={isPending} className="bg-blue-700 text-white hover:bg-blue-800">
               {isPending ? <Loader2 className="size-4 animate-spin" /> : <Gauge className="size-4" />}
               Score all
             </Button>
@@ -96,10 +96,10 @@ export function BulkClient() {
           <CardContent className="space-y-3">
             <div
               {...getRootProps()}
-              className={`flex min-h-32 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed p-6 text-center transition ${isDragActive ? "border-teal-500 bg-teal-50" : "border-neutral-200 bg-neutral-50"}`}
+              className={`flex min-h-32 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed p-6 text-center transition ${isDragActive ? "border-blue-500 bg-blue-50" : "border-neutral-200 bg-neutral-50"}`}
             >
               <input {...getInputProps()} />
-              <FileUp className="size-8 text-teal-700" />
+              <FileUp className="size-8 text-blue-700" />
               <p className="mt-2 text-sm font-medium text-neutral-950">
                 {isDragActive ? "Drop the CVs here" : "Drop up to 25 CVs"}
               </p>
@@ -114,7 +114,7 @@ export function BulkClient() {
                     <button
                       type="button"
                       onClick={() => removeFile(i)}
-                      className="text-rose-600 hover:text-rose-800"
+                      className="text-blue-600 hover:text-blue-800"
                       aria-label={`Remove ${f.name}`}
                     >
                       <X className="size-3.5" />
@@ -124,7 +124,7 @@ export function BulkClient() {
               </ul>
             ) : null}
 
-            {error ? <p className="text-sm text-rose-700">{error}</p> : null}
+            {error ? <p className="text-sm text-blue-700">{error}</p> : null}
           </CardContent>
         </Card>
       </div>
@@ -164,7 +164,7 @@ function BulkResults({ response }: { response: BulkScoreResponse }) {
               {response.entries.map((e, rank) => {
                 if (e.error) {
                   return (
-                    <tr key={`err-${rank}-${e.filename}`} className="border-b last:border-b-0 text-rose-700">
+                    <tr key={`err-${rank}-${e.filename}`} className="border-b last:border-b-0 text-blue-700">
                       <td className="py-2">—</td>
                       <td className="font-medium">{e.filename}</td>
                       <td colSpan={5} className="text-xs italic">{e.error}</td>
@@ -174,24 +174,24 @@ function BulkResults({ response }: { response: BulkScoreResponse }) {
                 const interp = interpretScore(e.overall);
                 const bandClass =
                   interp.band === "excellent"
-                    ? "bg-emerald-600"
+                    ? "bg-blue-600"
                     : interp.band === "good"
-                      ? "bg-teal-700"
+                      ? "bg-blue-700"
                       : interp.band === "fair"
-                        ? "bg-amber-600"
-                        : "bg-rose-600";
+                        ? "bg-sky-600"
+                        : "bg-blue-600";
                 return (
                   <tr key={`${e.filename}-${rank}`} className="border-b last:border-b-0">
                     <td className="py-2">
                       {rank === 0 ? (
-                        <Trophy className="size-4 text-amber-600" />
+                        <Trophy className="size-4 text-sky-600" />
                       ) : (
                         <span className="text-neutral-500">{rank + 1}</span>
                       )}
                     </td>
                     <td className="font-medium text-neutral-900">
                       {e.filename}
-                      {e.warning ? <span className="block text-[10px] text-amber-700">⚠ {e.warning}</span> : null}
+                      {e.warning ? <span className="block text-[10px] text-sky-700">⚠ {e.warning}</span> : null}
                     </td>
                     <td className="text-right font-semibold">{e.overall}</td>
                     <td>
@@ -204,7 +204,7 @@ function BulkResults({ response }: { response: BulkScoreResponse }) {
                       ) : (
                         <div className="flex flex-wrap gap-1">
                           {e.matchedHardSkills.slice(0, 6).map((s) => (
-                            <span key={s} className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] text-emerald-900">
+                            <span key={s} className="rounded bg-blue-100 px-1.5 py-0.5 text-[10px] text-blue-900">
                               {s}
                             </span>
                           ))}
@@ -213,11 +213,11 @@ function BulkResults({ response }: { response: BulkScoreResponse }) {
                     </td>
                     <td className="max-w-xs">
                       {e.missingHardSkills.length === 0 ? (
-                        <span className="text-xs text-emerald-600">Full coverage</span>
+                        <span className="text-xs text-blue-600">Full coverage</span>
                       ) : (
                         <div className="flex flex-wrap gap-1">
                           {e.missingHardSkills.slice(0, 6).map((s) => (
-                            <span key={s} className="rounded bg-rose-100 px-1.5 py-0.5 text-[10px] text-rose-900">
+                            <span key={s} className="rounded bg-blue-100 px-1.5 py-0.5 text-[10px] text-blue-900">
                               {s}
                             </span>
                           ))}

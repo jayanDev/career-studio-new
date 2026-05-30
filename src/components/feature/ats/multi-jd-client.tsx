@@ -97,10 +97,10 @@ export function MultiJdClient() {
           <CardContent className="space-y-4">
             <div
               {...getRootProps()}
-              className={`flex min-h-40 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed p-6 text-center transition ${isDragActive ? "border-teal-500 bg-teal-50" : "border-neutral-200 bg-neutral-50"}`}
+              className={`flex min-h-40 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed p-6 text-center transition ${isDragActive ? "border-blue-500 bg-blue-50" : "border-neutral-200 bg-neutral-50"}`}
             >
               <input {...getInputProps()} />
-              <FileUp className="size-8 text-teal-700" />
+              <FileUp className="size-8 text-blue-700" />
               <p className="mt-2 text-sm font-medium text-neutral-950">{file?.name ?? "Drop your CV here"}</p>
               <p className="mt-0.5 text-xs text-neutral-500">PDF, DOC, DOCX, TXT · 5MB</p>
             </div>
@@ -137,7 +137,7 @@ export function MultiJdClient() {
                     disabled={jds.length <= 1}
                     aria-label={`Remove JD ${i + 1}`}
                   >
-                    <Trash2 className="size-4 text-rose-600" />
+                    <Trash2 className="size-4 text-blue-600" />
                   </Button>
                 </div>
                 <Textarea
@@ -150,14 +150,14 @@ export function MultiJdClient() {
             ))}
             <Button
               type="button"
-              className="w-full bg-teal-700 text-white hover:bg-teal-800"
+              className="w-full bg-blue-700 text-white hover:bg-blue-800"
               onClick={analyze}
               disabled={isPending}
             >
               {isPending ? <Loader2 className="size-4 animate-spin" /> : <Gauge className="size-4" />}
               Score against all JDs
             </Button>
-            {error ? <p className="text-sm text-rose-700">{error}</p> : null}
+            {error ? <p className="text-sm text-blue-700">{error}</p> : null}
           </CardContent>
         </Card>
       </div>
@@ -178,16 +178,16 @@ function Results({ response }: { response: MultiJdResponse }) {
           const isBest = rank === 0;
           const tone =
             e.matchPct >= 75
-              ? "border-emerald-300 bg-emerald-50"
+              ? "border-blue-300 bg-blue-50"
               : e.matchPct >= 50
-                ? "border-amber-300 bg-amber-50"
-                : "border-rose-300 bg-rose-50";
+                ? "border-sky-300 bg-sky-50"
+                : "border-blue-300 bg-blue-50";
           return (
             <div key={e.index} className={`rounded-md border p-4 ${tone}`}>
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <div>
                   <div className="flex items-center gap-2">
-                    {isBest ? <Trophy className="size-4 text-amber-600" /> : null}
+                    {isBest ? <Trophy className="size-4 text-sky-600" /> : null}
                     <span className="font-semibold text-neutral-900">
                       #{rank + 1}: {e.label}
                     </span>
@@ -198,7 +198,7 @@ function Results({ response }: { response: MultiJdResponse }) {
                       {e.yearsRequired !== null ? ` · ${e.yearsRequired}+ years` : ""}
                     </div>
                   ) : null}
-                  {e.error ? <p className="mt-1 text-xs text-rose-700">{e.error}</p> : null}
+                  {e.error ? <p className="mt-1 text-xs text-blue-700">{e.error}</p> : null}
                 </div>
                 <div className="text-3xl font-semibold text-neutral-900">{e.matchPct}%</div>
               </div>
@@ -218,7 +218,7 @@ function Results({ response }: { response: MultiJdResponse }) {
 }
 
 function KwBucket({ title, items, tone }: { title: string; items: string[]; tone: "good" | "bad" }) {
-  const cls = tone === "good" ? "bg-emerald-100 text-emerald-900" : "bg-rose-100 text-rose-900";
+  const cls = tone === "good" ? "bg-blue-100 text-blue-900" : "bg-blue-100 text-blue-900";
   return (
     <div>
       <div className="mb-1 font-medium text-neutral-700">{title}</div>

@@ -40,7 +40,7 @@ export default async function PublicGcvPage({ params, searchParams }: PublicGcvP
             <p className="text-sm text-neutral-600">Graphical CV web version</p>
           </div>
           <div className="flex gap-2">
-            <Badge className="rounded-md bg-teal-700 text-white">{theme.template}</Badge>
+            <Badge className="rounded-md bg-blue-700 text-white">{theme.template}</Badge>
             <Badge variant="outline" className="rounded-md">ATS estimate {design.atsScore}</Badge>
           </div>
         </div>

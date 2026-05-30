@@ -129,7 +129,7 @@ export function ShareToggleButton({
           </Button>
         ) : null}
       </div>
-      {error ? <span className="text-xs text-rose-700">{error}</span> : null}
+      {error ? <span className="text-xs text-blue-700">{error}</span> : null}
       {shareUrl ? (
         <code className="block max-w-md truncate rounded bg-neutral-50 px-2 py-1 text-[10px] text-neutral-600">
           {shareUrl}

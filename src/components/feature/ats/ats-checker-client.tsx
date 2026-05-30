@@ -214,17 +214,17 @@ export function AtsCheckerClient({
       {/* Upload and Configuration Form */}
       <Card className="bg-zinc-900 border-zinc-800 text-zinc-100 h-fit">
         <CardHeader>
-          <CardTitle className="text-teal-400 font-semibold flex items-center gap-2">
+          <CardTitle className="text-blue-400 font-semibold flex items-center gap-2">
             <Sparkles className="size-5" /> Analyze Resume
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-5">
           <div
             {...getRootProps()}
-            className={`flex min-h-40 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed p-6 text-center transition ${isDragActive ? "border-teal-500 bg-teal-950/20" : "border-zinc-800 bg-zinc-950/30"}`}
+            className={`flex min-h-40 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed p-6 text-center transition ${isDragActive ? "border-blue-500 bg-blue-950/20" : "border-zinc-800 bg-zinc-950/30"}`}
           >
             <input {...getInputProps()} />
-            <FileUp className="size-8 text-teal-400" />
+            <FileUp className="size-8 text-blue-400" />
             <p className="mt-2 text-sm font-medium text-zinc-200">{file?.name ?? labels.uploadBody}</p>
             <p className="mt-1 text-xs text-zinc-500">PDF, DOC, DOCX, TXT up to 5MB</p>
           </div>
@@ -232,7 +232,7 @@ export function AtsCheckerClient({
           <div>
             <label className="text-xs font-semibold text-zinc-400 tracking-wide uppercase">Paste Resume Text</label>
             <Textarea 
-              className="mt-1.5 bg-zinc-950 border-zinc-800 text-zinc-200 focus:border-teal-500" 
+              className="mt-1.5 bg-zinc-950 border-zinc-800 text-zinc-200 focus:border-blue-500" 
               rows={8} 
               value={resumeText} 
               onChange={(event) => setResumeText(event.target.value)} 
@@ -244,7 +244,7 @@ export function AtsCheckerClient({
             <label className="text-xs font-semibold text-zinc-400 tracking-wide uppercase">Import Job Description URL</label>
             <div className="flex gap-2 mt-1.5">
               <Input 
-                className="bg-zinc-950 border-zinc-800 text-zinc-200 focus:border-teal-500 text-xs" 
+                className="bg-zinc-950 border-zinc-800 text-zinc-200 focus:border-blue-500 text-xs" 
                 value={jdUrl} 
                 onChange={(e) => setJdUrl(e.target.value)} 
                 placeholder="e.g. topjobs.lk / XpressJobs URL"
@@ -264,7 +264,7 @@ export function AtsCheckerClient({
           <div>
             <label className="text-xs font-semibold text-zinc-400 tracking-wide uppercase">{labels.jdLabel}</label>
             <Textarea 
-              className="mt-1.5 bg-zinc-950 border-zinc-800 text-zinc-200 focus:border-teal-500" 
+              className="mt-1.5 bg-zinc-950 border-zinc-800 text-zinc-200 focus:border-blue-500" 
               rows={5} 
               value={jobDescription} 
               onChange={(event) => setJobDescription(event.target.value)} 
@@ -275,7 +275,7 @@ export function AtsCheckerClient({
           <div className="flex gap-2">
             <Button 
               type="button" 
-              className="flex-1 bg-teal-600 text-zinc-900 hover:bg-teal-500 font-bold transition flex justify-center gap-2 items-center" 
+              className="flex-1 bg-blue-600 text-zinc-900 hover:bg-blue-500 font-bold transition flex justify-center gap-2 items-center" 
               disabled={isPending || (!file && !resumeText.trim())} 
               onClick={analyze}
             >
@@ -351,9 +351,9 @@ export function AtsCheckerClient({
                   <div className="flex flex-col gap-6 md:flex-row md:items-center border-b border-zinc-900 pb-6">
                     <div className="flex items-center gap-4 bg-zinc-900/60 p-5 rounded-lg border border-zinc-800/80 min-w-48 justify-center">
                       <div className="text-center">
-                        <div className="text-5xl font-black tracking-tight text-teal-400">{result.overall}</div>
+                        <div className="text-5xl font-black tracking-tight text-blue-400">{result.overall}</div>
                         <div className="text-xs text-zinc-400 mt-0.5">Overall Fit</div>
-                        <Badge className="mt-2.5 rounded bg-teal-950 border border-teal-800 text-teal-300 font-bold hover:bg-teal-950">
+                        <Badge className="mt-2.5 rounded bg-blue-950 border border-blue-800 text-blue-300 font-bold hover:bg-blue-950">
                           {interpretation.label}
                         </Badge>
                       </div>
@@ -369,35 +369,35 @@ export function AtsCheckerClient({
 
                   {/* Keywords Fit */}
                   {typeof result.jdKeywordMatchPct === "number" ? (
-                    <div className="rounded-lg border border-amber-950/40 bg-amber-950/10 p-5">
-                      <div className="font-semibold text-amber-200 flex justify-between items-center text-sm">
+                    <div className="rounded-lg border border-sky-950/40 bg-sky-950/10 p-5">
+                      <div className="font-semibold text-sky-200 flex justify-between items-center text-sm">
                         <span className="flex items-center gap-1.5">
-                          <CheckCircle2 className="size-4 text-amber-500" />
+                          <CheckCircle2 className="size-4 text-sky-500" />
                           Job Description Keyword Fit
                         </span>
                         <span className="text-base font-extrabold">{result.jdKeywordMatchPct}%</span>
                       </div>
                       <div className="mt-3 h-2 w-full rounded-full bg-zinc-900 overflow-hidden border border-zinc-800">
-                        <div className="h-full bg-amber-500 rounded-full transition-all duration-500" style={{ width: `${result.jdKeywordMatchPct}%` }} />
+                        <div className="h-full bg-sky-500 rounded-full transition-all duration-500" style={{ width: `${result.jdKeywordMatchPct}%` }} />
                       </div>
                       
                       {/* Keyword Lists */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5 pt-4 border-t border-zinc-800/40">
                         <div>
-                          <div className="text-xs font-semibold text-teal-400 uppercase tracking-wider mb-2">Matching Keywords</div>
+                          <div className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">Matching Keywords</div>
                           <div className="flex flex-wrap gap-1.5">
                             {result.matchingKeywords?.slice(0, 15).map(kw => (
-                              <Badge key={kw} className="bg-teal-950/30 text-teal-300 border border-teal-900/60 font-normal text-[11px] rounded">
+                              <Badge key={kw} className="bg-blue-950/30 text-blue-300 border border-blue-900/60 font-normal text-[11px] rounded">
                                 {kw}
                               </Badge>
                             )) || <span className="text-xs text-zinc-500">None detected</span>}
                           </div>
                         </div>
                         <div>
-                          <div className="text-xs font-semibold text-rose-400 uppercase tracking-wider mb-2">Missing Keywords</div>
+                          <div className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">Missing Keywords</div>
                           <div className="flex flex-wrap gap-1.5">
                             {result.missingKeywords?.slice(0, 15).map(kw => (
-                              <Badge key={kw} className="bg-rose-950/30 text-rose-300 border border-rose-900/60 font-normal text-[11px] rounded">
+                              <Badge key={kw} className="bg-blue-950/30 text-blue-300 border border-blue-900/60 font-normal text-[11px] rounded">
                                 {kw}
                               </Badge>
                             )) || <span className="text-xs text-zinc-500">None missing</span>}
@@ -411,7 +411,7 @@ export function AtsCheckerClient({
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-zinc-900/20 border border-zinc-900 rounded-lg p-5">
                       <h3 className="font-semibold text-zinc-200 text-sm border-b border-zinc-900 pb-2 flex items-center gap-2">
-                        <AlertCircle className="size-4 text-rose-400" /> Key Issues Flagged
+                        <AlertCircle className="size-4 text-blue-400" /> Key Issues Flagged
                       </h3>
                       <ul className="mt-3 list-disc pl-4 text-xs leading-5 text-zinc-400 space-y-2">
                         {result.issues.map((item, idx) => <li key={idx}>{item}</li>)}
@@ -420,7 +420,7 @@ export function AtsCheckerClient({
                     </div>
                     <div className="bg-zinc-900/20 border border-zinc-900 rounded-lg p-5">
                       <h3 className="font-semibold text-zinc-200 text-sm border-b border-zinc-900 pb-2 flex items-center gap-2">
-                        <CheckCircle2 className="size-4 text-teal-400" /> Recommended Actions
+                        <CheckCircle2 className="size-4 text-blue-400" /> Recommended Actions
                       </h3>
                       <ul className="mt-3 list-disc pl-4 text-xs leading-5 text-zinc-400 space-y-2">
                         {result.suggestions.map((item, idx) => <li key={idx}>{item}</li>)}
@@ -434,10 +434,10 @@ export function AtsCheckerClient({
               {/* 2. ATS Simulator Tab */}
               {activeTab === "simulator" && (
                 <div className="space-y-6">
-                  <div className="flex items-start gap-3 p-4 bg-teal-950/10 border border-teal-900/40 rounded-lg">
-                    <Info className="size-5 text-teal-400 shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-3 p-4 bg-blue-950/10 border border-blue-900/40 rounded-lg">
+                    <Info className="size-5 text-blue-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-sm font-semibold text-teal-200">ATS Parsing Simulator</h4>
+                      <h4 className="text-sm font-semibold text-blue-200">ATS Parsing Simulator</h4>
                       <p className="text-xs text-zinc-400 mt-1">
                         Below is what the ATS literally "sees" when it extracts and catalogs information from your uploaded document. If contact information or experience blocks are empty or garbled, the ATS scanner will automatically filter out your profile.
                       </p>
@@ -449,7 +449,7 @@ export function AtsCheckerClient({
                       {/* Left: Contact & Profile details */}
                       <div className="space-y-4">
                         <div className="bg-zinc-900/30 border border-zinc-900 rounded-lg p-5">
-                          <h3 className="text-xs font-bold text-teal-400 uppercase tracking-wider border-b border-zinc-900 pb-2 mb-3">Parsed Contact Information</h3>
+                          <h3 className="text-xs font-bold text-blue-400 uppercase tracking-wider border-b border-zinc-900 pb-2 mb-3">Parsed Contact Information</h3>
                           <div className="space-y-2 text-xs">
                             <ParsedItem label="Name" value={result.atsSimulator.contact.name} />
                             <ParsedItem label="Email" value={result.atsSimulator.contact.email} />
@@ -460,7 +460,7 @@ export function AtsCheckerClient({
                           
                           {result.atsSimulator.contact.issues.length > 0 && (
                             <div className="mt-4 border-t border-zinc-800/50 pt-3">
-                              <div className="text-[11px] font-semibold text-rose-400 flex items-center gap-1">
+                              <div className="text-[11px] font-semibold text-blue-400 flex items-center gap-1">
                                 <AlertTriangle className="size-3" /> Contact Issues
                               </div>
                               <ul className="list-disc pl-4 text-[10px] text-zinc-500 mt-1.5 space-y-1">
@@ -471,17 +471,17 @@ export function AtsCheckerClient({
                         </div>
 
                         <div className="bg-zinc-900/30 border border-zinc-900 rounded-lg p-5">
-                          <h3 className="text-xs font-bold text-teal-400 uppercase tracking-wider border-b border-zinc-900 pb-2 mb-3">Parsed Summary</h3>
+                          <h3 className="text-xs font-bold text-blue-400 uppercase tracking-wider border-b border-zinc-900 pb-2 mb-3">Parsed Summary</h3>
                           <p className="text-xs text-zinc-400 leading-5 italic">
                             {result.atsSimulator.summary.parsedText || "No introductory summary parsed."}
                           </p>
                         </div>
                         
                         <div className="bg-zinc-900/30 border border-zinc-900 rounded-lg p-5">
-                          <h3 className="text-xs font-bold text-teal-400 uppercase tracking-wider border-b border-zinc-900 pb-2 mb-3">Skills Detected</h3>
+                          <h3 className="text-xs font-bold text-blue-400 uppercase tracking-wider border-b border-zinc-900 pb-2 mb-3">Skills Detected</h3>
                           <div className="flex flex-wrap gap-1">
                             {result.atsSimulator.skills.map((s, i) => (
-                              <Badge key={i} className={`text-[10px] py-0.5 px-2 rounded-md ${s.type === "hard" ? "bg-teal-950 text-teal-300 border border-teal-900" : "bg-zinc-800 text-zinc-300 border border-zinc-700"}`}>
+                              <Badge key={i} className={`text-[10px] py-0.5 px-2 rounded-md ${s.type === "hard" ? "bg-blue-950 text-blue-300 border border-blue-900" : "bg-zinc-800 text-zinc-300 border border-zinc-700"}`}>
                                 {s.name} ({s.type})
                               </Badge>
                             ))}
@@ -495,10 +495,10 @@ export function AtsCheckerClient({
                       {/* Right: Timeline Experience & Education */}
                       <div className="space-y-4">
                         <div className="bg-zinc-900/30 border border-zinc-900 rounded-lg p-5">
-                          <h3 className="text-xs font-bold text-teal-400 uppercase tracking-wider border-b border-zinc-900 pb-2 mb-3">Parsed Experience Timeline</h3>
+                          <h3 className="text-xs font-bold text-blue-400 uppercase tracking-wider border-b border-zinc-900 pb-2 mb-3">Parsed Experience Timeline</h3>
                           <div className="space-y-4">
                             {result.atsSimulator.experience.map((exp, idx) => (
-                              <div key={idx} className="border-l border-teal-500/30 pl-3 py-0.5">
+                              <div key={idx} className="border-l border-blue-500/30 pl-3 py-0.5">
                                 <div className="text-xs font-bold text-zinc-200">{exp.role || "Untitled Role"}</div>
                                 <div className="text-[11px] text-zinc-400">{exp.company || "Unknown Company"} {exp.duration ? `• ${exp.duration}` : ""}</div>
                                 {exp.description && (
@@ -513,7 +513,7 @@ export function AtsCheckerClient({
                         </div>
 
                         <div className="bg-zinc-900/30 border border-zinc-900 rounded-lg p-5">
-                          <h3 className="text-xs font-bold text-teal-400 uppercase tracking-wider border-b border-zinc-900 pb-2 mb-3">Parsed Education</h3>
+                          <h3 className="text-xs font-bold text-blue-400 uppercase tracking-wider border-b border-zinc-900 pb-2 mb-3">Parsed Education</h3>
                           <div className="space-y-3">
                             {result.atsSimulator.education.map((edu, idx) => (
                               <div key={idx} className="border-l border-zinc-700 pl-3">
@@ -528,11 +528,11 @@ export function AtsCheckerClient({
                         </div>
                         
                         {result.atsSimulator.missingRequiredSections.length > 0 && (
-                          <div className="bg-rose-950/20 border border-rose-900/50 rounded-lg p-4 flex gap-2.5 items-start">
-                            <AlertCircle className="size-5 text-rose-400 mt-0.5 shrink-0" />
+                          <div className="bg-blue-950/20 border border-blue-900/50 rounded-lg p-4 flex gap-2.5 items-start">
+                            <AlertCircle className="size-5 text-blue-400 mt-0.5 shrink-0" />
                             <div>
-                              <div className="text-xs font-semibold text-rose-200">Missing Required Sections</div>
-                              <p className="text-[11px] text-zinc-400 mt-0.5">We could not identify key section headers for: <strong className="text-rose-300">{result.atsSimulator.missingRequiredSections.join(", ")}</strong>. Some ATS filters auto-reject resumes lacking these labels.</p>
+                              <div className="text-xs font-semibold text-blue-200">Missing Required Sections</div>
+                              <p className="text-[11px] text-zinc-400 mt-0.5">We could not identify key section headers for: <strong className="text-blue-300">{result.atsSimulator.missingRequiredSections.join(", ")}</strong>. Some ATS filters auto-reject resumes lacking these labels.</p>
                             </div>
                           </div>
                         )}
@@ -553,16 +553,16 @@ export function AtsCheckerClient({
                       <p className="text-xs text-zinc-500 mt-0.5">Line-by-line checks for strong openers, numeric metrics, pronoun counts, and XYZ formatting.</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-black text-teal-400">{result.bulletAnalysis?.impactScore ?? 0}</div>
+                      <div className="text-2xl font-black text-blue-400">{result.bulletAnalysis?.impactScore ?? 0}</div>
                       <div className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">Bullet Impact</div>
                     </div>
                   </div>
 
                   {/* Bullet Rewriter suggesting popup */}
                   {rewritingBulletIdx !== null && (
-                    <div className="bg-zinc-900 border border-teal-900/80 rounded-lg p-5 space-y-4">
+                    <div className="bg-zinc-900 border border-blue-900/80 rounded-lg p-5 space-y-4">
                       <div className="flex justify-between items-center border-b border-zinc-800 pb-2">
-                        <div className="text-xs font-bold text-teal-400 flex items-center gap-1.5">
+                        <div className="text-xs font-bold text-blue-400 flex items-center gap-1.5">
                           <Sparkles className="size-4" /> Gemini AI Bullet Optimizer
                         </div>
                         <Button 
@@ -583,7 +583,7 @@ export function AtsCheckerClient({
                         <div className="text-xs text-zinc-400 font-bold uppercase tracking-wider">Suggested Rewrites (Google XYZ standard):</div>
                         {isRewriting ? (
                           <div className="flex justify-center items-center py-6 text-xs text-zinc-500 gap-2">
-                            <Loader2 className="size-4 animate-spin text-teal-400" />
+                            <Loader2 className="size-4 animate-spin text-blue-400" />
                             Generating high-impact formulations...
                           </div>
                         ) : (
@@ -592,7 +592,7 @@ export function AtsCheckerClient({
                               <div 
                                 key={index} 
                                 onClick={() => handleSelectRewrite(rw)}
-                                className="p-3 bg-zinc-950 hover:bg-teal-950/20 border border-zinc-800 hover:border-teal-900/60 rounded-md cursor-pointer text-xs text-zinc-300 leading-5 transition"
+                                className="p-3 bg-zinc-950 hover:bg-blue-950/20 border border-zinc-800 hover:border-blue-900/60 rounded-md cursor-pointer text-xs text-zinc-300 leading-5 transition"
                               >
                                 {rw}
                               </div>
@@ -610,7 +610,7 @@ export function AtsCheckerClient({
                           <p className="text-xs text-zinc-300 leading-5 font-mono">"{b.text}"</p>
                           <Button
                             onClick={() => handleTriggerRewrite(b.text, idx)}
-                            className="bg-zinc-800 hover:bg-teal-900/40 text-teal-300 border border-zinc-700 h-7 text-[10px] px-2.5 shrink-0 flex gap-1 items-center"
+                            className="bg-zinc-800 hover:bg-blue-900/40 text-blue-300 border border-zinc-700 h-7 text-[10px] px-2.5 shrink-0 flex gap-1 items-center"
                           >
                             <Wand2 className="size-3" /> Improve
                           </Button>
@@ -647,7 +647,7 @@ export function AtsCheckerClient({
                   {/* Local Sri Lanka MOAT Insights */}
                   {result.sriLankaContext && (
                     <div className="space-y-4">
-                      <h4 className="text-sm font-semibold text-teal-400 flex items-center gap-1.5 border-b border-zinc-900 pb-2">
+                      <h4 className="text-sm font-semibold text-blue-400 flex items-center gap-1.5 border-b border-zinc-900 pb-2">
                         <Sparkles className="size-4" /> Sri Lankan Market MOAT Validation
                       </h4>
                       
@@ -670,10 +670,10 @@ export function AtsCheckerClient({
                       </div>
 
                       {result.sriLankaContext.hasNicWarning && (
-                        <div className="p-4 bg-rose-950/20 border border-rose-900/50 rounded-lg flex gap-3">
-                          <AlertTriangle className="size-5 text-rose-500 mt-0.5 shrink-0" />
+                        <div className="p-4 bg-blue-950/20 border border-blue-900/50 rounded-lg flex gap-3">
+                          <AlertTriangle className="size-5 text-blue-500 mt-0.5 shrink-0" />
                           <div>
-                            <div className="text-xs font-semibold text-rose-300">Privacy Advisory: NIC Number Detected</div>
+                            <div className="text-xs font-semibold text-blue-300">Privacy Advisory: NIC Number Detected</div>
                             <p className="text-[11px] text-zinc-400 mt-0.5">
                               Our parser identified a national identity card (NIC) format (e.g. 9-digit suffix V or 12-digit format) in your text. Job boards and public CVs should not expose your NIC to prevent identity theft. Remove it.
                             </p>
@@ -682,8 +682,8 @@ export function AtsCheckerClient({
                       )}
 
                       {result.sriLankaContext.tips.length > 0 && (
-                        <div className="bg-teal-950/15 border border-teal-900/50 rounded-lg p-5">
-                          <h4 className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-2.5">Moat Improvement Actions</h4>
+                        <div className="bg-blue-950/15 border border-blue-900/50 rounded-lg p-5">
+                          <h4 className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2.5">Moat Improvement Actions</h4>
                           <ul className="list-disc pl-4 text-xs space-y-1.5 text-zinc-400">
                             {result.sriLankaContext.tips.map((tip, idx) => (
                               <li key={idx} className="leading-5">{tip}</li>
@@ -697,7 +697,7 @@ export function AtsCheckerClient({
                   {/* Formatting Hazards */}
                   {result.formattingHazards && (
                     <div className="space-y-4 pt-4 border-t border-zinc-900">
-                      <h4 className="text-sm font-semibold text-rose-400 flex items-center gap-1.5 pb-2">
+                      <h4 className="text-sm font-semibold text-blue-400 flex items-center gap-1.5 pb-2">
                         <AlertCircle className="size-4" /> ATS Formatting Hazards & Obstacles
                       </h4>
                       
@@ -709,7 +709,7 @@ export function AtsCheckerClient({
                       </div>
 
                       {result.formattingHazards.issues.length > 0 && (
-                        <div className="bg-rose-950/10 border border-rose-900/40 rounded-lg p-4">
+                        <div className="bg-blue-950/10 border border-blue-900/40 rounded-lg p-4">
                           <ul className="list-disc pl-4 text-xs space-y-1 text-zinc-400 leading-5">
                             {result.formattingHazards.issues.map((iss, i) => <li key={i}>{iss}</li>)}
                           </ul>
@@ -734,7 +734,7 @@ export function AtsCheckerClient({
                         setCopiedTailored(true);
                         setTimeout(() => setCopiedTailored(false), 2000);
                       }}
-                      className="bg-teal-600 text-zinc-900 hover:bg-teal-500 text-xs flex gap-1.5 items-center font-bold"
+                      className="bg-blue-600 text-zinc-900 hover:bg-blue-500 text-xs flex gap-1.5 items-center font-bold"
                     >
                       {copiedTailored ? <Check className="size-4" /> : <Copy className="size-4" />}
                       {copiedTailored ? "Copied!" : "Copy Markdown"}
@@ -763,7 +763,7 @@ function TabButton({ children, active, onClick }: { children: React.ReactNode; a
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-1.5 rounded-md text-xs font-semibold shrink-0 transition ${active ? "bg-teal-600 text-zinc-950" : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/60"}`}
+      className={`px-3 py-1.5 rounded-md text-xs font-semibold shrink-0 transition ${active ? "bg-blue-600 text-zinc-950" : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/60"}`}
     >
       {children}
     </button>
@@ -781,7 +781,7 @@ function SubScore({ label, value, max = 25 }: { label: string; value: number; ma
       <div className="h-2 w-full rounded-full bg-zinc-950 overflow-hidden border border-zinc-800 mt-2">
         <div
           className={`h-full rounded-full transition-all duration-500 ${
-            percentage >= 80 ? "bg-teal-400" : percentage >= 50 ? "bg-amber-400" : "bg-rose-500"
+            percentage >= 80 ? "bg-blue-400" : percentage >= 50 ? "bg-sky-400" : "bg-blue-500"
           }`}
           style={{ width: `${percentage}%` }}
         />
@@ -794,10 +794,10 @@ function BulletCriteria({ label, passed }: { label: string; passed: boolean }) {
   return (
     <span className={`inline-flex items-center gap-1 text-[10px] font-medium py-0.5 px-2 rounded-md border ${
       passed 
-        ? "bg-teal-950/20 text-teal-300 border-teal-900/60" 
-        : "bg-rose-950/20 text-rose-300 border-rose-900/60"
+        ? "bg-blue-950/20 text-blue-300 border-blue-900/60" 
+        : "bg-blue-950/20 text-blue-300 border-blue-900/60"
     }`}>
-      <span className={`size-1 rounded-full ${passed ? "bg-teal-400" : "bg-rose-400"}`} />
+      <span className={`size-1 rounded-full ${passed ? "bg-blue-400" : "bg-blue-400"}`} />
       {label}
     </span>
   );
@@ -807,10 +807,10 @@ function HazardMetric({ label, failed }: { label: string; failed: boolean }) {
   return (
     <div className={`p-3 border rounded-lg flex flex-col items-center justify-center text-center ${
       failed 
-        ? "bg-rose-950/15 border-rose-900/60 text-rose-200" 
+        ? "bg-blue-950/15 border-blue-900/60 text-blue-200" 
         : "bg-zinc-900/40 border-zinc-800 text-zinc-400"
     }`}>
-      {failed ? <AlertTriangle className="size-4 text-rose-400 mb-1" /> : <CheckCircle2 className="size-4 text-teal-400 mb-1" />}
+      {failed ? <AlertTriangle className="size-4 text-blue-400 mb-1" /> : <CheckCircle2 className="size-4 text-blue-400 mb-1" />}
       <div className="text-[10px] font-bold tracking-wide uppercase">{label}</div>
       <div className="text-[10px] mt-0.5">{failed ? "Hazard found" : "Clean"}</div>
     </div>
@@ -820,7 +820,7 @@ function HazardMetric({ label, failed }: { label: string; failed: boolean }) {
 function LocalMetricBox({ title, list, description }: { title: string; list: string[]; description: string }) {
   return (
     <div className="p-4 bg-zinc-900/40 border border-zinc-800 rounded-lg">
-      <div className="text-[10px] font-bold text-teal-400 uppercase tracking-wider">{title}</div>
+      <div className="text-[10px] font-bold text-blue-400 uppercase tracking-wider">{title}</div>
       <div className="text-xs font-black text-zinc-100 mt-1">
         {list.length > 0 ? list.join(", ") : "None Detected"}
       </div>
@@ -835,7 +835,7 @@ function ParsedItem({ label, value, isLink = false }: { label: string; value?: s
       <span className="text-zinc-500 font-medium">{label}:</span>
       {value ? (
         isLink ? (
-          <a href={`https://${value}`} target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:underline flex items-center gap-0.5">
+          <a href={`https://${value}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline flex items-center gap-0.5">
             {value} <ExternalLink className="size-2.5" />
           </a>
         ) : (

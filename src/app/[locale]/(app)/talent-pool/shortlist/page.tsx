@@ -69,7 +69,7 @@ export default async function ShortlistPage({ params }: ShortlistPageProps) {
 
       <div>
         <h1 className="text-3xl font-semibold tracking-tight text-neutral-950 flex items-center gap-2.5">
-          <Bookmark className="size-7 text-teal-700 fill-teal-100" />
+          <Bookmark className="size-7 text-blue-700 fill-blue-100" />
           <span>My Shortlist</span>
         </h1>
         <p className="mt-1.5 text-sm text-neutral-600">
@@ -87,7 +87,7 @@ export default async function ShortlistPage({ params }: ShortlistPageProps) {
                   <CardContent className="p-6 space-y-4">
                     <div className="flex justify-between items-start gap-4">
                       <div className="flex gap-3">
-                        <div className="size-11 rounded-full bg-teal-50 text-teal-800 text-md font-bold flex items-center justify-center shrink-0 border overflow-hidden">
+                        <div className="size-11 rounded-full bg-blue-50 text-blue-800 text-md font-bold flex items-center justify-center shrink-0 border overflow-hidden">
                           {cand.profileImage ? (
                             <img src={cand.profileImage} alt={cand.headline} className="size-full object-cover" />
                           ) : (
@@ -98,7 +98,7 @@ export default async function ShortlistPage({ params }: ShortlistPageProps) {
                           <h4 className="font-semibold text-neutral-900 flex items-center gap-1.5">
                             <span>{cand.user.firstName} {cand.user.lastName}</span>
                             {cand.isVerified && (
-                              <ShieldCheck className="size-4.5 text-teal-600" />
+                              <ShieldCheck className="size-4.5 text-blue-600" />
                             )}
                           </h4>
                           <p className="text-xs text-neutral-500 mt-0.5">{cand.city}, {cand.country}</p>
@@ -139,7 +139,7 @@ export default async function ShortlistPage({ params }: ShortlistPageProps) {
                       Saved {new Date(item.createdAt).toLocaleDateString(locale, { month: "short", day: "numeric" })}
                     </span>
                     {cand.customSlug ? (
-                      <Button asChild className="bg-teal-700 hover:bg-teal-800 text-white text-xs gap-1 py-1" size="xs">
+                      <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white text-xs gap-1 py-1" size="xs">
                         <Link href={`/${locale}/talent/${cand.customSlug}`}>
                           <span>View Profile</span>
                           <ChevronRight className="size-3" />
@@ -161,7 +161,7 @@ export default async function ShortlistPage({ params }: ShortlistPageProps) {
               Save profiles from the Talent Pool to view and manage them on your shortlist dashboard.
             </p>
             <div className="pt-2">
-              <Button asChild className="bg-teal-700 hover:bg-teal-800 text-white gap-1" size="sm">
+              <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white gap-1" size="sm">
                 <Link href={`/${locale}/talent-pool`}>
                   Browse Candidates
                 </Link>

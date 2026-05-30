@@ -57,7 +57,7 @@ export default async function JobTrackerPage({ params }: JobTrackerPageProps) {
           <h1 className="text-3xl font-semibold tracking-tight text-neutral-950">{t("title")}</h1>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-neutral-600">{t("subtitle")}</p>
         </div>
-        <Badge variant="outline" className="w-fit rounded-md border-teal-200 text-teal-700">
+        <Badge variant="outline" className="w-fit rounded-md border-blue-200 text-blue-700">
           {t("responseRate")}: {stats.responseRate}%
         </Badge>
       </div>
@@ -96,7 +96,7 @@ export default async function JobTrackerPage({ params }: JobTrackerPageProps) {
             <Input name="recruiterEmail" placeholder={t("recruiterEmail")} />
             <Input name="tags" placeholder={t("tags")} />
             <Textarea name="notes" className="lg:col-span-3" placeholder={t("notes")} />
-            <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">
+            <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">
               {t("addApplication")}
             </Button>
           </form>
@@ -129,7 +129,7 @@ function StatCard({ icon: Icon, label, value }: { icon: typeof BriefcaseBusiness
   return (
     <Card className="bg-white">
       <CardContent className="flex items-center gap-4 p-5">
-        <div className="flex size-11 items-center justify-center rounded-md bg-teal-100 text-teal-800">
+        <div className="flex size-11 items-center justify-center rounded-md bg-blue-100 text-blue-800">
           <Icon className="size-5" />
         </div>
         <div>

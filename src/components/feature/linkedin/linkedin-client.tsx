@@ -359,7 +359,7 @@ export function LinkedInClient({
         <Card className="bg-white border-neutral-200 shadow-sm rounded-xl">
           <CardHeader className="py-4 border-b">
             <CardTitle className="text-base font-semibold text-neutral-900 flex items-center gap-2">
-              <Upload className="size-4 text-teal-700" />
+              <Upload className="size-4 text-blue-700" />
               1. Profile Data Source
             </CardTitle>
           </CardHeader>
@@ -367,14 +367,14 @@ export function LinkedInClient({
             <div
               {...getRootProps()}
               className={`flex min-h-32 cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed p-6 text-center transition ${
-                isDragActive ? "border-teal-500 bg-teal-50/50" : "border-neutral-200 bg-neutral-50/50 hover:bg-neutral-50"
+                isDragActive ? "border-blue-500 bg-blue-50/50" : "border-neutral-200 bg-neutral-50/50 hover:bg-neutral-50"
               }`}
             >
               <input {...getInputProps()} />
               {isParsing ? (
-                <Loader2 className="size-8 text-teal-600 animate-spin" />
+                <Loader2 className="size-8 text-blue-600 animate-spin" />
               ) : (
-                <FileText className="size-8 text-teal-600" />
+                <FileText className="size-8 text-blue-600" />
               )}
               <p className="mt-2 text-sm font-semibold text-neutral-900">
                 {isParsing ? "Analyzing Profile Structure..." : "Drop your LinkedIn PDF Export here"}
@@ -387,7 +387,7 @@ export function LinkedInClient({
         <Card className="bg-white border-neutral-200 shadow-sm rounded-xl">
           <CardHeader className="py-4 border-b">
             <CardTitle className="text-base font-semibold text-neutral-900 flex items-center gap-2">
-              <Globe className="size-4 text-teal-700" />
+              <Globe className="size-4 text-blue-700" />
               2. Profile Audit Controls
             </CardTitle>
           </CardHeader>
@@ -450,7 +450,7 @@ export function LinkedInClient({
               <Button 
                 onClick={handleRunFullAudit} 
                 disabled={isAuditing}
-                className="w-full bg-teal-700 hover:bg-teal-800 text-white font-bold h-10 shadow-sm"
+                className="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold h-10 shadow-sm"
               >
                 {isAuditing ? (
                   <>
@@ -474,10 +474,10 @@ export function LinkedInClient({
         <CardHeader className="py-4 border-b">
           <CardTitle className="text-sm font-bold text-neutral-900 flex items-center justify-between">
             <span className="flex items-center gap-2">
-              <Award className="size-4 text-teal-700" />
+              <Award className="size-4 text-blue-700" />
               Target Job Description Match (Gemini Scraper)
             </span>
-            <span className="text-[10px] bg-teal-50 border border-teal-200 text-teal-800 px-2 py-0.5 rounded font-medium">Reuses ATS Engine</span>
+            <span className="text-[10px] bg-blue-50 border border-blue-200 text-blue-800 px-2 py-0.5 rounded font-medium">Reuses ATS Engine</span>
           </CardTitle>
         </CardHeader>
         <CardContent className="pt-6 space-y-4">
@@ -519,14 +519,14 @@ export function LinkedInClient({
           </div>
 
           {scrapedKeywords && (
-            <div className="bg-teal-50/30 rounded-lg border border-teal-100 p-3 space-y-2">
-              <h4 className="text-xs font-bold text-teal-900 flex items-center gap-1">
+            <div className="bg-blue-50/30 rounded-lg border border-blue-100 p-3 space-y-2">
+              <h4 className="text-xs font-bold text-blue-900 flex items-center gap-1">
                 <Check className="size-3.5" />
                 Gemini Extracted JD Keywords:
               </h4>
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {scrapedKeywords.hard_skills.slice(0, 8).map(skill => (
-                  <Badge key={skill} variant="outline" className="bg-white border-teal-200 text-[10px] text-teal-800">
+                  <Badge key={skill} variant="outline" className="bg-white border-blue-200 text-[10px] text-blue-800">
                     {skill}
                   </Badge>
                 ))}
@@ -547,7 +547,7 @@ export function LinkedInClient({
       <Card className="bg-white border-neutral-200 shadow-sm rounded-xl">
         <CardHeader className="py-4 border-b">
           <CardTitle className="text-sm font-bold text-neutral-900 flex items-center gap-2">
-            <RefreshCw className="size-4 text-teal-700" />
+            <RefreshCw className="size-4 text-blue-700" />
             Activity, Endorsements & Compliance Signals
           </CardTitle>
         </CardHeader>
@@ -624,7 +624,7 @@ export function LinkedInClient({
         <CardHeader className="py-4 border-b">
           <CardTitle className="text-sm font-bold text-neutral-900 flex items-center justify-between">
             <span className="flex items-center gap-2">
-              <Edit2 className="size-4 text-teal-700" />
+              <Edit2 className="size-4 text-blue-700" />
               AI Post Generator
             </span>
             <Button type="button" variant="outline" size="sm" className="h-8 text-xs" onClick={generatePostPack} disabled={isGeneratingPosts}>
@@ -640,7 +640,7 @@ export function LinkedInClient({
               <p className="mt-2 whitespace-pre-wrap text-xs leading-5 text-neutral-700">{postPack.story_post}</p>
             </div>
             <div className="space-y-3">
-              <div className="rounded-lg border bg-teal-50/40 p-3 text-xs text-teal-900">
+              <div className="rounded-lg border bg-blue-50/40 p-3 text-xs text-blue-900">
                 Best time: {postPack.best_time_to_post}
               </div>
               <div className="flex flex-wrap gap-1.5">
@@ -686,7 +686,7 @@ export function LinkedInClient({
               {/* LinkedIn Cover Banner */}
               <div className={`h-40 relative flex items-end px-6 justify-between transition-all ${
                 profile.customBanner 
-                  ? "bg-gradient-to-r from-teal-900 via-emerald-800 to-cyan-900" 
+                  ? "bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-900" 
                   : "bg-neutral-200" // Default cosmic blue is generic neutral-200/slate representation
               }`}>
                 {/* Banner Toggles */}
@@ -716,9 +716,9 @@ export function LinkedInClient({
               
               <CardContent className="px-6 pb-6 pt-0 relative">
                 {/* Avatar container */}
-                <div className="absolute -top-16 left-6 size-28 rounded-full border-4 border-white bg-neutral-100 overflow-hidden flex items-center justify-center text-teal-800 text-3xl font-extrabold shadow-sm">
+                <div className="absolute -top-16 left-6 size-28 rounded-full border-4 border-white bg-neutral-100 overflow-hidden flex items-center justify-center text-blue-800 text-3xl font-extrabold shadow-sm">
                   {profile.profilePhoto ? (
-                    <div className="w-full h-full bg-teal-800 text-white flex items-center justify-center">
+                    <div className="w-full h-full bg-blue-800 text-white flex items-center justify-center">
                       {profile.name.split(" ").map(n => n[0]).join("")}
                     </div>
                   ) : (
@@ -740,7 +740,7 @@ export function LinkedInClient({
                   <div className="space-y-1 flex-1">
                     <div className="flex items-center gap-2">
                       <h2 className="text-xl font-bold text-neutral-900">{profile.name}</h2>
-                      <span className="text-[10px] bg-teal-50 border border-teal-200 text-teal-800 px-1.5 py-0.5 rounded-md font-bold">1st</span>
+                      <span className="text-[10px] bg-blue-50 border border-blue-200 text-blue-800 px-1.5 py-0.5 rounded-md font-bold">1st</span>
                     </div>
                     <p className="text-sm text-neutral-700 font-medium leading-5 max-w-xl">{profile.headline}</p>
                     
@@ -751,11 +751,11 @@ export function LinkedInClient({
 
                     <div className="pt-2 flex items-center gap-1 text-[11px] text-neutral-500">
                       <span className="font-bold">Vanity URL:</span>
-                      <span className={`font-mono ${isVanityUrlInvalid ? "text-rose-600 font-bold" : "text-teal-700"}`}>
+                      <span className={`font-mono ${isVanityUrlInvalid ? "text-blue-600 font-bold" : "text-blue-700"}`}>
                         linkedin.com/in/{profile.vanityUrl || "not-configured-yet"}
                       </span>
                       {isVanityUrlInvalid && (
-                        <span className="text-[9px] text-rose-500 font-semibold italic ml-1">
+                        <span className="text-[9px] text-blue-500 font-semibold italic ml-1">
                           (Contains hash suffix! Change to custom)
                         </span>
                       )}
@@ -766,10 +766,10 @@ export function LinkedInClient({
                     <Button 
                       variant="outline" 
                       size="sm" 
-                      className="text-xs border-teal-700 text-teal-700 hover:bg-teal-50/50"
+                      className="text-xs border-blue-700 text-blue-700 hover:bg-blue-50/50"
                       onClick={() => generateVariants("headline")}
                     >
-                      <Sparkles className="size-3 text-teal-600 mr-1 animate-pulse" />
+                      <Sparkles className="size-3 text-blue-600 mr-1 animate-pulse" />
                       Optimize Headline
                     </Button>
                   </div>
@@ -784,10 +784,10 @@ export function LinkedInClient({
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="text-xs border-teal-700 text-teal-700 hover:bg-teal-50/50"
+                  className="text-xs border-blue-700 text-blue-700 hover:bg-blue-50/50"
                   onClick={() => generateVariants("about")}
                 >
-                  <Sparkles className="size-3 text-teal-600 mr-1 animate-pulse" />
+                  <Sparkles className="size-3 text-blue-600 mr-1 animate-pulse" />
                   Optimize Summary
                 </Button>
               </CardHeader>
@@ -796,9 +796,9 @@ export function LinkedInClient({
                 <div className="mt-3 flex items-center justify-between text-[11px] text-neutral-400 border-t pt-2.5">
                   <span>Characters: {profile.about.length} (Target: 1500-2000)</span>
                   {profile.about.length < 200 ? (
-                    <span className="text-rose-500 font-semibold">Critically short</span>
+                    <span className="text-blue-500 font-semibold">Critically short</span>
                   ) : (
-                    <span className="text-teal-600 font-semibold">Good length</span>
+                    <span className="text-blue-600 font-semibold">Good length</span>
                   )}
                 </div>
               </CardContent>
@@ -827,10 +827,10 @@ export function LinkedInClient({
                     {profile.featuredItems.map((item, index) => (
                       <div key={index} className="flex justify-between items-center rounded-lg border border-neutral-100 bg-neutral-50/50 p-3 shadow-xs">
                         <div className="flex items-center gap-2">
-                          <Link2 className="size-3.5 text-teal-700" />
+                          <Link2 className="size-3.5 text-blue-700" />
                           <span className="text-xs font-semibold text-neutral-800">{item}</span>
                         </div>
-                        <button onClick={() => removeFeaturedItem(index)} className="text-neutral-400 hover:text-rose-600">
+                        <button onClick={() => removeFeaturedItem(index)} className="text-neutral-400 hover:text-blue-600">
                           <Trash className="size-3.5" />
                         </button>
                       </div>
@@ -867,7 +867,7 @@ export function LinkedInClient({
 
                     <button 
                       onClick={() => removeExperience(index)}
-                      className="text-neutral-400 hover:text-rose-600 text-xs flex items-center gap-1"
+                      className="text-neutral-400 hover:text-blue-600 text-xs flex items-center gap-1"
                     >
                       <Trash className="size-3.5" /> Remove
                     </button>
@@ -886,7 +886,7 @@ export function LinkedInClient({
                   {profile.skills.map((skill) => (
                     <Badge key={skill} variant="secondary" className="flex items-center gap-1 bg-neutral-100 text-neutral-800 text-xs px-3 py-1 font-semibold rounded-full border border-neutral-200/60">
                       {skill}
-                      <button onClick={() => removeSkill(skill)} className="text-neutral-400 hover:text-rose-600 ml-1">
+                      <button onClick={() => removeSkill(skill)} className="text-neutral-400 hover:text-blue-600 ml-1">
                         ×
                       </button>
                     </Badge>
@@ -899,9 +899,9 @@ export function LinkedInClient({
           {/* Sidebar Audit Checklist Overview */}
           <div className="space-y-6">
             <Card className="sticky top-6 bg-white border-neutral-200/80 shadow-md rounded-xl">
-              <CardHeader className="py-4 border-b bg-teal-50/10">
+              <CardHeader className="py-4 border-b bg-blue-50/10">
                 <CardTitle className="text-sm font-bold text-neutral-900 flex items-center gap-2">
-                  <CheckSquare className="size-4 text-teal-700" />
+                  <CheckSquare className="size-4 text-blue-700" />
                   Mockup Parameters
                 </CardTitle>
               </CardHeader>
@@ -942,7 +942,7 @@ export function LinkedInClient({
                     <span className="text-xs font-semibold text-neutral-700">Featured items toggled</span>
                     <input
                       type="checkbox"
-                      className="size-4 text-teal-700 focus:ring-teal-500 rounded border-neutral-300"
+                      className="size-4 text-blue-700 focus:ring-blue-500 rounded border-neutral-300"
                       checked={profile.featuredPopulated}
                       onChange={(e) => setProfile(prev => ({ ...prev, featuredPopulated: e.target.checked }))}
                     />
@@ -958,7 +958,7 @@ export function LinkedInClient({
                     </div>
                     <input
                       type="checkbox"
-                      className="size-4 text-teal-700 focus:ring-teal-500 rounded border-neutral-300"
+                      className="size-4 text-blue-700 focus:ring-blue-500 rounded border-neutral-300"
                       checked={profile.complianceMode}
                       onChange={(e) => setProfile(prev => ({ ...prev, complianceMode: e.target.checked }))}
                     />
@@ -969,7 +969,7 @@ export function LinkedInClient({
                   <Button 
                     onClick={handleRunFullAudit} 
                     disabled={isAuditing}
-                    className="w-full bg-teal-800 text-white hover:bg-teal-900 font-bold text-xs h-9"
+                    className="w-full bg-blue-800 text-white hover:bg-blue-900 font-bold text-xs h-9"
                   >
                     Run Detailed Audit Report
                   </Button>
@@ -1050,7 +1050,7 @@ export function LinkedInClient({
                   <button 
                     type="button" 
                     onClick={() => removeExperience(index)}
-                    className="absolute top-4 right-4 text-neutral-400 hover:text-rose-600 transition"
+                    className="absolute top-4 right-4 text-neutral-400 hover:text-blue-600 transition"
                   >
                     <Trash className="size-4" />
                   </button>
@@ -1105,7 +1105,7 @@ export function LinkedInClient({
                   onKeyDown={(e) => e.key === "Enter" && addSkill()}
                   className="h-9 text-xs"
                 />
-                <Button size="sm" onClick={addSkill} className="h-9 bg-teal-700 hover:bg-teal-800 text-white text-xs font-semibold">
+                <Button size="sm" onClick={addSkill} className="h-9 bg-blue-700 hover:bg-blue-800 text-white text-xs font-semibold">
                   Add Skill
                 </Button>
               </div>
@@ -1114,7 +1114,7 @@ export function LinkedInClient({
                 {profile.skills.map((skill) => (
                   <Badge key={skill} variant="secondary" className="flex items-center gap-1 bg-neutral-100 text-neutral-800 text-xs px-2.5 py-0.5 rounded-full border border-neutral-200">
                     {skill}
-                    <button type="button" onClick={() => removeSkill(skill)} className="text-neutral-400 hover:text-rose-600">
+                    <button type="button" onClick={() => removeSkill(skill)} className="text-neutral-400 hover:text-blue-600">
                       ×
                     </button>
                   </Badge>
@@ -1129,9 +1129,9 @@ export function LinkedInClient({
       {optimizerModal.isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4">
           <div className="bg-white rounded-2xl border border-neutral-200 max-w-2xl w-full shadow-2xl overflow-hidden flex flex-col max-h-[85vh] animate-in fade-in zoom-in-95 duration-150">
-            <CardHeader className="py-4 border-b bg-teal-50/10 flex flex-row items-center justify-between">
+            <CardHeader className="py-4 border-b bg-blue-50/10 flex flex-row items-center justify-between">
               <CardTitle className="text-sm font-bold text-neutral-950 flex items-center gap-2">
-                <Sparkles className="size-4 text-teal-600" />
+                <Sparkles className="size-4 text-blue-600" />
                 AI Multivariant Copywriter: {optimizerModal.section === "headline" ? "Headline" : "Summary"} Optimizer
               </CardTitle>
               <button 
@@ -1144,7 +1144,7 @@ export function LinkedInClient({
             <div className="p-6 overflow-y-auto space-y-4 flex-1">
               {isGeneratingVariants ? (
                 <div className="py-16 text-center space-y-3">
-                  <Loader2 className="size-8 text-teal-600 animate-spin mx-auto" />
+                  <Loader2 className="size-8 text-blue-600 animate-spin mx-auto" />
                   <p className="text-xs text-neutral-500 font-semibold">Gemini Copywriter is crafting 5 goal variants...</p>
                 </div>
               ) : optimizerModal.variants ? (
@@ -1156,15 +1156,15 @@ export function LinkedInClient({
                     { id: "story", label: "📖 Story (Narrative Hook Style)", text: optimizerModal.variants.story },
                     { id: "clarity", label: "🎚️ Clarity (Sharp & Minimalist)", text: optimizerModal.variants.clarity },
                   ].map((v) => (
-                    <div key={v.id} className="rounded-xl border border-neutral-100 bg-neutral-50/50 p-4 hover:border-teal-200 transition relative group">
-                      <div className="text-xs font-bold text-teal-800">{v.label}</div>
+                    <div key={v.id} className="rounded-xl border border-neutral-100 bg-neutral-50/50 p-4 hover:border-blue-200 transition relative group">
+                      <div className="text-xs font-bold text-blue-800">{v.label}</div>
                       <p className="mt-2 text-xs leading-5 text-neutral-700 font-medium whitespace-pre-wrap">
                         {v.text}
                       </p>
                       <div className="mt-3 flex justify-end">
                         <Button 
                           size="xs" 
-                          className="bg-teal-700 hover:bg-teal-800 text-white text-[10px] h-7"
+                          className="bg-blue-700 hover:bg-blue-800 text-white text-[10px] h-7"
                           onClick={() => applyVariant(v.text)}
                         >
                           Apply to Mockup

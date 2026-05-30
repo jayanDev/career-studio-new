@@ -65,7 +65,7 @@ export default async function CoursesPage({ params, searchParams }: CoursePagePr
 
   return (
     <div className="bg-white">
-      <section className="border-b bg-gradient-to-br from-white via-teal-50 to-amber-50">
+      <section className="border-b bg-gradient-to-br from-white via-blue-50 to-sky-50">
         <div className="mx-auto max-w-7xl px-4 py-16">
           <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
           <div className="mt-8">
@@ -154,7 +154,7 @@ export default async function CoursesPage({ params, searchParams }: CoursePagePr
               </select>
             </div>
             <div className="flex items-end">
-              <Button type="submit" className="w-full bg-teal-700 text-white hover:bg-teal-800">
+              <Button type="submit" className="w-full bg-blue-700 text-white hover:bg-blue-800">
                 {t("filter")}
               </Button>
             </div>

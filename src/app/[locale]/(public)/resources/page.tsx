@@ -114,7 +114,7 @@ export default async function ResourcesPage({ params, searchParams }: ResourcesP
 
   return (
     <div className="bg-white">
-      <section className="border-b bg-gradient-to-br from-amber-50 via-white to-teal-50">
+      <section className="border-b bg-gradient-to-br from-sky-50 via-white to-blue-50">
         <div className="mx-auto max-w-7xl px-4 py-16">
           <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
         </div>
@@ -149,7 +149,7 @@ export default async function ResourcesPage({ params, searchParams }: ResourcesP
               </select>
             </div>
             <div className="flex items-end">
-              <Button type="submit" className="w-full bg-teal-700 text-white hover:bg-teal-800">{t6("filter")}</Button>
+              <Button type="submit" className="w-full bg-blue-700 text-white hover:bg-blue-800">{t6("filter")}</Button>
             </div>
           </div>
         </form>
@@ -164,7 +164,7 @@ export default async function ResourcesPage({ params, searchParams }: ResourcesP
                   <CardHeader>
                     <div className="flex items-start justify-between gap-3">
                       <Badge variant="outline" className="rounded-md">{resource.type}</Badge>
-                      {resource.isPremium ? <Badge className="rounded-md bg-amber-600">{t6("premium")}</Badge> : null}
+                      {resource.isPremium ? <Badge className="rounded-md bg-sky-600">{t6("premium")}</Badge> : null}
                     </div>
                     <CardTitle>{resource.title}</CardTitle>
                   </CardHeader>
@@ -199,7 +199,7 @@ export default async function ResourcesPage({ params, searchParams }: ResourcesP
               return (
                 <Card key={resource.title} className={resource.disabled ? "bg-neutral-50 opacity-80" : "bg-white"}>
                   <CardHeader>
-                    <div className="flex size-11 items-center justify-center rounded-md bg-amber-100 text-amber-900">
+                    <div className="flex size-11 items-center justify-center rounded-md bg-sky-100 text-sky-900">
                       <Icon className="size-5" />
                     </div>
                     <CardTitle>{resource.title}</CardTitle>
@@ -222,7 +222,7 @@ export default async function ResourcesPage({ params, searchParams }: ResourcesP
             {ebookCatalog.map((ebook) => (
               <Card key={ebook.slug} className="bg-white">
                 <CardHeader>
-                  <BookOpen className="size-6 text-teal-700" />
+                  <BookOpen className="size-6 text-blue-700" />
                   <CardTitle>{ebook.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm leading-6 text-neutral-600">{ebook.summary}</CardContent>
@@ -246,7 +246,7 @@ export default async function ResourcesPage({ params, searchParams }: ResourcesP
           {resourceCollections.map((collection) => (
             <Card key={collection.title} className="bg-white">
               <CardHeader>
-                <BookOpen className="size-6 text-teal-700" />
+                <BookOpen className="size-6 text-blue-700" />
                 <CardTitle>{collection.title}</CardTitle>
               </CardHeader>
               <CardContent className="text-sm leading-6 text-neutral-600">{collection.description}</CardContent>

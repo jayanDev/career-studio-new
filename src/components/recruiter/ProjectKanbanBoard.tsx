@@ -18,9 +18,9 @@ const STAGES = [
   { id: "new", label: "Sourced", color: "bg-slate-100 border-slate-200 text-slate-800" },
   { id: "reviewed", label: "Reviewed", color: "bg-blue-50 border-blue-200 text-blue-800" },
   { id: "contacted", label: "Contacted", color: "bg-purple-50 border-purple-200 text-purple-800" },
-  { id: "interview", label: "Interview", color: "bg-amber-50 border-amber-200 text-amber-800" },
-  { id: "offered", label: "Offered", color: "bg-emerald-50 border-emerald-200 text-emerald-800" },
-  { id: "hired", label: "Hired", color: "bg-teal-50 border-teal-200 text-teal-800" },
+  { id: "interview", label: "Interview", color: "bg-sky-50 border-sky-200 text-sky-800" },
+  { id: "offered", label: "Offered", color: "bg-blue-50 border-blue-200 text-blue-800" },
+  { id: "hired", label: "Hired", color: "bg-blue-50 border-blue-200 text-blue-800" },
   { id: "rejected", label: "Rejected", color: "bg-red-50 border-red-200 text-red-800" },
 ];
 

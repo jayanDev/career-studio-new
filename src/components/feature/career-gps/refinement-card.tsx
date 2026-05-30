@@ -80,7 +80,7 @@ export function RefinementCard({ planId }: { planId: string }) {
     <Card className="bg-white">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Wand2 className="size-4 text-teal-700" />
+          <Wand2 className="size-4 text-blue-700" />
           Refine your plan
         </CardTitle>
         <p className="text-xs text-neutral-500">
@@ -95,7 +95,7 @@ export function RefinementCard({ planId }: { planId: string }) {
               type="button"
               onClick={() => submit(preset.prompt, preset.kind)}
               disabled={isPending}
-              className="rounded-full border bg-neutral-50 px-3 py-1.5 text-xs text-neutral-700 transition hover:border-teal-400 hover:bg-teal-50 hover:text-teal-900 disabled:opacity-50"
+              className="rounded-full border bg-neutral-50 px-3 py-1.5 text-xs text-neutral-700 transition hover:border-blue-400 hover:bg-blue-50 hover:text-blue-900 disabled:opacity-50"
             >
               {preset.label}
             </button>
@@ -138,10 +138,10 @@ export function RefinementCard({ planId }: { planId: string }) {
           </div>
         </div>
 
-        {error ? <p className="text-xs text-rose-700">{error}</p> : null}
+        {error ? <p className="text-xs text-blue-700">{error}</p> : null}
 
         {lastApplied ? (
-          <div className="rounded-md border border-emerald-200 bg-emerald-50 p-3 text-xs text-emerald-900">
+          <div className="rounded-md border border-blue-200 bg-blue-50 p-3 text-xs text-blue-900">
             <div className="flex items-center gap-2 font-semibold">
               <Sparkles className="size-3.5" />
               Applied — plan refreshed

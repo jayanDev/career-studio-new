@@ -28,17 +28,17 @@ export default async function VerifyRequestPage({ params }: VerifyRequestPagePro
   const t = await getTranslations({ locale, namespace: "phase2.auth" });
 
   return (
-    <main className="flex min-h-screen items-center bg-gradient-to-br from-teal-50 via-white to-amber-50 px-4">
+    <main className="flex min-h-screen items-center bg-gradient-to-br from-blue-50 via-white to-sky-50 px-4">
       <Card className="mx-auto max-w-md bg-white text-center">
         <CardHeader>
-          <div className="mx-auto flex size-14 items-center justify-center rounded-md bg-teal-100 text-teal-800">
+          <div className="mx-auto flex size-14 items-center justify-center rounded-md bg-blue-100 text-blue-800">
             <MailCheck className="size-7" />
           </div>
           <CardTitle className="mt-4 text-2xl">{t("verifyTitle")}</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-sm leading-6 text-neutral-600">{t("verifyBody")}</p>
-          <Button asChild className="mt-6 bg-teal-700 text-white hover:bg-teal-800">
+          <Button asChild className="mt-6 bg-blue-700 text-white hover:bg-blue-800">
             <Link href={`/${locale}/auth/sign-in`}>{t("backToSignIn")}</Link>
           </Button>
         </CardContent>

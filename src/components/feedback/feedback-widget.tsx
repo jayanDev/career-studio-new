@@ -15,7 +15,7 @@ export async function FeedbackWidget({ locale }: { locale: Locale }) {
   return (
     <details className="fixed bottom-4 right-4 z-40 w-[min(360px,calc(100vw-2rem))] rounded-lg border bg-white shadow-lg">
       <summary className="flex cursor-pointer list-none items-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-neutral-950">
-        <MessageSquarePlus className="size-4 text-teal-700" />
+        <MessageSquarePlus className="size-4 text-blue-700" />
         {t("title")}
       </summary>
       <form action={action} className="space-y-3 border-t p-4">
@@ -27,7 +27,7 @@ export async function FeedbackWidget({ locale }: { locale: Locale }) {
         </select>
         <Input name="title" placeholder={t("titlePlaceholder")} required />
         <Textarea name="message" placeholder={t("messagePlaceholder")} required />
-        <Button type="submit" className="w-full bg-teal-700 text-white hover:bg-teal-800">
+        <Button type="submit" className="w-full bg-blue-700 text-white hover:bg-blue-800">
           {t("send")}
         </Button>
       </form>

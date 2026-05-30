@@ -56,7 +56,7 @@ export default async function EbookReaderPage({ params }: EbookReaderPageProps) 
 
   return (
     <div className="bg-white">
-      <header className="border-b bg-gradient-to-br from-white via-teal-50 to-amber-50">
+      <header className="border-b bg-gradient-to-br from-white via-blue-50 to-sky-50">
         <div className="mx-auto max-w-5xl px-4 py-12">
           <Button asChild variant="ghost" className="-ml-3 mb-6">
             <Link href={`/${locale}/resources`}>
@@ -64,7 +64,7 @@ export default async function EbookReaderPage({ params }: EbookReaderPageProps) 
               {t("back")}
             </Link>
           </Button>
-          <Badge variant="outline" className="rounded-md border-teal-200 bg-white text-teal-800">{ebook.category}</Badge>
+          <Badge variant="outline" className="rounded-md border-blue-200 bg-white text-blue-800">{ebook.category}</Badge>
           <h1 className="mt-5 text-4xl font-semibold tracking-tight text-neutral-950 md:text-5xl">{ebook.title}</h1>
           <p className="mt-4 max-w-3xl text-lg leading-8 text-neutral-600">{ebook.summary}</p>
         </div>
@@ -74,7 +74,7 @@ export default async function EbookReaderPage({ params }: EbookReaderPageProps) 
         <article className="space-y-6">
           {ebook.chapters.map((chapter, index) => (
             <section key={chapter.title} className="rounded-lg border bg-neutral-50 p-6">
-              <div className="flex items-center gap-2 text-sm font-medium text-teal-700">
+              <div className="flex items-center gap-2 text-sm font-medium text-blue-700">
                 <BookOpen className="size-4" />
                 {t("page")} {index + 1}
               </div>
@@ -88,7 +88,7 @@ export default async function EbookReaderPage({ params }: EbookReaderPageProps) 
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Highlighter className="size-5 text-teal-700" />
+                <Highlighter className="size-5 text-blue-700" />
                 {t("annotations")}
               </CardTitle>
             </CardHeader>
@@ -103,10 +103,10 @@ export default async function EbookReaderPage({ params }: EbookReaderPageProps) 
                   <Input name="color" defaultValue="#fef08a" placeholder={t("color")} />
                   <Textarea name="selectedText" placeholder={t("selectedText")} required />
                   <Textarea name="noteText" placeholder={t("noteText")} />
-                  <Button type="submit" className="w-full bg-teal-700 text-white hover:bg-teal-800">{t("saveAnnotation")}</Button>
+                  <Button type="submit" className="w-full bg-blue-700 text-white hover:bg-blue-800">{t("saveAnnotation")}</Button>
                 </form>
               ) : (
-                <Button asChild className="w-full bg-teal-700 text-white hover:bg-teal-800">
+                <Button asChild className="w-full bg-blue-700 text-white hover:bg-blue-800">
                   <Link href={`/${locale}/auth/sign-in?callbackUrl=/${locale}/resources/ebooks/${bookSlug}`}>{t("signInToAnnotate")}</Link>
                 </Button>
               )}
@@ -116,7 +116,7 @@ export default async function EbookReaderPage({ params }: EbookReaderPageProps) 
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <StickyNote className="size-5 text-teal-700" />
+                <StickyNote className="size-5 text-blue-700" />
                 {t("myNotes")}
               </CardTitle>
             </CardHeader>

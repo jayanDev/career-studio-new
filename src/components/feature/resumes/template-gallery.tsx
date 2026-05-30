@@ -55,7 +55,7 @@ export function ResumeTemplateGallery({
               type="button"
               onClick={() => setTier(t)}
               className={`rounded px-2.5 py-1 text-xs font-medium capitalize transition ${
-                tier === t ? "bg-teal-700 text-white" : "text-neutral-600 hover:bg-neutral-100"
+                tier === t ? "bg-blue-700 text-white" : "text-neutral-600 hover:bg-neutral-100"
               }`}
             >
               {t}
@@ -112,8 +112,8 @@ function TemplateCard({
       <div
         className={`overflow-hidden rounded-xl border-2 bg-white p-2 transition-all ${
           selected
-            ? "border-teal-600 ring-4 ring-teal-600/10"
-            : "border-neutral-200 hover:border-teal-300"
+            ? "border-blue-600 ring-4 ring-blue-600/10"
+            : "border-neutral-200 hover:border-blue-300"
         }`}
       >
         <div className="aspect-[3/4] overflow-hidden rounded bg-neutral-50 relative">
@@ -130,9 +130,9 @@ function TemplateCard({
               variant="outline"
               className={`text-[9px] capitalize ${
                 template.category === "premium"
-                  ? "border-amber-300 text-amber-800"
+                  ? "border-sky-300 text-sky-800"
                   : template.category === "pro"
-                    ? "border-teal-300 text-teal-800"
+                    ? "border-blue-300 text-blue-800"
                     : "border-neutral-300 text-neutral-700"
               }`}
             >

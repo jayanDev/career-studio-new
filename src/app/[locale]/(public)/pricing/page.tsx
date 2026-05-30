@@ -33,7 +33,7 @@ export default async function PricingPage({ params }: LocaleParams) {
 
   return (
     <div className="bg-white">
-      <section className="border-b bg-gradient-to-br from-white via-teal-50 to-rose-50">
+      <section className="border-b bg-gradient-to-br from-white via-blue-50 to-blue-50">
         <div className="mx-auto max-w-7xl px-4 py-16">
           <SectionHeading
             eyebrow={t("eyebrow")}
@@ -51,7 +51,7 @@ export default async function PricingPage({ params }: LocaleParams) {
               key={plan.name}
               className={cn(
                 "bg-white",
-                plan.highlighted && "border-teal-300 shadow-lg shadow-teal-100",
+                plan.highlighted && "border-blue-300 shadow-lg shadow-blue-100",
                 plan.disabled && "opacity-90"
               )}
             >
@@ -61,7 +61,7 @@ export default async function PricingPage({ params }: LocaleParams) {
                   {plan.badge ? (
                     <Badge
                       variant={plan.highlighted ? "default" : "secondary"}
-                      className={cn("rounded-md", plan.highlighted && "bg-teal-700")}
+                      className={cn("rounded-md", plan.highlighted && "bg-blue-700")}
                     >
                       {plan.badge}
                     </Badge>
@@ -77,7 +77,7 @@ export default async function PricingPage({ params }: LocaleParams) {
                 <ul className="mt-6 grid gap-3 text-sm text-neutral-700">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex gap-3">
-                      <Check className="mt-0.5 size-4 shrink-0 text-teal-700" />
+                      <Check className="mt-0.5 size-4 shrink-0 text-blue-700" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -90,7 +90,7 @@ export default async function PricingPage({ params }: LocaleParams) {
                     {plan.cta}
                   </Button>
                 ) : (
-                  <Button asChild className="w-full bg-teal-700 text-white hover:bg-teal-800">
+                  <Button asChild className="w-full bg-blue-700 text-white hover:bg-blue-800">
                     <Link href={`/${locale}${plan.href}`}>{plan.cta}</Link>
                   </Button>
                 )}
@@ -99,16 +99,16 @@ export default async function PricingPage({ params }: LocaleParams) {
           ))}
         </div>
 
-        <div className="mt-10 rounded-xl border bg-amber-50 p-6">
+        <div className="mt-10 rounded-xl border bg-sky-50 p-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div>
-              <div className="inline-flex items-center gap-2 font-semibold text-amber-950">
+              <div className="inline-flex items-center gap-2 font-semibold text-sky-950">
                 <ShieldCheck className="size-5" />
                 {t("noteTitle")}
               </div>
-              <p className="mt-2 max-w-3xl text-sm leading-6 text-amber-950/75">{t("noteBody")}</p>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-sky-950/75">{t("noteBody")}</p>
             </div>
-            <Badge variant="outline" className="w-fit rounded-md border-amber-300 bg-white text-amber-950">
+            <Badge variant="outline" className="w-fit rounded-md border-sky-300 bg-white text-sky-950">
               LKR
             </Badge>
           </div>

@@ -41,12 +41,12 @@ export default async function ShareCoverLetterPage({ params, searchParams }: Sha
             <h1 className="text-2xl font-semibold">{letter.title}</h1>
             <p className="text-sm text-neutral-600">{letter.jobTitle} at {letter.companyName}</p>
           </div>
-          <Badge className="rounded-md bg-teal-700 text-white">{content.qualityScore || 0}/100 {content.qualityLabel}</Badge>
+          <Badge className="rounded-md bg-blue-700 text-white">{content.qualityScore || 0}/100 {content.qualityLabel}</Badge>
         </div>
         <Card className="bg-white">
           <CardContent className="p-8">
             <article
-              className="prose prose-neutral max-w-none whitespace-pre-wrap text-sm leading-7"
+              className="prose pblue-neutral max-w-none whitespace-pre-wrap text-sm leading-7"
               style={{ borderTop: `4px solid ${content.accentColor || "#0f766e"}`, paddingTop: "1rem" }}
             >
               {coverLetterContentToText(content)}

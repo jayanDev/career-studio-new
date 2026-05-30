@@ -30,7 +30,7 @@ export default async function TermsPage({ params }: LegalPageProps) {
 
   return (
     <div className="bg-white">
-      <section className="border-b bg-gradient-to-br from-white via-teal-50 to-amber-50">
+      <section className="border-b bg-gradient-to-br from-white via-blue-50 to-sky-50">
         <div className="mx-auto max-w-4xl px-4 py-16">
           <SectionHeading
             eyebrow={t("eyebrow")}
@@ -41,7 +41,7 @@ export default async function TermsPage({ params }: LegalPageProps) {
       </section>
 
       <section className="mx-auto max-w-4xl px-4 py-10">
-        <div className="mb-6 rounded-md border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
+        <div className="mb-6 rounded-md border border-sky-200 bg-sky-50 p-4 text-sm text-sky-900">
           <strong>This is a working draft.</strong> Pending legal review before general
           availability. By using Career Studio today you accept these terms as written, with
           the understanding that material changes will be communicated to active accounts at

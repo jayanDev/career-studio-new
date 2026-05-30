@@ -111,7 +111,7 @@ export default async function InterviewPage({ params, searchParams }: InterviewP
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="outline" className="rounded-md">{question.category}</Badge>
                     <Badge variant="outline" className="rounded-md">{question.difficulty}</Badge>
-                    {question.isPremium ? <Badge className="rounded-md bg-amber-600">{t("premium")}</Badge> : null}
+                    {question.isPremium ? <Badge className="rounded-md bg-sky-600">{t("premium")}</Badge> : null}
                   </div>
                   <h2 className="mt-3 font-semibold text-neutral-950">{question.questionText}</h2>
                   <p className="mt-2 text-sm leading-6 text-neutral-600">{question.tips}</p>

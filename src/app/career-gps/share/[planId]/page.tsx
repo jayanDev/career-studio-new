@@ -51,7 +51,7 @@ export default async function SharedCareerGpsPage({ params, searchParams }: Shar
   return (
     <main className="min-h-screen bg-neutral-100 px-4 py-8 text-neutral-950">
       <div className="mx-auto max-w-5xl space-y-5">
-        <div className="rounded-md border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
+        <div className="rounded-md border border-sky-300 bg-sky-50 p-3 text-sm text-sky-900">
           Public Career GPS plan — personal contact details have been redacted. The candidate controls
           this link and can revoke it at any time.
         </div>
@@ -61,7 +61,7 @@ export default async function SharedCareerGpsPage({ params, searchParams }: Shar
             <h1 className="text-2xl font-semibold">Career GPS Roadmap (anonymised)</h1>
             <p className="mt-1 max-w-3xl text-sm leading-6 text-neutral-600">{maskText(data.identity_statement)}</p>
           </div>
-          <Badge className="rounded-md bg-teal-700 text-white">{data.plan_strength.score}/100</Badge>
+          <Badge className="rounded-md bg-blue-700 text-white">{data.plan_strength.score}/100</Badge>
         </div>
 
         <div className="grid gap-4 md:grid-cols-3">

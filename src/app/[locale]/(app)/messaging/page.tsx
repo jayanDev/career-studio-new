@@ -144,7 +144,7 @@ export default async function MessagingPage({ params, searchParams }: MessagingP
                   <a
                     key={conversation.id}
                     href={`/${locale}/messaging?conversation=${conversation.id}`}
-                    className={`block rounded-md border p-3 text-sm transition ${isActive ? "border-teal-600 bg-teal-50" : "bg-neutral-50 hover:bg-neutral-100"}`}
+                    className={`block rounded-md border p-3 text-sm transition ${isActive ? "border-blue-600 bg-blue-50" : "bg-neutral-50 hover:bg-neutral-100"}`}
                   >
                     <div className="font-medium text-neutral-950">{displayName(partner ?? {})}</div>
                     <div className="mt-1 text-xs text-neutral-500">{conversation.updatedAt.toLocaleDateString("en-LK")}</div>
@@ -169,7 +169,7 @@ export default async function MessagingPage({ params, searchParams }: MessagingP
                   <input type="hidden" name="recipientId" value={candidate.id} />
                   <div className="font-medium text-neutral-950">{displayName(candidate)}</div>
                   <Textarea name="body" className="mt-3" placeholder={t("messagePlaceholder")} required />
-                  <Button type="submit" size="sm" className="mt-3 bg-teal-700 text-white hover:bg-teal-800">
+                  <Button type="submit" size="sm" className="mt-3 bg-blue-700 text-white hover:bg-blue-800">
                     <Send className="size-4" />
                     {t("send")}
                   </Button>

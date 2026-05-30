@@ -76,7 +76,7 @@ export default async function GcvPage({ params }: GcvPageProps) {
             </div>
             <div>
               <div className="mb-2 flex items-center gap-2 text-sm font-medium text-neutral-900">
-                <LayoutTemplate className="size-4 text-teal-700" />
+                <LayoutTemplate className="size-4 text-blue-700" />
                 Template gallery
               </div>
               <div className="grid max-h-96 gap-3 overflow-auto md:grid-cols-2 xl:grid-cols-3">
@@ -96,7 +96,7 @@ export default async function GcvPage({ params }: GcvPageProps) {
               <label className="flex items-center gap-2 text-sm text-neutral-700"><input type="checkbox" name="showLogos" defaultChecked /> SL logos</label>
               <label className="flex items-center gap-2 text-sm text-neutral-700"><input type="checkbox" name="showQr" defaultChecked /> QR</label>
               <label className="flex items-center gap-2 text-sm text-neutral-700"><input type="checkbox" name="showMotif" /> SL motif</label>
-              <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">
+              <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">
                 <Palette className="size-4" />
                 {t("create")}
               </Button>
@@ -108,7 +108,7 @@ export default async function GcvPage({ params }: GcvPageProps) {
         {resumes.map((resume) => (
           <Card key={resume.id} className="bg-white">
             <CardHeader>
-              <Palette className="size-6 text-teal-700" />
+              <Palette className="size-6 text-blue-700" />
               <CardTitle>{resume.title}</CardTitle>
               <p className="text-sm text-neutral-600">{resume.updatedAt.toLocaleDateString("en-LK")}</p>
             </CardHeader>

@@ -98,7 +98,7 @@ export default async function ForumPage({ params }: ForumPageProps) {
               </select>
               <Input name="title" placeholder={t("threadTitle")} required />
               <Textarea name="body" placeholder={t("threadBody")} required />
-              <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">
+              <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">
                 {t("publishThread")}
               </Button>
             </form>
@@ -109,7 +109,7 @@ export default async function ForumPage({ params }: ForumPageProps) {
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="size-5 text-teal-700" />
+                <TrendingUp className="size-5 text-blue-700" />
                 {t("trending")}
               </CardTitle>
             </CardHeader>
@@ -188,7 +188,7 @@ function ThreadCard({
     <Link href={`/${locale}/forum/${id}`} className="block rounded-md border bg-neutral-50 p-4 transition hover:bg-neutral-100">
       <div className="flex flex-wrap items-center gap-2">
         {isPinned ? (
-          <Badge className="rounded-md bg-amber-600">
+          <Badge className="rounded-md bg-sky-600">
             <Pin className="size-3" />
             {pinnedLabel}
           </Badge>

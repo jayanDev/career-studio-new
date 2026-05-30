@@ -141,7 +141,7 @@ export function ChatClient({
             key={idx}
             className={`my-2 overflow-x-auto rounded-lg border p-3.5 text-xs font-mono shadow-inner ${
               isMine
-                ? "bg-teal-900/60 border-teal-600/40 text-neutral-100"
+                ? "bg-blue-900/60 border-blue-600/40 text-neutral-100"
                 : "bg-neutral-900 border-neutral-800 text-neutral-200"
             }`}
           >
@@ -166,7 +166,7 @@ export function ChatClient({
                   key={subIdx}
                   className={`rounded px-1.5 py-0.5 text-xs font-mono font-semibold ${
                     isMine
-                      ? "bg-teal-800/80 text-white"
+                      ? "bg-blue-800/80 text-white"
                       : "bg-neutral-200 text-neutral-800"
                   }`}
                 >
@@ -188,7 +188,7 @@ export function ChatClient({
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`underline font-medium hover:opacity-80 transition ${
-                      isMine ? "text-white" : "text-teal-600"
+                      isMine ? "text-white" : "text-blue-600"
                     }`}
                   >
                     {linkText}
@@ -233,8 +233,8 @@ export function ChatClient({
         {/* Real-time Status Badge */}
         <div className="absolute top-2 right-2 z-10 flex items-center gap-1.5 rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-medium text-neutral-600 shadow-sm border border-neutral-100">
           <span className={`relative flex h-2 w-2`}>
-            <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isSyncing ? "bg-teal-400" : "bg-emerald-400"}`}></span>
-            <span className={`relative inline-flex rounded-full h-2 w-2 ${isSyncing ? "bg-teal-500" : "bg-emerald-500"}`}></span>
+            <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isSyncing ? "bg-blue-400" : "bg-blue-400"}`}></span>
+            <span className={`relative inline-flex rounded-full h-2 w-2 ${isSyncing ? "bg-blue-500" : "bg-blue-500"}`}></span>
           </span>
           {isSyncing ? "Syncing..." : "Live"}
         </div>
@@ -249,7 +249,7 @@ export function ChatClient({
               <div
                 className={`max-w-[80%] rounded-2xl px-4 py-3 shadow-sm border transition-all ${
                   isMine
-                    ? "bg-teal-700 border-teal-600 text-white rounded-br-none"
+                    ? "bg-blue-700 border-blue-600 text-white rounded-br-none"
                     : "bg-white border-neutral-200 text-neutral-900 rounded-bl-none"
                 }`}
               >
@@ -265,7 +265,7 @@ export function ChatClient({
                     variant="outline"
                     className={`mt-2.5 flex w-fit items-center gap-1 rounded-md px-2 py-1 text-xs border ${
                       isMine
-                        ? "bg-teal-800/80 text-white border-teal-600/50"
+                        ? "bg-blue-800/80 text-white border-blue-600/50"
                         : "bg-neutral-50 text-neutral-700 border-neutral-200"
                     }`}
                   >
@@ -289,7 +289,7 @@ export function ChatClient({
           <Textarea
             name="body"
             placeholder={translations.replyPlaceholder}
-            className="min-h-[80px] bg-white border border-neutral-200 focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
+            className="min-h-[80px] bg-white border border-neutral-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
             required
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey) {
@@ -310,7 +310,7 @@ export function ChatClient({
             <Button
               type="submit"
               disabled={isSending}
-              className="bg-teal-700 text-white hover:bg-teal-800 shadow-sm transition-all px-5 py-2 h-auto"
+              className="bg-blue-700 text-white hover:bg-blue-800 shadow-sm transition-all px-5 py-2 h-auto"
             >
               <Send className="size-4 mr-1.5" />
               {isSending ? "Sending..." : translations.send}

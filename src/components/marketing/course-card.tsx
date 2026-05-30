@@ -13,13 +13,13 @@ export function CourseCard({ course }: { course: Course }) {
             {course.level}
           </Badge>
           {course.verified ? (
-            <Badge variant="outline" className="rounded-md border-teal-200 text-teal-800">
+            <Badge variant="outline" className="rounded-md border-blue-200 text-blue-800">
               <BadgeCheck className="size-3" />
               Verified
             </Badge>
           ) : null}
           {course.installments ? (
-            <Badge variant="outline" className="rounded-md border-amber-200 text-amber-800">
+            <Badge variant="outline" className="rounded-md border-sky-200 text-sky-800">
               <CreditCard className="size-3" />
               Installments
             </Badge>

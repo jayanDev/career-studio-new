@@ -47,7 +47,7 @@ export default async function PublicResumePage({ params, searchParams }: PublicR
             className="mt-4 h-10 w-full rounded-md border border-slate-200 px-3 text-sm"
             placeholder="Password"
           />
-          <button className="mt-3 h-10 w-full rounded-md bg-teal-700 text-sm font-semibold text-white" type="submit">
+          <button className="mt-3 h-10 w-full rounded-md bg-blue-700 text-sm font-semibold text-white" type="submit">
             View resume
           </button>
         </form>

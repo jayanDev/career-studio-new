@@ -258,7 +258,7 @@ export function ResumeEditorClient({
               variant={content.mode === "local" ? "default" : "outline"}
               size="sm"
               onClick={() => applyResumeMode("local")}
-              className={content.mode === "local" ? "bg-teal-700 hover:bg-teal-800" : ""}
+              className={content.mode === "local" ? "bg-blue-700 hover:bg-blue-800" : ""}
             >
               <MapPin className="size-4 mr-1.5" />
               Local SL
@@ -267,7 +267,7 @@ export function ResumeEditorClient({
               variant={content.mode === "international" ? "default" : "outline"}
               size="sm"
               onClick={() => applyResumeMode("international")}
-              className={content.mode === "international" ? "bg-teal-700 hover:bg-teal-800" : ""}
+              className={content.mode === "international" ? "bg-blue-700 hover:bg-blue-800" : ""}
             >
               <Globe className="size-4 mr-1.5" />
               International
@@ -277,17 +277,17 @@ export function ResumeEditorClient({
             <span className="text-xs text-neutral-500 flex items-center gap-1.5">
               {isPending ? (
                 <>
-                  <span className="size-2 rounded-full bg-amber-400 animate-pulse" />
+                  <span className="size-2 rounded-full bg-sky-400 animate-pulse" />
                   {labels.saving}
                 </>
               ) : saveError ? (
                 <>
-                  <AlertTriangle className="size-3.5 text-amber-600" />
+                  <AlertTriangle className="size-3.5 text-sky-600" />
                   <span title={saveError}>{saveState}</span>
                 </>
               ) : lastSaved ? (
                 <>
-                  <CheckCircle2 className="size-3.5 text-teal-600" />
+                  <CheckCircle2 className="size-3.5 text-blue-600" />
                   Saved at {lastSaved.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </>
               ) : (
@@ -301,7 +301,7 @@ export function ResumeEditorClient({
           <h3 className="font-semibold text-sm">Professional Summary</h3>
           <div className="flex flex-wrap gap-2">
             <Button type="button" variant="outline" size="sm" onClick={() => generateSection("summary")} disabled={aiBusy === "summary"}>
-              <Wand2 className="size-4 mr-1.5 text-teal-700" />
+              <Wand2 className="size-4 mr-1.5 text-blue-700" />
               Generate
             </Button>
             <Button type="button" variant="outline" size="sm" onClick={() => generateSection("skills")} disabled={aiBusy === "skills"}>
@@ -311,14 +311,14 @@ export function ResumeEditorClient({
               Achievements
             </Button>
             <Button type="button" variant="outline" size="sm" onClick={improveSummary}>
-              <Sparkles className="size-4 mr-1.5 text-amber-500" />
+              <Sparkles className="size-4 mr-1.5 text-sky-500" />
               {labels.improve}
             </Button>
           </div>
         </div>
 
         {content.settings?.resumeModeNote ? (
-          <div className="rounded-md border border-teal-200 bg-teal-50 px-3 py-2 text-xs font-medium text-teal-900">
+          <div className="rounded-md border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-medium text-blue-900">
             {content.settings.resumeModeNote}
           </div>
         ) : null}
@@ -326,7 +326,7 @@ export function ResumeEditorClient({
         <Card className="bg-white">
           <CardHeader className="pb-3">
             <CardTitle className="text-md flex items-center gap-2">
-              <FileSearch className="size-4 text-teal-700" />
+              <FileSearch className="size-4 text-blue-700" />
               JD Tailoring
             </CardTitle>
             <CardDescription className="text-xs">Paste a job description to reorder bullets and surface relevant skills.</CardDescription>
@@ -335,16 +335,16 @@ export function ResumeEditorClient({
             <Textarea rows={4} value={jdText} onChange={(event) => setJdText(event.target.value)} placeholder="Paste the job description here..." />
             <div className="flex flex-wrap items-center gap-2">
               <Button type="button" variant="outline" size="sm" onClick={tailorToJob} disabled={aiBusy === "tailor" || jdText.trim().length < 20}>
-                <Sparkles className="size-4 mr-1.5 text-amber-500" />
+                <Sparkles className="size-4 mr-1.5 text-sky-500" />
                 Tailor resume
               </Button>
-              {tailorNote ? <span className="text-xs font-medium text-teal-700">{tailorNote}</span> : null}
+              {tailorNote ? <span className="text-xs font-medium text-blue-700">{tailorNote}</span> : null}
             </div>
           </CardContent>
         </Card>
 
         {suggestions.length ? (
-          <Card className="bg-amber-50">
+          <Card className="bg-sky-50">
             <CardContent className="space-y-2 p-4">
               {suggestions.map((suggestion) => (
                 <button
@@ -520,22 +520,22 @@ export function ResumeEditorClient({
            <CardHeader className="pb-3 border-b bg-slate-50/50">
               <CardTitle className="text-md flex items-center justify-between">
                  <span>ATS Readiness</span>
-                 {atsScore && <span className="text-2xl font-bold text-teal-700">{atsScore.overall}<span className="text-xs text-neutral-400 font-normal">/100</span></span>}
+                 {atsScore && <span className="text-2xl font-bold text-blue-700">{atsScore.overall}<span className="text-xs text-neutral-400 font-normal">/100</span></span>}
               </CardTitle>
            </CardHeader>
            <CardContent className="space-y-5 pt-4">
               <div className="space-y-2.5">
                  <div className="flex justify-between text-xs font-semibold text-neutral-600 uppercase tracking-wider">
                     <span>Completion</span>
-                    <span className={checklist.percent === 100 ? "text-teal-600" : ""}>{checklist.percent}%</span>
+                    <span className={checklist.percent === 100 ? "text-blue-600" : ""}>{checklist.percent}%</span>
                  </div>
                  <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-teal-600 transition-all duration-500" style={{ width: `${checklist.percent}%` }} />
+                    <div className="h-full bg-blue-600 transition-all duration-500" style={{ width: `${checklist.percent}%` }} />
                  </div>
                  <div className="pt-2 grid gap-2">
                     {checklist.steps.map(s => (
                        <div key={s.name} className="flex items-center gap-2.5 text-xs">
-                          {s.done ? <CheckCircle2 className="size-4 text-teal-600 shrink-0" /> : <div className="size-4 rounded-full border-2 border-slate-200 shrink-0" />}
+                          {s.done ? <CheckCircle2 className="size-4 text-blue-600 shrink-0" /> : <div className="size-4 rounded-full border-2 border-slate-200 shrink-0" />}
                           <span className={s.done ? "text-slate-500 line-through" : "text-slate-800 font-medium"}>{s.name}</span>
                           {!s.required && <span className="text-[9px] uppercase tracking-wider text-slate-400 ml-auto">Optional</span>}
                        </div>
@@ -562,7 +562,7 @@ export function ResumeEditorClient({
                  <div className="pt-4 border-t space-y-2">
                     <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Why this score?</h4>
                     {atsScore.issues.slice(0, 3).map((issue: string) => (
-                       <div key={issue} className="flex gap-2 rounded-md bg-amber-50 p-2 text-xs leading-5 text-amber-900">
+                       <div key={issue} className="flex gap-2 rounded-md bg-sky-50 p-2 text-xs leading-5 text-sky-900">
                           <AlertTriangle className="mt-0.5 size-3.5 shrink-0" />
                           <span>{issue}</span>
                        </div>
@@ -575,15 +575,15 @@ export function ResumeEditorClient({
         <div>
           <div className="mb-3 flex items-center justify-between">
             <h2 className="font-semibold text-neutral-950">{labels.livePreview}</h2>
-            <Button variant="outline" size="sm" className="h-8 gap-1.5 text-teal-700 bg-teal-50 border-teal-200 hover:bg-teal-100" onClick={runGrammarCheck} disabled={aiBusy === "grammar"}>
+            <Button variant="outline" size="sm" className="h-8 gap-1.5 text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100" onClick={runGrammarCheck} disabled={aiBusy === "grammar"}>
                <Sparkles className="size-3.5" />
                Grammar Check
             </Button>
           </div>
           {grammarIssues.length ? (
-            <div className="mb-3 space-y-2 rounded-md border border-amber-200 bg-amber-50 p-3">
+            <div className="mb-3 space-y-2 rounded-md border border-sky-200 bg-sky-50 p-3">
               {grammarIssues.map((issue) => (
-                <div key={issue} className="text-xs font-medium leading-5 text-amber-900">{issue}</div>
+                <div key={issue} className="text-xs font-medium leading-5 text-sky-900">{issue}</div>
               ))}
             </div>
           ) : null}
@@ -752,13 +752,13 @@ function renderEditor(
                         type="button" 
                         variant="outline" 
                         size="icon" 
-                        className="h-7 w-7 text-amber-600 hover:text-amber-700 hover:bg-amber-50"
+                        className="h-7 w-7 text-sky-600 hover:text-sky-700 hover:bg-sky-50"
                         disabled={improvingBullet?.expIdx === index && improvingBullet?.bulletIdx === bulletIdx}
                         onClick={() => handleImproveBullet(index, bulletIdx, bullet)}
                         title="AI Rewrite"
                       >
                         {improvingBullet?.expIdx === index && improvingBullet?.bulletIdx === bulletIdx ? (
-                          <div className="size-3 border-2 border-amber-600 border-t-transparent rounded-full animate-spin" />
+                          <div className="size-3 border-2 border-sky-600 border-t-transparent rounded-full animate-spin" />
                         ) : (
                           <Sparkles className="size-3.5" />
                         )}
@@ -767,7 +767,7 @@ function renderEditor(
                         type="button" 
                         variant="outline" 
                         size="icon" 
-                        className="h-7 w-7 text-rose-600 hover:text-rose-700 hover:bg-rose-50"
+                        className="h-7 w-7 text-blue-600 hover:text-blue-700 hover:bg-blue-50"
                         onClick={() => {
                           const newBullets = item.bullets.filter((_, i) => i !== bulletIdx);
                           updateExperience(index, "bullets", newBullets.length ? newBullets : [""], setContent);
@@ -822,7 +822,7 @@ function renderEditor(
                 type="button" 
                 variant="ghost" 
                 size="sm" 
-                className="mt-1 text-teal-700"
+                className="mt-1 text-blue-700"
                 onClick={() => updateExperience(index, "bullets", [...item.bullets, ""], setContent)}
               >
                 <Plus className="size-3 mr-1" /> Add Bullet
@@ -842,7 +842,7 @@ function renderEditor(
                     <button
                       key={example}
                       type="button"
-                      className="rounded-md border bg-slate-50 p-2 text-left text-xs leading-5 hover:border-teal-300 hover:bg-teal-50"
+                      className="rounded-md border bg-slate-50 p-2 text-left text-xs leading-5 hover:border-blue-300 hover:bg-blue-50"
                       onClick={() => {
                         updateExperience(index, "bullets", [...item.bullets.filter(Boolean), example], setContent);
                         setLibraryFor(null);
@@ -855,7 +855,7 @@ function renderEditor(
               ) : null}
             </div>
             <div className="flex justify-end border-t mt-4 pt-3">
-              <Button type="button" variant="ghost" size="sm" className="text-rose-700 hover:bg-rose-50" onClick={() => setContent((current) => ({ ...current, experience: current.experience.filter((_, itemIndex) => itemIndex !== index) }))}>
+              <Button type="button" variant="ghost" size="sm" className="text-blue-700 hover:bg-blue-50" onClick={() => setContent((current) => ({ ...current, experience: current.experience.filter((_, itemIndex) => itemIndex !== index) }))}>
                 <Trash2 className="size-4 mr-1.5" />
                 {labels.remove} Role
               </Button>
@@ -914,7 +914,7 @@ function renderEditor(
           <div key={item.id} className="grid gap-3 rounded-md border bg-neutral-50 p-4 md:grid-cols-[1fr_1fr_auto]">
             <Input value={item.name} placeholder="e.g. English" onChange={(e) => updateCustomArray(setContent, "languages", index, "name", e.target.value)} />
             <Input value={item.proficiency} placeholder="e.g. Fluent" onChange={(e) => updateCustomArray(setContent, "languages", index, "proficiency", e.target.value)} />
-            <Button type="button" variant="ghost" size="icon" onClick={() => removeCustomArray(setContent, "languages", index)}><Trash2 className="size-4 text-rose-600" /></Button>
+            <Button type="button" variant="ghost" size="icon" onClick={() => removeCustomArray(setContent, "languages", index)}><Trash2 className="size-4 text-blue-600" /></Button>
           </div>
         ))}
         <Button type="button" variant="outline" className="w-full border-dashed" onClick={() => setContent(c => ({ ...c, languages: [...(c.languages || []), { id: createId(), name: "", proficiency: "" }] }))}>
@@ -932,7 +932,7 @@ function renderEditor(
             <Input value={item.name} placeholder="Award Name" onChange={(e) => updateCustomArray(setContent, "awards", index, "name", e.target.value)} />
             <Input value={item.issuer} placeholder="Issuer" onChange={(e) => updateCustomArray(setContent, "awards", index, "issuer", e.target.value)} />
             <Input value={item.date} placeholder="Year" onChange={(e) => updateCustomArray(setContent, "awards", index, "date", e.target.value)} />
-            <Button type="button" variant="ghost" size="icon" onClick={() => removeCustomArray(setContent, "awards", index)}><Trash2 className="size-4 text-rose-600" /></Button>
+            <Button type="button" variant="ghost" size="icon" onClick={() => removeCustomArray(setContent, "awards", index)}><Trash2 className="size-4 text-blue-600" /></Button>
           </div>
         ))}
         <Button type="button" variant="outline" className="w-full border-dashed" onClick={() => setContent(c => ({ ...c, awards: [...(c.awards || []), { id: createId(), name: "", issuer: "", date: "" }] }))}>
@@ -958,7 +958,7 @@ function renderEditor(
               });
             }} />
             <div className="flex justify-end">
-               <Button type="button" variant="ghost" size="sm" onClick={() => removeCustomArray(setContent, "volunteering", index)}><Trash2 className="size-4 text-rose-600 mr-1.5" /> Remove</Button>
+               <Button type="button" variant="ghost" size="sm" onClick={() => removeCustomArray(setContent, "volunteering", index)}><Trash2 className="size-4 text-blue-600 mr-1.5" /> Remove</Button>
             </div>
           </div>
         ))}

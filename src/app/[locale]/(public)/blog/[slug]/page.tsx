@@ -110,7 +110,7 @@ export default async function BlogPostPage({ params, searchParams }: BlogPostPag
 
   return (
     <article className="bg-white">
-      <header className="border-b bg-gradient-to-br from-white via-teal-50 to-amber-50">
+      <header className="border-b bg-gradient-to-br from-white via-blue-50 to-sky-50">
         <div className="mx-auto max-w-4xl px-4 py-14">
           <Button asChild variant="ghost" className="-ml-3 mb-6">
             <Link href={`/${locale}/blog`}>
@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params, searchParams }: BlogPostPag
               {t("back")}
             </Link>
           </Button>
-          <Badge variant="outline" className="rounded-md border-teal-200 bg-white text-teal-800">
+          <Badge variant="outline" className="rounded-md border-blue-200 bg-white text-blue-800">
             {post.category}
           </Badge>
           <h1 className="mt-5 text-4xl font-semibold tracking-tight text-neutral-950 md:text-5xl">{post.title}</h1>
@@ -152,11 +152,11 @@ export default async function BlogPostPage({ params, searchParams }: BlogPostPag
 
           <section className="mt-12 border-t pt-8">
             <div className="flex items-center gap-2">
-              <MessageSquare className="size-5 text-teal-700" />
+              <MessageSquare className="size-5 text-blue-700" />
               <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">{t6("comments")}</h2>
             </div>
             {pendingComment ? (
-              <Badge className="mt-4 rounded-md bg-amber-600">{t6("pendingReview")}</Badge>
+              <Badge className="mt-4 rounded-md bg-sky-600">{t6("pendingReview")}</Badge>
             ) : null}
             <div className="mt-5 space-y-4">
               {comments.map((comment) => (
@@ -178,13 +178,13 @@ export default async function BlogPostPage({ params, searchParams }: BlogPostPag
                 </form>
                 <form action={commentAction} className="space-y-3">
                   <Textarea name="content" placeholder={t6("commentPlaceholder")} required />
-                  <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">
+                  <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">
                     {t6("submitComment")}
                   </Button>
                 </form>
               </div>
             ) : (
-              <Button asChild className="mt-6 bg-teal-700 text-white hover:bg-teal-800">
+              <Button asChild className="mt-6 bg-blue-700 text-white hover:bg-blue-800">
                 <Link href={`/${locale}/auth/sign-in?callbackUrl=/${locale}/blog/${post.slug}`}>{t6("signInToComment")}</Link>
               </Button>
             )}
@@ -195,7 +195,7 @@ export default async function BlogPostPage({ params, searchParams }: BlogPostPag
           <Card className="bg-neutral-50">
             <CardContent className="p-5">
               <div className="flex items-center gap-2 font-semibold text-neutral-950">
-                <Tag className="size-4 text-teal-700" />
+                <Tag className="size-4 text-blue-700" />
                 {t("topics")}
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -213,7 +213,7 @@ export default async function BlogPostPage({ params, searchParams }: BlogPostPag
                 <div className="font-semibold text-neutral-950">{t("related")}</div>
                 <div className="mt-4 grid gap-3">
                   {relatedPosts.map((item) => (
-                    <Link key={item.slug} href={`/${locale}/blog/${item.slug}`} className="text-sm leading-6 text-teal-800 hover:underline">
+                    <Link key={item.slug} href={`/${locale}/blog/${item.slug}`} className="text-sm leading-6 text-blue-800 hover:underline">
                       {item.title}
                     </Link>
                   ))}

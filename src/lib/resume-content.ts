@@ -140,7 +140,7 @@ export const resumeContentSchema = z.object({
     sectionOrder: z.array(z.enum(resumeSectionKeys)).default(["header", "summary", "experience", "education", "skills"]),
   settings: z.object({
     font: z.enum(["inter", "roboto", "merriweather", "noto-sinhala", "noto-tamil"]).default("inter"),
-    accentColor: z.string().default("#0f766e"), // teal-700
+    accentColor: z.string().default("#0f766e"), // blue-700
     exportFormat: z.enum(["ats-friendly", "pixel-perfect"]).default("pixel-perfect"),
     hideReferences: z.boolean().default(false),
     showSkillRatings: z.boolean().default(false),

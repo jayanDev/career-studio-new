@@ -66,7 +66,7 @@ export default async function ForumThreadPage({ params }: ForumThreadPageProps) 
 
   return (
     <div className="space-y-6">
-      <Link href={`/${locale}/forum`} className="text-sm font-medium text-teal-700 hover:text-teal-800">
+      <Link href={`/${locale}/forum`} className="text-sm font-medium text-blue-700 hover:text-blue-800">
         {t("back")}
       </Link>
 
@@ -74,7 +74,7 @@ export default async function ForumThreadPage({ params }: ForumThreadPageProps) 
         <CardHeader>
           <div className="flex flex-wrap items-center gap-2">
             {role ? <Badge variant="outline" className="rounded-md">{role.name}</Badge> : null}
-            {thread.isLocked ? <Badge className="rounded-md bg-amber-600">{t("locked")}</Badge> : null}
+            {thread.isLocked ? <Badge className="rounded-md bg-sky-600">{t("locked")}</Badge> : null}
           </div>
           <CardTitle className="text-2xl">{thread.title}</CardTitle>
           <p className="text-sm text-neutral-500">{displayName(authorMap.get(thread.authorId) ?? {})}</p>
@@ -109,7 +109,7 @@ export default async function ForumThreadPage({ params }: ForumThreadPageProps) 
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <MessageSquareReply className="size-5 text-teal-700" />
+            <MessageSquareReply className="size-5 text-blue-700" />
             {t("replies")}
           </CardTitle>
         </CardHeader>
@@ -128,7 +128,7 @@ export default async function ForumThreadPage({ params }: ForumThreadPageProps) 
           {!thread.isLocked ? (
             <form action={replyAction} className="space-y-3 rounded-md border bg-neutral-50 p-4">
               <Textarea name="body" placeholder={t("replyPlaceholder")} required />
-              <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">
+              <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">
                 {t("postReply")}
               </Button>
             </form>

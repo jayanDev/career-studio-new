@@ -24,7 +24,7 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-neutral-50 px-4 text-center">
       <div className="max-w-md">
-        <p className="text-xs font-semibold uppercase tracking-wide text-rose-700">Something went wrong</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-blue-700">Something went wrong</p>
         <h1 className="mt-2 text-2xl font-semibold tracking-tight text-neutral-950">
           We hit an unexpected error
         </h1>
@@ -35,7 +35,7 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
           <p className="mt-2 text-[11px] font-mono text-neutral-400">Ref: {error.digest}</p>
         ) : null}
         <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <Button type="button" onClick={() => reset()} className="bg-teal-700 text-white hover:bg-teal-800">
+          <Button type="button" onClick={() => reset()} className="bg-blue-700 text-white hover:bg-blue-800">
             Try again
           </Button>
           <Button asChild variant="outline">

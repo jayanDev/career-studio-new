@@ -173,7 +173,7 @@ export default async function ConnectionsPage({ params, searchParams }: Connecti
                     <div className="font-semibold text-neutral-950">{displayName(member)}</div>
                     <p className="mt-1 text-sm text-neutral-500">{member.email}</p>
                     <Textarea name="message" className="mt-3" placeholder={t("requestMessage")} />
-                    <Button type="submit" size="sm" className="mt-3 bg-teal-700 text-white hover:bg-teal-800">
+                    <Button type="submit" size="sm" className="mt-3 bg-blue-700 text-white hover:bg-blue-800">
                       {t("connect")}
                     </Button>
                   </form>
@@ -226,7 +226,7 @@ export default async function ConnectionsPage({ params, searchParams }: Connecti
                   <p className="mt-2 text-sm leading-6 text-neutral-600">{request.message || t("noMessage")}</p>
                   <div className="mt-3 flex gap-2">
                     <form action={respondConnectionRequestAction.bind(null, locale, request.id, ConnectionRequestStatus.accepted)}>
-                      <Button type="submit" size="sm" className="bg-teal-700 text-white hover:bg-teal-800">{t("accept")}</Button>
+                      <Button type="submit" size="sm" className="bg-blue-700 text-white hover:bg-blue-800">{t("accept")}</Button>
                     </form>
                     <form action={respondConnectionRequestAction.bind(null, locale, request.id, ConnectionRequestStatus.declined)}>
                       <Button type="submit" size="sm" variant="outline">{t("decline")}</Button>
@@ -247,10 +247,10 @@ export default async function ConnectionsPage({ params, searchParams }: Connecti
                 {privacyFields.map((field) => (
                   <label key={field.name} className="flex items-center justify-between rounded-md border bg-neutral-50 p-3">
                     <span>{field.label}</span>
-                    <input name={field.name} type="checkbox" defaultChecked={field.checked} className="size-4 accent-teal-700" />
+                    <input name={field.name} type="checkbox" defaultChecked={field.checked} className="size-4 accent-blue-700" />
                   </label>
                 ))}
-                <Button type="submit" className="bg-teal-700 text-white hover:bg-teal-800">{t("savePrivacy")}</Button>
+                <Button type="submit" className="bg-blue-700 text-white hover:bg-blue-800">{t("savePrivacy")}</Button>
               </form>
             </CardContent>
           </Card>
@@ -264,7 +264,7 @@ function StatCard({ icon: Icon, label, value }: { icon: typeof Handshake; label:
   return (
     <Card className="bg-white">
       <CardContent className="flex items-center gap-4 p-5">
-        <div className="flex size-11 items-center justify-center rounded-md bg-teal-100 text-teal-800">
+        <div className="flex size-11 items-center justify-center rounded-md bg-blue-100 text-blue-800">
           <Icon className="size-5" />
         </div>
         <div>

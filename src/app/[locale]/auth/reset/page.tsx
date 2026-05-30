@@ -70,13 +70,13 @@ export default async function ResetPage({ params, searchParams }: AuthPageProps)
               <Label htmlFor="email">{t("emailLabel")}</Label>
               <Input id="email" name="email" type="email" placeholder={t("emailPlaceholder")} required />
             </div>
-            <Button type="submit" className="w-full bg-teal-700 text-white hover:bg-teal-800">
+            <Button type="submit" className="w-full bg-blue-700 text-white hover:bg-blue-800">
               <Mail className="size-4" />
               {t("sendRecoveryLink")}
             </Button>
           </form>
           <p className="text-center text-sm text-neutral-600">
-            <Link href={`/${locale}/auth/sign-in`} className="font-medium text-teal-800 hover:underline">
+            <Link href={`/${locale}/auth/sign-in`} className="font-medium text-blue-800 hover:underline">
               {t("backToSignIn")}
             </Link>
           </p>

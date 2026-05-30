@@ -231,7 +231,7 @@ export function InterviewPracticeClient({
             <CardTitle>{labels.practiceTitle}</CardTitle>
             <p className="text-xs text-neutral-500 mt-0.5">Conversational AI Mock Interview Session</p>
           </div>
-          <Badge className="bg-teal-700 text-white rounded-md">
+          <Badge className="bg-blue-700 text-white rounded-md">
             {sessionCompleted ? "Session Completed" : `Turn ${currentTurn} of 3`}
           </Badge>
         </CardHeader>
@@ -242,13 +242,13 @@ export function InterviewPracticeClient({
             {history.map((msg, index) => (
               <div key={index} className={`flex gap-3 ${msg.role === "candidate" ? "justify-end" : "justify-start"}`}>
                 {msg.role !== "candidate" && (
-                  <div className="size-8 rounded-full bg-teal-50 border border-teal-100 flex items-center justify-center text-teal-700 shrink-0 shadow-xs">
+                  <div className="size-8 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 shrink-0 shadow-xs">
                     <Radio className="size-4 animate-pulse" />
                   </div>
                 )}
                 <div className={`rounded-xl p-3.5 max-w-[85%] text-sm leading-6 shadow-xs ${
                   msg.role === "candidate" 
-                    ? "bg-teal-700 text-white rounded-tr-none" 
+                    ? "bg-blue-700 text-white rounded-tr-none" 
                     : "bg-neutral-50 border border-neutral-100 text-neutral-800 rounded-tl-none"
                 }`}>
                   <div className="font-semibold text-xs mb-1 opacity-75">
@@ -257,7 +257,7 @@ export function InterviewPracticeClient({
                   <div>{msg.text}</div>
                 </div>
                 {msg.role === "candidate" && (
-                  <div className="size-8 rounded-full bg-teal-800 flex items-center justify-center text-white shrink-0 shadow-xs">
+                  <div className="size-8 rounded-full bg-blue-800 flex items-center justify-center text-white shrink-0 shadow-xs">
                     <User className="size-4" />
                   </div>
                 )}
@@ -265,7 +265,7 @@ export function InterviewPracticeClient({
             ))}
             {isPending && (
               <div className="flex gap-3 justify-start items-center">
-                <div className="size-8 rounded-full bg-teal-50 border border-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                <div className="size-8 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 shrink-0">
                   <Loader2 className="size-4 animate-spin" />
                 </div>
                 <div className="text-xs text-neutral-400 font-medium">Interviewer is evaluating and formulating response...</div>
@@ -291,7 +291,7 @@ export function InterviewPracticeClient({
                     disabled={isPending}
                     className={`absolute bottom-3 right-3 p-2 rounded-full border transition-all ${
                       isRecording 
-                        ? "bg-rose-50 border-rose-200 text-rose-600 animate-pulse hover:bg-rose-100" 
+                        ? "bg-blue-50 border-blue-200 text-blue-600 animate-pulse hover:bg-blue-100" 
                         : "bg-neutral-50 border-neutral-200 text-neutral-600 hover:bg-neutral-100"
                     }`}
                   >
@@ -310,7 +310,7 @@ export function InterviewPracticeClient({
                 </div>
                 <div className="rounded-lg border border-neutral-100 bg-neutral-50/50 p-2.5 text-center shadow-xs">
                   <div className="text-xs font-semibold text-neutral-500">Filler Words</div>
-                  <div className={`text-sm font-bold mt-0.5 ${fillerCount > 3 ? "text-amber-600" : "text-emerald-600"}`}>
+                  <div className={`text-sm font-bold mt-0.5 ${fillerCount > 3 ? "text-sky-600" : "text-blue-600"}`}>
                     {fillerCount}
                   </div>
                 </div>
@@ -326,7 +326,7 @@ export function InterviewPracticeClient({
               <div className="flex gap-2 justify-end">
                 <Button 
                   type="button" 
-                  className="bg-teal-700 text-white hover:bg-teal-800" 
+                  className="bg-blue-700 text-white hover:bg-blue-800" 
                   disabled={isPending || !answer.trim()} 
                   onClick={submitTurn}
                 >
@@ -336,13 +336,13 @@ export function InterviewPracticeClient({
               </div>
             </div>
           ) : (
-            <div className="rounded-xl border border-teal-100 bg-teal-50/30 p-6 text-center space-y-3">
-              <CheckCircle2 className="size-10 text-teal-600 mx-auto" />
+            <div className="rounded-xl border border-blue-100 bg-blue-50/30 p-6 text-center space-y-3">
+              <CheckCircle2 className="size-10 text-blue-600 mx-auto" />
               <div>
                 <h4 className="font-semibold text-neutral-950 text-base">Session Finished!</h4>
                 <p className="text-sm text-neutral-500 mt-1">You have completed all 3 turns. Review your overall feedback on the right panel.</p>
               </div>
-              <Button type="button" variant="outline" className="border-teal-700 text-teal-700 hover:bg-teal-50" onClick={resetSession}>
+              <Button type="button" variant="outline" className="border-blue-700 text-blue-700 hover:bg-blue-50" onClick={resetSession}>
                 <RefreshCw className="size-4" />
                 Practice Again
               </Button>
@@ -362,7 +362,7 @@ export function InterviewPracticeClient({
             <div className="space-y-6">
               {/* Score summary */}
               <div className="flex items-center gap-4 border-b pb-4">
-                <div className="size-14 rounded-full bg-teal-50 border-2 border-teal-200 flex items-center justify-center text-teal-800 font-extrabold text-xl shadow-xs">
+                <div className="size-14 rounded-full bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-blue-800 font-extrabold text-xl shadow-xs">
                   {feedbacks[feedbacks.length - 1].score}/10
                 </div>
                 <div>

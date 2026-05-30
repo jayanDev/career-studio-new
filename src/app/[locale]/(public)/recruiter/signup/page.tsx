@@ -25,7 +25,7 @@ export default async function RecruiterSignupPage({ params }: { params: Promise<
   return (
     <main className="min-h-screen bg-slate-50 px-4 py-16">
       <div className="mx-auto max-w-3xl space-y-8 text-center">
-        <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-teal-100 text-teal-800">
+        <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-blue-100 text-blue-800">
           <Briefcase className="size-8" />
         </div>
         <div>
@@ -42,14 +42,14 @@ export default async function RecruiterSignupPage({ params }: { params: Promise<
           ].map(([title, Icon, body]) => (
             <Card key={title as string} className="bg-white text-left">
               <CardContent className="p-5">
-                <Icon className="size-5 text-teal-700" />
+                <Icon className="size-5 text-blue-700" />
                 <h2 className="mt-3 text-sm font-semibold text-slate-950">{title as string}</h2>
                 <p className="mt-2 text-xs leading-5 text-slate-600">{body as string}</p>
               </CardContent>
             </Card>
           ))}
         </div>
-        <Button asChild size="lg" className="bg-teal-700 text-white hover:bg-teal-800">
+        <Button asChild size="lg" className="bg-blue-700 text-white hover:bg-blue-800">
           <Link href={`/${locale}/auth/sign-in?callbackUrl=/${locale}/talent-pool/company`}>Sign in to create recruiter profile</Link>
         </Button>
       </div>

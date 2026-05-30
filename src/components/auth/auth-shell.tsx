@@ -36,7 +36,7 @@ export function AuthShell({
 
   return (
     <main className="grid min-h-screen bg-white lg:grid-cols-[0.9fr_1.1fr]">
-      <section className="flex items-center border-b bg-gradient-to-br from-teal-800 via-teal-700 to-amber-600 px-6 py-10 text-white lg:border-b-0 lg:px-12">
+      <section className="flex items-center border-b bg-gradient-to-br from-blue-800 via-blue-700 to-sky-600 px-6 py-10 text-white lg:border-b-0 lg:px-12">
         <div className="mx-auto max-w-lg">
           <Link href={`/${locale}`} className="inline-flex items-center gap-2 font-semibold">
             <span className="flex size-10 items-center justify-center rounded-md bg-white/15">
@@ -45,7 +45,7 @@ export function AuthShell({
             {brand}
           </Link>
           <h1 className="mt-10 text-4xl font-semibold tracking-tight md:text-5xl">{title}</h1>
-          <p className="mt-4 text-base leading-7 text-teal-50">{subtitle}</p>
+          <p className="mt-4 text-base leading-7 text-blue-50">{subtitle}</p>
           <div className="mt-8 grid gap-5">
             {features.map((feature) => {
               const Icon = feature.icon;
@@ -57,7 +57,7 @@ export function AuthShell({
                   </span>
                   <span>
                     <span className="block font-semibold">{feature.title}</span>
-                    <span className="mt-1 block text-sm leading-6 text-teal-50">{feature.body}</span>
+                    <span className="mt-1 block text-sm leading-6 text-blue-50">{feature.body}</span>
                   </span>
                 </div>
               );

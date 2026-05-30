@@ -58,7 +58,7 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
 
   return (
     <div className="bg-white">
-      <section className="border-b bg-gradient-to-br from-teal-50 via-white to-amber-50">
+      <section className="border-b bg-gradient-to-br from-blue-50 via-white to-sky-50">
         <div className="mx-auto max-w-7xl px-4 py-16">
           <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
         </div>
@@ -98,7 +98,7 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
               </select>
             </div>
             <div className="flex items-end">
-              <Button type="submit" className="w-full bg-teal-700 text-white hover:bg-teal-800">
+              <Button type="submit" className="w-full bg-blue-700 text-white hover:bg-blue-800">
                 {t("filter")}
               </Button>
             </div>
@@ -106,7 +106,7 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
         </form>
 
         {featuredPost ? (
-          <Card className="mt-8 border-teal-200 bg-white">
+          <Card className="mt-8 border-blue-200 bg-white">
             <CardContent className="grid gap-6 p-6 lg:grid-cols-[0.75fr_1.25fr]">
               <div className="rounded-lg bg-neutral-950 p-6 text-white">
                 <Badge variant="secondary" className="rounded-md">
@@ -136,7 +136,7 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
                     ))}
                   </div>
                 </div>
-                <Button asChild className="mt-6 w-fit bg-teal-700 text-white hover:bg-teal-800">
+                <Button asChild className="mt-6 w-fit bg-blue-700 text-white hover:bg-blue-800">
                   <Link href={`/${locale}/blog/${featuredPost.slug}`}>
                     {t("readArticle")}
                     <ArrowRight className="size-4" />

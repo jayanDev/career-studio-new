@@ -74,7 +74,7 @@ export function SalaryCalculatorClient({
             </select>
           </Field>
           <div className="flex items-end">
-            <Button type="button" className="w-full bg-teal-700 text-white hover:bg-teal-800" disabled={isPending || !jobTitle || !city} onClick={calculate}>
+            <Button type="button" className="w-full bg-blue-700 text-white hover:bg-blue-800" disabled={isPending || !jobTitle || !city} onClick={calculate}>
               {isPending ? <Loader2 className="size-4 animate-spin" /> : <Calculator className="size-4" />}
               {labels.calculate}
             </Button>

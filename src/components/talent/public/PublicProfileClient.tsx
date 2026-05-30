@@ -147,11 +147,11 @@ export function PublicProfileClient({
   return (
     <div className="space-y-6">
       {isAnonymousView && (
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3 shadow-sm">
-          <ShieldCheck className="size-5 text-amber-600 mt-0.5 shrink-0" />
+        <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 flex items-start gap-3 shadow-sm">
+          <ShieldCheck className="size-5 text-sky-600 mt-0.5 shrink-0" />
           <div>
-            <h4 className="text-sm font-semibold text-amber-900">Anonymized Profile View</h4>
-            <p className="text-xs text-amber-800 mt-1 leading-relaxed">
+            <h4 className="text-sm font-semibold text-sky-900">Anonymized Profile View</h4>
+            <p className="text-xs text-sky-800 mt-1 leading-relaxed">
               To protect candidate privacy, the full last name, contact details, and resume files are hidden. You must send an Introduction Inquiry and have it accepted by the candidate to reveal this information.
             </p>
           </div>
@@ -163,7 +163,7 @@ export function PublicProfileClient({
         {/* Cover & Hero Section */}
         <div className="relative overflow-hidden rounded-2xl border bg-white shadow-sm">
           {/* Cover Image Banner */}
-          <div className="h-44 w-full bg-gradient-to-r from-teal-800 via-teal-950 to-neutral-900 relative">
+          <div className="h-44 w-full bg-gradient-to-r from-blue-800 via-blue-950 to-neutral-900 relative">
             {profile.coverImage && (
               <img src={profile.coverImage} alt="Cover banner" className="size-full object-cover" />
             )}
@@ -173,7 +173,7 @@ export function PublicProfileClient({
           <div className="px-6 pb-6 pt-0 relative">
             {/* Overlapping Avatar */}
             <div className="-mt-16 mb-4 relative z-10 flex size-28 items-center justify-center rounded-full bg-white p-1 shadow-md">
-              <div className="relative size-full items-center justify-center rounded-full bg-teal-50 text-teal-800 font-bold text-3xl flex overflow-hidden">
+              <div className="relative size-full items-center justify-center rounded-full bg-blue-50 text-blue-800 font-bold text-3xl flex overflow-hidden">
                 {profile.profileImage ? (
                   <img src={profile.profileImage} alt={profile.headline} className="size-full object-cover" />
                 ) : (
@@ -189,7 +189,7 @@ export function PublicProfileClient({
                   <span>{profile.user.firstName} {profile.user.lastName}</span>
                   {profile.isVerified && (
                     <span title="Verified Professional">
-                      <ShieldCheck className="size-5 text-teal-600 fill-teal-50" />
+                      <ShieldCheck className="size-5 text-blue-600 fill-blue-50" />
                     </span>
                   )}
                 </h1>
@@ -211,10 +211,10 @@ export function PublicProfileClient({
 
                 <div className="mt-3 flex flex-wrap gap-2">
                   {profile.isOpenToWork && (
-                    <Badge className="bg-teal-700 hover:bg-teal-800 text-white font-medium">Open to Opportunities</Badge>
+                    <Badge className="bg-blue-700 hover:bg-blue-800 text-white font-medium">Open to Opportunities</Badge>
                   )}
                   {profile.availabilityDate && (
-                    <Badge variant="outline" className="border-teal-200 text-teal-800">
+                    <Badge variant="outline" className="border-blue-200 text-blue-800">
                       Available from {new Date(profile.availabilityDate).toLocaleDateString(locale, { month: "short", year: "numeric" })}
                     </Badge>
                   )}
@@ -228,9 +228,9 @@ export function PublicProfileClient({
                     variant="outline" 
                     size="sm" 
                     onClick={handleToggleShortlist} 
-                    className={`gap-1.5 ${isShortlisted ? "border-amber-200 bg-amber-50 text-amber-900" : ""}`}
+                    className={`gap-1.5 ${isShortlisted ? "border-sky-200 bg-sky-50 text-sky-900" : ""}`}
                   >
-                    {isShortlisted ? <BookmarkCheck className="size-4 text-amber-700" /> : <Bookmark className="size-4" />}
+                    {isShortlisted ? <BookmarkCheck className="size-4 text-sky-700" /> : <Bookmark className="size-4" />}
                     <span>{isShortlisted ? "Shortlisted" : "Shortlist"}</span>
                   </Button>
                 )}
@@ -240,18 +240,18 @@ export function PublicProfileClient({
                     Viewing own profile
                   </Button>
                 ) : requestStatus === "accepted" ? (
-                  <Badge variant="outline" className="border-teal-200 bg-teal-50 text-teal-850 py-1.5 px-3 gap-1 text-sm">
-                    <CheckCircle className="size-4 text-teal-700" />
+                  <Badge variant="outline" className="border-blue-200 bg-blue-50 text-blue-850 py-1.5 px-3 gap-1 text-sm">
+                    <CheckCircle className="size-4 text-blue-700" />
                     Connected
                   </Badge>
                 ) : requestStatus === "pending" ? (
-                  <Button variant="outline" size="sm" disabled className="border-amber-200 bg-amber-50 text-amber-800">
+                  <Button variant="outline" size="sm" disabled className="border-sky-200 bg-sky-50 text-sky-800">
                     Inquiry Pending
                   </Button>
                 ) : recruiterProfile ? (
                   <Dialog open={isContactDialogOpen} onOpenChange={setIsContactDialogOpen}>
                     <DialogTrigger asChild>
-                      <Button className="bg-teal-700 hover:bg-teal-800 text-white gap-1.5" size="sm">
+                      <Button className="bg-blue-700 hover:bg-blue-800 text-white gap-1.5" size="sm">
                         <Mail className="size-4" />
                         <span>Request Contact</span>
                       </Button>
@@ -314,7 +314,7 @@ export function PublicProfileClient({
                                 size="sm" 
                                 onClick={handleGenerateDraft}
                                 disabled={isGeneratingDraft}
-                                className="h-7 text-xs bg-teal-50 border-teal-200 text-teal-700 hover:bg-teal-100 gap-1"
+                                className="h-7 text-xs bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 gap-1"
                               >
                                 <Sparkles className="size-3" />
                                 {isGeneratingDraft ? "Drafting..." : "AI Draft"}
@@ -331,7 +331,7 @@ export function PublicProfileClient({
                         </div>
                         <DialogFooter>
                           <Button type="button" variant="ghost" onClick={() => setIsContactDialogOpen(false)}>Cancel</Button>
-                          <Button type="submit" disabled={isSubmittingRequest} className="bg-teal-700 text-white hover:bg-teal-800 gap-1.5">
+                          <Button type="submit" disabled={isSubmittingRequest} className="bg-blue-700 text-white hover:bg-blue-800 gap-1.5">
                             <Send className="size-4" />
                             <span>Send Request</span>
                           </Button>
@@ -340,7 +340,7 @@ export function PublicProfileClient({
                     </DialogContent>
                   </Dialog>
                 ) : (
-                  <Button asChild size="sm" className="bg-teal-700 hover:bg-teal-800 text-white">
+                  <Button asChild size="sm" className="bg-blue-700 hover:bg-blue-800 text-white">
                     <a href={`/${locale}/auth/sign-in`}>Sign in to Contact</a>
                   </Button>
                 )}
@@ -370,7 +370,7 @@ export function PublicProfileClient({
             <CardContent className="space-y-6">
               {profile.experiences.map((exp) => (
                 <div key={exp.id} className="relative flex gap-4 first:pt-0 pt-6 border-t first:border-0">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-teal-800">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-800">
                     <Briefcase className="size-5" />
                   </div>
                   <div className="space-y-1">
@@ -406,7 +406,7 @@ export function PublicProfileClient({
             <CardContent className="space-y-6">
               {profile.educations.map((edu) => (
                 <div key={edu.id} className="flex gap-4 first:pt-0 pt-6 border-t first:border-0">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-teal-800">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-800">
                     <FileText className="size-5" />
                   </div>
                   <div>
@@ -415,7 +415,7 @@ export function PublicProfileClient({
                     <p className="text-xs text-neutral-400">
                       {new Date(edu.startDate).getFullYear()} - {edu.isOngoing ? "Ongoing" : edu.endDate ? new Date(edu.endDate).getFullYear() : ""}
                     </p>
-                    {edu.gpa && <p className="mt-1 text-xs font-semibold text-teal-700">GPA: {edu.gpa}</p>}
+                    {edu.gpa && <p className="mt-1 text-xs font-semibold text-blue-700">GPA: {edu.gpa}</p>}
                     {edu.description && <p className="mt-2 text-sm text-neutral-600">{edu.description}</p>}
                   </div>
                 </div>
@@ -441,18 +441,18 @@ export function PublicProfileClient({
                     <p className="text-xs text-neutral-500 mt-0.5">{proj.role}</p>
                     <p className="text-sm text-neutral-600 mt-2 line-clamp-3">{proj.description}</p>
                     {proj.outcome && (
-                      <p className="text-xs font-medium text-teal-800 mt-2">Outcome: {proj.outcome}</p>
+                      <p className="text-xs font-medium text-blue-800 mt-2">Outcome: {proj.outcome}</p>
                     )}
                   </div>
                   <div className="mt-4 flex flex-wrap gap-2 pt-3 border-t border-slate-100">
                     {proj.projectUrl && (
-                      <a href={proj.projectUrl} target="_blank" className="inline-flex items-center gap-1 text-xs text-teal-700 font-semibold hover:underline">
+                      <a href={proj.projectUrl} target="_blank" className="inline-flex items-center gap-1 text-xs text-blue-700 font-semibold hover:underline">
                         <span>Demo</span>
                         <ExternalLink className="size-3" />
                       </a>
                     )}
                     {proj.githubUrl && (
-                      <a href={proj.githubUrl} target="_blank" className="inline-flex items-center gap-1 text-xs text-teal-700 font-semibold hover:underline">
+                      <a href={proj.githubUrl} target="_blank" className="inline-flex items-center gap-1 text-xs text-blue-700 font-semibold hover:underline">
                         <span>Codebase</span>
                         <ExternalLink className="size-3" />
                       </a>
@@ -474,7 +474,7 @@ export function PublicProfileClient({
               {profile.services.map((serv) => (
                 <div key={serv.id} className="rounded-xl border p-4 bg-slate-50/50">
                   <h4 className="font-semibold text-neutral-950 text-sm">{serv.title}</h4>
-                  {serv.pricing && <p className="text-xs text-teal-850 font-bold mt-1">Pricing: {serv.pricing}</p>}
+                  {serv.pricing && <p className="text-xs text-blue-850 font-bold mt-1">Pricing: {serv.pricing}</p>}
                   <p className="text-xs text-neutral-600 mt-2">{serv.description}</p>
                 </div>
               ))}
@@ -494,7 +494,7 @@ export function PublicProfileClient({
             {showContactDetails ? (
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-sm">
-                  <Mail className="size-4.5 text-teal-700 shrink-0" />
+                  <Mail className="size-4.5 text-blue-700 shrink-0" />
                   <a href={`mailto:${profile.user.email}`} className="text-neutral-800 hover:underline break-all">
                     {profile.user.email}
                   </a>
@@ -507,11 +507,11 @@ export function PublicProfileClient({
                 )}
                 {/* Simulated direct details if any details present */}
                 <div className="flex items-center gap-3 text-sm">
-                  <Phone className="size-4.5 text-teal-700 shrink-0" />
+                  <Phone className="size-4.5 text-blue-700 shrink-0" />
                   <span className="text-neutral-800">+94 77 123 4567</span>
                 </div>
                 {profile.cvPath && (
-                  <Button asChild className="w-full bg-teal-700 hover:bg-teal-800 text-white mt-2 text-xs">
+                  <Button asChild className="w-full bg-blue-700 hover:bg-blue-800 text-white mt-2 text-xs">
                     <a href={profile.cvPath} download={profile.cvFilename || "Resume.pdf"}>
                       <FileText className="size-4 mr-1.5" />
                       Download Resume CV
@@ -546,7 +546,7 @@ export function PublicProfileClient({
                   <h5 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">Top Skills</h5>
                   <div className="flex flex-wrap gap-1.5">
                     {profile.skills.filter(s => s.isTop).map(skill => (
-                      <Badge key={skill.name} className="bg-teal-700 text-white text-xs">
+                      <Badge key={skill.name} className="bg-blue-700 text-white text-xs">
                         <Star className="size-3 fill-white mr-1" />
                         {skill.name}
                       </Badge>

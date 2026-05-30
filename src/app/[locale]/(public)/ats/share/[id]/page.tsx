@@ -59,7 +59,7 @@ export default async function SharedAtsReportPage({ params, searchParams }: Shar
 
   return (
     <div className="mx-auto max-w-5xl space-y-6 px-4 py-10">
-      <div className="rounded-md border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
+      <div className="rounded-md border border-sky-300 bg-sky-50 p-3 text-sm text-sky-900">
         Public ATS report — personal contact details have been redacted. The candidate controls
         visibility and can revoke this link at any time.
       </div>
@@ -80,12 +80,12 @@ export default async function SharedAtsReportPage({ params, searchParams }: Shar
               <Badge
                 className={`mt-2 rounded-md ${
                   interp.band === "excellent"
-                    ? "bg-emerald-600"
+                    ? "bg-blue-600"
                     : interp.band === "good"
-                      ? "bg-teal-700"
+                      ? "bg-blue-700"
                       : interp.band === "fair"
-                        ? "bg-amber-600"
-                        : "bg-rose-600"
+                        ? "bg-sky-600"
+                        : "bg-blue-600"
                 }`}
               >
                 {interp.label}
@@ -100,12 +100,12 @@ export default async function SharedAtsReportPage({ params, searchParams }: Shar
           </div>
 
           {row.jdKeywordMatchPct !== null ? (
-            <div className="mt-6 rounded-md border bg-amber-50 p-4">
-              <div className="font-semibold text-amber-950">
+            <div className="mt-6 rounded-md border bg-sky-50 p-4">
+              <div className="font-semibold text-sky-950">
                 JD match: {row.jdKeywordMatchPct}%
               </div>
               {jdTopKeywords.length > 0 ? (
-                <p className="mt-2 text-sm leading-6 text-amber-950/75">
+                <p className="mt-2 text-sm leading-6 text-sky-950/75">
                   {jdTopKeywords.slice(0, 12).join(", ")}
                 </p>
               ) : null}

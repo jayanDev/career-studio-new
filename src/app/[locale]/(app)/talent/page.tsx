@@ -142,7 +142,7 @@ export default async function TalentPage({ params }: TalentPageProps) {
               </Link>
             </Button>
           )}
-          <Button asChild className="bg-teal-700 hover:bg-teal-800 text-white gap-2" size="sm">
+          <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white gap-2" size="sm">
             <Link href={`/${locale}/talent/edit`}>
               <Edit3 className="size-4" />
               <span>Edit Career Profile</span>
@@ -169,7 +169,7 @@ export default async function TalentPage({ params }: TalentPageProps) {
                   d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                 />
                 <path
-                  className="text-teal-600"
+                  className="text-blue-600"
                   strokeWidth="3.5"
                   strokeDasharray={`${profile.completionScore}, 100`}
                   strokeLinecap="round"
@@ -178,7 +178,7 @@ export default async function TalentPage({ params }: TalentPageProps) {
                   d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                 />
               </svg>
-              <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-teal-900">
+              <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-blue-900">
                 {profile.completionScore}%
               </div>
             </div>
@@ -191,7 +191,7 @@ export default async function TalentPage({ params }: TalentPageProps) {
               <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">Profile Views</p>
               <h3 className="text-3xl font-bold text-neutral-900 mt-1">{profile.views}</h3>
             </div>
-            <div className="p-3 bg-teal-50 text-teal-800 rounded-2xl">
+            <div className="p-3 bg-blue-50 text-blue-800 rounded-2xl">
               <Eye className="size-6" />
             </div>
           </CardContent>
@@ -203,7 +203,7 @@ export default async function TalentPage({ params }: TalentPageProps) {
               <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">Search Appearances</p>
               <h3 className="text-3xl font-bold text-neutral-900 mt-1">{profile.searchAppearances}</h3>
             </div>
-            <div className="p-3 bg-teal-50 text-teal-800 rounded-2xl">
+            <div className="p-3 bg-blue-50 text-blue-800 rounded-2xl">
               <Search className="size-6" />
             </div>
           </CardContent>
@@ -215,7 +215,7 @@ export default async function TalentPage({ params }: TalentPageProps) {
               <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">Inquiries Received</p>
               <h3 className="text-3xl font-bold text-neutral-900 mt-1">{contactRequests.length}</h3>
             </div>
-            <div className="p-3 bg-teal-50 text-teal-800 rounded-2xl">
+            <div className="p-3 bg-blue-50 text-blue-800 rounded-2xl">
               <MessageSquare className="size-6" />
             </div>
           </CardContent>
@@ -235,7 +235,7 @@ export default async function TalentPage({ params }: TalentPageProps) {
             <CardContent className="space-y-4">
               {pendingRequests.length > 0 ? (
                 pendingRequests.map((req) => (
-                  <div key={req.id} className="rounded-xl border border-teal-100 bg-teal-50/20 p-5 space-y-4">
+                  <div key={req.id} className="rounded-xl border border-blue-100 bg-blue-50/20 p-5 space-y-4">
                     <div className="flex items-start justify-between">
                       <div>
                         <h4 className="font-semibold text-neutral-900">{req.jobTitle}</h4>
@@ -257,7 +257,7 @@ export default async function TalentPage({ params }: TalentPageProps) {
                       </div>
                     )}
 
-                    <div className="flex items-center justify-between pt-2 border-t border-teal-100/50">
+                    <div className="flex items-center justify-between pt-2 border-t border-blue-100/50">
                       <p className="text-xs text-neutral-500">
                         Accepting will reveal your contact details & resume to this recruiter.
                       </p>
@@ -279,7 +279,7 @@ export default async function TalentPage({ params }: TalentPageProps) {
                           name="status" 
                           value="accepted" 
                           size="sm" 
-                          className="bg-teal-700 hover:bg-teal-800 text-white"
+                          className="bg-blue-700 hover:bg-blue-800 text-white"
                         >
                           <CheckCircle className="size-4 mr-1.5" />
                           Accept
@@ -327,7 +327,7 @@ export default async function TalentPage({ params }: TalentPageProps) {
                   </Button>
                 </form>
                 {profile.visibility === "private" && (
-                  <div className="flex items-center gap-2 text-xs text-amber-700 bg-amber-50 p-2 rounded-md border border-amber-200 mt-2">
+                  <div className="flex items-center gap-2 text-xs text-sky-700 bg-sky-50 p-2 rounded-md border border-sky-200 mt-2">
                     <Lock className="size-3.5" /> Your profile is hidden from the marketplace. Recruiters cannot find you.
                   </div>
                 )}
@@ -396,7 +396,7 @@ export default async function TalentPage({ params }: TalentPageProps) {
                         Accepted on {new Date(req.updatedAt).toLocaleDateString(locale)}
                       </p>
                     </div>
-                    <Badge variant="outline" className="border-teal-200 bg-teal-50 text-teal-850 gap-1 text-xs">
+                    <Badge variant="outline" className="border-blue-200 bg-blue-50 text-blue-850 gap-1 text-xs">
                       <Unlock className="size-3" />
                       Connected
                     </Badge>
@@ -409,13 +409,13 @@ export default async function TalentPage({ params }: TalentPageProps) {
 
         {/* Sidebar Tips Panel */}
         <aside className="space-y-6">
-          <Card className="bg-gradient-to-br from-teal-900 to-teal-950 text-white border-0 shadow-lg">
+          <Card className="bg-gradient-to-br from-blue-900 to-blue-950 text-white border-0 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Sparkles className="size-5 text-teal-300" />
+                <Sparkles className="size-5 text-blue-300" />
                 Improve Profile
               </CardTitle>
-              <CardDescription className="text-teal-200">
+              <CardDescription className="text-blue-200">
                 Complete these suggestions to reach 100% profile score and get 4x more views.
               </CardDescription>
             </CardHeader>
@@ -425,15 +425,15 @@ export default async function TalentPage({ params }: TalentPageProps) {
                   <Link 
                     href={`/${locale}/talent/edit`} 
                     key={idx} 
-                    className="flex items-start gap-2.5 p-2.5 rounded-lg hover:bg-white/10 transition-colors text-xs text-teal-50"
+                    className="flex items-start gap-2.5 p-2.5 rounded-lg hover:bg-white/10 transition-colors text-xs text-blue-50"
                   >
-                    <AlertCircle className="size-4 shrink-0 text-teal-300 mt-0.5" />
+                    <AlertCircle className="size-4 shrink-0 text-blue-300 mt-0.5" />
                     <span className="flex-1 leading-normal">{tip.text}</span>
-                    <ArrowRight className="size-3.5 shrink-0 text-teal-400 mt-0.5" />
+                    <ArrowRight className="size-3.5 shrink-0 text-blue-400 mt-0.5" />
                   </Link>
                 ))
               ) : (
-                <div className="py-4 text-center text-sm text-teal-200 font-medium">
+                <div className="py-4 text-center text-sm text-blue-200 font-medium">
                   🎉 Your profile is 100% complete and fully optimized!
                 </div>
               )}

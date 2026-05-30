@@ -177,12 +177,12 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
           </CardHeader>
           <CardContent>
             <form action={action} className="space-y-4">
-              <div className="rounded-md border border-teal-100 bg-teal-50 p-4">
-                <div className="flex items-center gap-2 text-sm font-semibold text-teal-950">
+              <div className="rounded-md border border-blue-100 bg-blue-50 p-4">
+                <div className="flex items-center gap-2 text-sm font-semibold text-blue-950">
                   <Sparkles className="size-4" />
                   Identity-first discovery
                 </div>
-                <p className="mt-1 text-xs leading-5 text-teal-800">
+                <p className="mt-1 text-xs leading-5 text-blue-800">
                   Tell the story first. Career GPS will turn it into an identity statement, career constellation, pathways, and skill gaps.
                 </p>
                 <Textarea
@@ -236,7 +236,7 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
                 <option value="ONE_YEAR">{t("oneYear")}</option>
               </select>
               <Textarea name="constraints" rows={4} placeholder={t("constraints")} />
-              <Button type="submit" className="w-full bg-teal-700 text-white hover:bg-teal-800">
+              <Button type="submit" className="w-full bg-blue-700 text-white hover:bg-blue-800">
                 <Compass className="size-4" />
                 {t("generate")}
               </Button>
@@ -256,7 +256,7 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
                 <div className="grid gap-4 lg:grid-cols-[1fr_220px]">
                   <div className="rounded-lg border bg-neutral-50 p-5">
                     <div className="flex items-start gap-3">
-                      <Brain className="mt-1 size-5 text-teal-700" />
+                      <Brain className="mt-1 size-5 text-blue-700" />
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500">Identity Statement</p>
                         <p className="mt-2 text-sm leading-7 text-neutral-800">{planData?.identity_statement}</p>
@@ -322,7 +322,7 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
                 <div className="grid gap-4 lg:grid-cols-3">
                   {planData?.pathways.map((pathway) => (
                     <div key={pathway.type} className="rounded-lg border bg-white p-4">
-                      <Badge className="rounded-md bg-teal-700 text-white">{pathway.type}</Badge>
+                      <Badge className="rounded-md bg-blue-700 text-white">{pathway.type}</Badge>
                       <h3 className="mt-3 font-semibold text-neutral-950">{pathway.role}</h3>
                       <p className="mt-2 text-sm leading-6 text-neutral-600">{pathway.summary}</p>
                       <p className="mt-3 text-xs text-neutral-500">{pathway.time_to_transition_months} months - {pathway.risk}</p>
@@ -337,13 +337,13 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
                       <div className="mt-3 grid grid-cols-2 gap-2 border-t pt-3 text-[11px]">
                         <Link
                           href={`/${locale}/resumes?target=${encodeURIComponent(pathway.role)}`}
-                          className="rounded-md border bg-neutral-50 px-2 py-1.5 text-center font-medium text-neutral-800 hover:bg-teal-50 hover:text-teal-900"
+                          className="rounded-md border bg-neutral-50 px-2 py-1.5 text-center font-medium text-neutral-800 hover:bg-blue-50 hover:text-blue-900"
                         >
                           Tailor resume
                         </Link>
                         <Link
                           href={`/${locale}/cover-letter?target=${encodeURIComponent(pathway.role)}`}
-                          className="rounded-md border bg-neutral-50 px-2 py-1.5 text-center font-medium text-neutral-800 hover:bg-teal-50 hover:text-teal-900"
+                          className="rounded-md border bg-neutral-50 px-2 py-1.5 text-center font-medium text-neutral-800 hover:bg-blue-50 hover:text-blue-900"
                         >
                           Cover letter
                         </Link>
@@ -378,7 +378,7 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
                     {planData?.sl_context.diaspora_bridge ? (
                       <p className="mt-3 rounded-md bg-blue-50 p-3 text-xs leading-5 text-blue-900">{planData.sl_context.diaspora_bridge}</p>
                     ) : null}
-                    <p className="mt-3 rounded-md bg-amber-50 p-3 text-xs leading-5 text-amber-900">{planData?.sl_context.cost_of_living_note}</p>
+                    <p className="mt-3 rounded-md bg-sky-50 p-3 text-xs leading-5 text-sky-900">{planData?.sl_context.cost_of_living_note}</p>
                   </div>
                 </div>
 
@@ -388,12 +388,12 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
                   <MiniPanel icon={<Globe2 className="size-4" />} title="Weekly Check-ins" items={planData?.checkins.slice(0, 4).map((item) => `Week ${item.week}: ${item.prompt}`) ?? []} />
                 </div>
 
-                <div className="rounded-lg border bg-teal-50 p-5">
+                <div className="rounded-lg border bg-blue-50 p-5">
                   <div className="flex items-start gap-3">
-                    <Route className="mt-1 size-5 text-teal-800" />
+                    <Route className="mt-1 size-5 text-blue-800" />
                     <div>
-                      <h2 className="text-xl font-semibold text-teal-950">{parsedPlan.data.career_paths[0]?.role ?? t("targetRole")}</h2>
-                      <p className="mt-1 text-sm text-teal-900/75">{t("match")}: {parsedPlan.data.career_paths[0]?.match ?? 0}%</p>
+                      <h2 className="text-xl font-semibold text-blue-950">{parsedPlan.data.career_paths[0]?.role ?? t("targetRole")}</h2>
+                      <p className="mt-1 text-sm text-blue-900/75">{t("match")}: {parsedPlan.data.career_paths[0]?.match ?? 0}%</p>
                     </div>
                   </div>
                 </div>
@@ -412,7 +412,7 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
                         <div key={week} className={`min-w-24 rounded-md border p-3 text-xs ${locked ? "bg-neutral-100 text-neutral-400" : "bg-white text-neutral-700"}`}>
                           <div className="flex items-center justify-between">
                             <span className="font-semibold">W{week}</span>
-                            {locked ? <Lock className="size-3" /> : <Target className="size-3 text-teal-700" />}
+                            {locked ? <Lock className="size-3" /> : <Target className="size-3 text-blue-700" />}
                           </div>
                           <p className="mt-1">{locked ? "Upgrade" : `${weekTasks.length} tasks`}</p>
                         </div>
@@ -431,7 +431,7 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
 
                 <div className="space-y-4 pt-4 border-t">
                   <h3 className="text-base font-semibold text-neutral-900 flex items-center gap-2">
-                    <GraduationCap className="size-5 text-teal-700" />
+                    <GraduationCap className="size-5 text-blue-700" />
                     Recommended Learning & Mentors
                   </h3>
                   <p className="text-xs text-neutral-500">
@@ -455,7 +455,7 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
                                   href={course.officialUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="text-[10px] text-teal-700 hover:text-teal-800 hover:underline font-semibold w-fit"
+                                  className="text-[10px] text-blue-700 hover:text-blue-800 hover:underline font-semibold w-fit"
                                 >
                                   View Course &rarr;
                                 </a>
@@ -491,7 +491,7 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
                                 </div>
                                 <a
                                   href={`/${locale}/mentorship`}
-                                  className="text-[10px] text-teal-700 hover:text-teal-800 hover:underline font-semibold w-fit mt-1"
+                                  className="text-[10px] text-blue-700 hover:text-blue-800 hover:underline font-semibold w-fit mt-1"
                                 >
                                   Request Session &rarr;
                                 </a>
@@ -519,7 +519,7 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
                       <div className="mt-4 space-y-2">
                         {tasks.filter((task) => task.milestoneId === milestone.id).map((task) => (
                           <div key={task.id} className="flex gap-3 rounded-md bg-white p-3">
-                            <CheckCircle2 className="mt-0.5 size-4 text-teal-700" />
+                            <CheckCircle2 className="mt-0.5 size-4 text-blue-700" />
                             <div>
                               <div className="font-medium text-neutral-950">{task.title}</div>
                               <div className="mt-1 text-xs text-neutral-500">{t("week")} {task.week} - {task.type} - {task.effortMinutes} {t("minutes")}</div>
@@ -534,7 +534,7 @@ export default async function CareerGpsPage({ params, searchParams }: CareerGpsP
               </>
             ) : (
               <div className="rounded-lg border border-dashed p-8 text-center">
-                <GraduationCap className="mx-auto size-10 text-teal-700" />
+                <GraduationCap className="mx-auto size-10 text-blue-700" />
                 <h2 className="mt-4 text-lg font-semibold text-neutral-950">{t("emptyPlanTitle")}</h2>
                 <p className="mt-2 text-sm leading-6 text-neutral-600">{t("emptyPlanBody")}</p>
               </div>
@@ -579,7 +579,7 @@ function SkillOverlapDonut({ value }: { value: number }) {
 
 function TagList({ title, items, tone }: { title: string; items: string[]; tone: "green" | "red" | "neutral" }) {
   const styles = {
-    green: "bg-emerald-50 text-emerald-800 border-emerald-100",
+    green: "bg-blue-50 text-blue-800 border-blue-100",
     red: "bg-red-50 text-red-800 border-red-100",
     neutral: "bg-neutral-50 text-neutral-700 border-neutral-100",
   };

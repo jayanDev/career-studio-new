@@ -60,19 +60,19 @@ export function CompanyProfileForm({ initialProfile, locale }: CompanyProfileFor
       
       {/* Recruiter Details */}
       <Card className="bg-white/70 backdrop-blur-xl border border-neutral-200/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 rounded-2xl overflow-hidden">
-        <CardHeader className="border-b border-neutral-100 bg-gradient-to-r from-teal-50/60 to-emerald-50/60 pb-6">
+        <CardHeader className="border-b border-neutral-100 bg-gradient-to-r from-blue-50/60 to-blue-50/60 pb-6">
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle className="text-xl font-semibold text-teal-950 flex items-center gap-2">
-                <Briefcase className="size-5 text-teal-600" />
+              <CardTitle className="text-xl font-semibold text-blue-950 flex items-center gap-2">
+                <Briefcase className="size-5 text-blue-600" />
                 Your Identity
               </CardTitle>
-              <CardDescription className="text-teal-800/70 mt-1.5">
+              <CardDescription className="text-blue-800/70 mt-1.5">
                 How candidates will see you when you reach out.
               </CardDescription>
             </div>
             {initialProfile?.isVerified && (
-              <Badge variant="secondary" className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 border-emerald-200/60 flex items-center gap-1.5 px-3 py-1 text-xs font-medium">
+              <Badge variant="secondary" className="bg-blue-100 text-blue-800 hover:bg-blue-200 border-blue-200/60 flex items-center gap-1.5 px-3 py-1 text-xs font-medium">
                 <CheckCircle2 className="size-3.5" /> Verified Recruiter
               </Badge>
             )}
@@ -81,31 +81,31 @@ export function CompanyProfileForm({ initialProfile, locale }: CompanyProfileFor
         <CardContent className="space-y-6 pt-6 p-6 md:p-8">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="space-y-2.5 group">
-              <Label htmlFor="title" className="flex items-center gap-2 text-neutral-600 font-medium transition-colors group-focus-within:text-teal-700">
+              <Label htmlFor="title" className="flex items-center gap-2 text-neutral-600 font-medium transition-colors group-focus-within:text-blue-700">
                 <span>Job Title <span className="text-red-500">*</span></span>
               </Label>
               <Input 
                 id="title" 
                 required 
                 placeholder="e.g. Senior Talent Acquisition Specialist" 
-                className="h-11 bg-white/60 border-neutral-200/80 focus:border-teal-500 focus:ring-teal-500/20 transition-all rounded-xl shadow-sm"
+                className="h-11 bg-white/60 border-neutral-200/80 focus:border-blue-500 focus:ring-blue-500/20 transition-all rounded-xl shadow-sm"
                 value={formData.title}
                 onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
               />
             </div>
 
             <div className="space-y-2.5 group">
-              <Label htmlFor="workEmail" className="flex items-center gap-2 text-neutral-600 font-medium transition-colors group-focus-within:text-teal-700">
+              <Label htmlFor="workEmail" className="flex items-center gap-2 text-neutral-600 font-medium transition-colors group-focus-within:text-blue-700">
                 <span>Work Email <span className="text-red-500">*</span></span>
               </Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-neutral-400 group-focus-within:text-teal-600 transition-colors" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-neutral-400 group-focus-within:text-blue-600 transition-colors" />
                 <Input 
                   id="workEmail" 
                   type="email"
                   required 
                   placeholder="you@company.lk" 
-                  className="h-11 pl-9 bg-white/60 border-neutral-200/80 focus:border-teal-500 focus:ring-teal-500/20 transition-all rounded-xl shadow-sm"
+                  className="h-11 pl-9 bg-white/60 border-neutral-200/80 focus:border-blue-500 focus:ring-blue-500/20 transition-all rounded-xl shadow-sm"
                   value={formData.workEmail}
                   onChange={(e) => setFormData(prev => ({ ...prev, workEmail: e.target.value }))}
                 />
@@ -117,7 +117,7 @@ export function CompanyProfileForm({ initialProfile, locale }: CompanyProfileFor
 
       {/* Company Details */}
       <Card className="bg-white/70 backdrop-blur-xl border border-neutral-200/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 rounded-2xl overflow-hidden">
-        <CardHeader className="border-b border-neutral-100 bg-gradient-to-r from-blue-50/60 to-indigo-50/60 pb-6">
+        <CardHeader className="border-b border-neutral-100 bg-gradient-to-r from-blue-50/60 to-blue-50/60 pb-6">
           <CardTitle className="text-xl font-semibold text-blue-950 flex items-center gap-2">
             <Building2 className="size-5 text-blue-600" />
             Company Profile
@@ -225,7 +225,7 @@ export function CompanyProfileForm({ initialProfile, locale }: CompanyProfileFor
             <Button 
               type="submit" 
               disabled={isLoading} 
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-blue-500/25 transition-all duration-300 gap-2 px-8 h-12 rounded-xl text-base"
+              className="bg-gradient-to-r from-blue-600 to-blue-600 text-white hover:from-blue-700 hover:to-blue-700 shadow-lg hover:shadow-blue-500/25 transition-all duration-300 gap-2 px-8 h-12 rounded-xl text-base"
             >
               <Save className="size-5" />
               <span className="font-medium">{isLoading ? "Saving Profile..." : "Save & Continue"}</span>

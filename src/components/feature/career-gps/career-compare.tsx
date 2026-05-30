@@ -40,7 +40,7 @@ export function CareerCompareCard({ constellation }: { constellation: Constellat
     <Card className="bg-white">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <ArrowLeftRight className="size-4 text-teal-700" />
+          <ArrowLeftRight className="size-4 text-blue-700" />
           Compare two careers
         </CardTitle>
       </CardHeader>
@@ -113,10 +113,10 @@ function CareerPicker({
 
 function CareerCard({ node, highlightHigher }: { node: ConstellationNode; highlightHigher: boolean }) {
   return (
-    <div className={`rounded-md border p-3 ${highlightHigher ? "border-teal-300 bg-teal-50/50" : "bg-neutral-50"}`}>
+    <div className={`rounded-md border p-3 ${highlightHigher ? "border-blue-300 bg-blue-50/50" : "bg-neutral-50"}`}>
       <div className="flex items-baseline justify-between gap-2">
         <span className="font-semibold text-neutral-900">{node.role}</span>
-        {highlightHigher ? <Trophy className="size-3.5 text-teal-700" /> : null}
+        {highlightHigher ? <Trophy className="size-3.5 text-blue-700" /> : null}
       </div>
       <div className="text-xs text-neutral-500">{node.domain}</div>
       <div className="mt-2 grid grid-cols-3 gap-2 text-center text-[10px]">
@@ -170,10 +170,10 @@ function Diff({ left, right }: { left: ConstellationNode; right: ConstellationNo
           {rows.map((row) => (
             <tr key={row.label} className="border-t">
               <td className="px-3 py-2 text-neutral-600">{row.label}</td>
-              <td className={`px-3 py-2 ${row.better === "a" ? "font-semibold text-teal-700" : "text-neutral-800"}`}>
+              <td className={`px-3 py-2 ${row.better === "a" ? "font-semibold text-blue-700" : "text-neutral-800"}`}>
                 {row.a}
               </td>
-              <td className={`px-3 py-2 ${row.better === "b" ? "font-semibold text-teal-700" : "text-neutral-800"}`}>
+              <td className={`px-3 py-2 ${row.better === "b" ? "font-semibold text-blue-700" : "text-neutral-800"}`}>
                 {row.b}
               </td>
             </tr>

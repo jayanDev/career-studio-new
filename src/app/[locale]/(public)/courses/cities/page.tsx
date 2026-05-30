@@ -31,7 +31,7 @@ export default async function CourseCitiesPage({ params }: LocaleParams) {
 
   return (
     <div className="bg-white">
-      <section className="border-b bg-gradient-to-br from-white via-teal-50 to-amber-50">
+      <section className="border-b bg-gradient-to-br from-white via-blue-50 to-sky-50">
         <div className="mx-auto max-w-7xl px-4 py-16">
           <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
           <div className="mt-8">
@@ -44,7 +44,7 @@ export default async function CourseCitiesPage({ params }: LocaleParams) {
           {courseCities.map((city) => (
             <Card key={city.name} className="bg-white">
               <CardHeader>
-                <div className="flex size-11 items-center justify-center rounded-md bg-teal-100 text-teal-800">
+                <div className="flex size-11 items-center justify-center rounded-md bg-blue-100 text-blue-800">
                   <MapPin className="size-5" />
                 </div>
                 <CardTitle>{city.name}</CardTitle>
@@ -55,7 +55,7 @@ export default async function CourseCitiesPage({ params }: LocaleParams) {
                 </Badge>
                 <p className="mt-4 text-sm leading-6 text-neutral-600">{city.focus}</p>
                 <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-neutral-950">
-                  <Building2 className="size-4 text-amber-700" />
+                  <Building2 className="size-4 text-sky-700" />
                   {city.courseCount} {t("courseCount")}
                 </div>
               </CardContent>

@@ -74,7 +74,7 @@ export default async function LinkedInPage({ params }: LinkedInPageProps) {
               ))}
               {audits.length === 0 ? (
                 <div className="rounded-lg border border-dashed p-8 text-center">
-                  <Network className="mx-auto size-8 text-teal-700" />
+                  <Network className="mx-auto size-8 text-blue-700" />
                   <h2 className="mt-3 text-sm font-semibold text-neutral-950">{t("emptyHistoryTitle")}</h2>
                   <p className="mt-1 text-xs text-neutral-500 leading-5">{t("emptyHistoryBody")}</p>
                 </div>
@@ -87,7 +87,7 @@ export default async function LinkedInPage({ params }: LinkedInPageProps) {
       <div className="grid gap-4 md:grid-cols-3 border-t pt-6">
         {[t("stepUpload"), t("stepAnalyze"), t("stepRewrite")].map((step) => (
           <div key={step} className="rounded-lg border bg-white p-5 shadow-xs">
-            <FileText className="size-5 text-teal-700" />
+            <FileText className="size-5 text-blue-700" />
             <p className="mt-3 text-xs leading-5 text-neutral-600 font-medium">{step}</p>
           </div>
         ))}

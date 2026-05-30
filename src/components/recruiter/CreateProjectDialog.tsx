@@ -55,7 +55,7 @@ export function CreateProjectDialog() {
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] overflow-hidden p-0 border-0 shadow-2xl rounded-2xl">
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white relative">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-600 p-6 text-white relative">
           <div className="absolute top-0 right-0 p-6 opacity-10">
             <FolderPlus className="size-24" />
           </div>

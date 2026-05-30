@@ -35,7 +35,7 @@ export const jobStatusMeta: Record<
 export const jobPriorityMeta: Record<Priority, { label: string; className: string }> = {
   low: { label: "Low", className: "border-neutral-200 text-neutral-600" },
   medium: { label: "Medium", className: "border-sky-200 text-sky-700" },
-  high: { label: "High", className: "border-rose-200 text-rose-700" },
+  high: { label: "High", className: "border-blue-200 text-blue-700" },
 };
 
 export type JobApplicationCard = {

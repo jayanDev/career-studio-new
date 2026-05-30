@@ -89,23 +89,23 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
 
   let overall = 0;
   let thresholdLabel = "Major sections need work";
-  let thresholdColor = "text-rose-600 border-rose-200 bg-rose-50/50";
+  let thresholdColor = "text-blue-600 border-blue-200 bg-blue-50/50";
 
   if (parsed?.success) {
     const s = parsed.data.score_breakdown;
     overall = Math.round(s.profile_strength + s.authority + s.findability + s.engagement_readiness);
     if (overall >= 90) {
       thresholdLabel = "Recruiter-ready (Outstanding)";
-      thresholdColor = "text-emerald-700 border-emerald-200 bg-emerald-50/50";
+      thresholdColor = "text-blue-700 border-blue-200 bg-blue-50/50";
     } else if (overall >= 75) {
       thresholdLabel = "Strong profile, minor polish";
-      thresholdColor = "text-teal-700 border-teal-200 bg-teal-50/50";
+      thresholdColor = "text-blue-700 border-blue-200 bg-blue-50/50";
     } else if (overall >= 60) {
       thresholdLabel = "Visible but missing key signals";
-      thresholdColor = "text-amber-700 border-amber-200 bg-amber-50/50";
+      thresholdColor = "text-sky-700 border-sky-200 bg-sky-50/50";
     } else {
       thresholdLabel = "Major sections need work";
-      thresholdColor = "text-rose-700 border-rose-200 bg-rose-50/50";
+      thresholdColor = "text-blue-700 border-blue-200 bg-blue-50/50";
     }
   }
 
@@ -131,7 +131,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
             onClick={() => window.print()}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border bg-white hover:bg-neutral-50 text-xs font-semibold text-neutral-700 shadow-xs transition-all"
           >
-            <Printer className="size-3.5 text-teal-700" />
+            <Printer className="size-3.5 text-blue-700" />
             Export / Print Report
           </button>
         </div>
@@ -140,7 +140,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
       {/* Main score card */}
       <div className="flex flex-col gap-5 md:flex-row md:items-center justify-between p-6 rounded-2xl border bg-white shadow-xs">
         <div className="space-y-1.5">
-          <Badge variant="outline" className="text-[10px] uppercase font-bold border-teal-600/30 text-teal-800 bg-teal-50/30">
+          <Badge variant="outline" className="text-[10px] uppercase font-bold border-blue-600/30 text-blue-800 bg-blue-50/30">
             LinkedIn SSI Audit
           </Badge>
           <h1 className="text-2xl font-extrabold tracking-tight text-neutral-900">
@@ -158,9 +158,9 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
             </div>
             <div className="text-[10px] text-neutral-400 font-semibold mt-1">Overall Profile Grade</div>
           </div>
-          <div className="size-20 rounded-full border-4 border-teal-500 flex flex-col items-center justify-center bg-teal-50/20 shadow-xs">
-            <span className="text-3xl font-extrabold text-teal-700">{overall}</span>
-            <span className="text-[9px] font-bold text-teal-600/70">/100</span>
+          <div className="size-20 rounded-full border-4 border-blue-500 flex flex-col items-center justify-center bg-blue-50/20 shadow-xs">
+            <span className="text-3xl font-extrabold text-blue-700">{overall}</span>
+            <span className="text-[9px] font-bold text-blue-600/70">/100</span>
           </div>
           <ShareToggleButton
             kind="linkedin"
@@ -180,7 +180,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
             <Card className="bg-white border-neutral-200 shadow-sm rounded-xl overflow-hidden">
               <CardHeader className="py-4 border-b bg-neutral-50/50">
                 <CardTitle className="text-sm font-bold text-neutral-950 flex items-center gap-2">
-                  <Layers className="size-4 text-teal-700" />
+                  <Layers className="size-4 text-blue-700" />
                   4-Dimension SSI Score Breakdown
                 </CardTitle>
               </CardHeader>
@@ -212,11 +212,11 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                     <div key={dim.name} className="space-y-1.5">
                       <div className="flex justify-between items-center text-xs font-bold text-neutral-900">
                         <span>{dim.name}</span>
-                        <span className="text-teal-700">{dim.score} <span className="text-neutral-400 font-normal">/ 25</span></span>
+                        <span className="text-blue-700">{dim.score} <span className="text-neutral-400 font-normal">/ 25</span></span>
                       </div>
                       <div className="h-2 w-full bg-neutral-100 rounded-full overflow-hidden">
                         <div 
-                          className="h-full bg-teal-600 rounded-full transition-all" 
+                          className="h-full bg-blue-600 rounded-full transition-all" 
                           style={{ width: `${pct}%` }}
                         />
                       </div>
@@ -230,7 +230,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
             <Card className="bg-white border-neutral-200 shadow-sm rounded-xl overflow-hidden">
               <CardHeader className="py-4 border-b bg-neutral-50/50">
                 <CardTitle className="text-sm font-bold text-neutral-950 flex items-center gap-2">
-                  <FileText className="size-4 text-teal-700" />
+                  <FileText className="size-4 text-blue-700" />
                   Profile Media & JD Match
                 </CardTitle>
               </CardHeader>
@@ -248,7 +248,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                   </div>
                   <div className="rounded-lg border bg-neutral-50 p-3">
                     <div className="text-[10px] font-bold uppercase text-neutral-400">JD Match</div>
-                    <div className="mt-1 text-lg font-extrabold text-teal-700">{parsed.data.jd_keyword_analysis.match_score}%</div>
+                    <div className="mt-1 text-lg font-extrabold text-blue-700">{parsed.data.jd_keyword_analysis.match_score}%</div>
                     <p className="mt-1 text-[10px] leading-4 text-neutral-500">{parsed.data.jd_keyword_analysis.matched_keywords.length} weighted keywords matched</p>
                   </div>
                 </div>
@@ -269,7 +269,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
             <Card className="bg-white border-neutral-200 shadow-sm rounded-xl overflow-hidden">
               <CardHeader className="py-4 border-b bg-neutral-50/50">
                 <CardTitle className="text-sm font-bold text-neutral-950 flex items-center gap-2">
-                  <User className="size-4 text-teal-700" />
+                  <User className="size-4 text-blue-700" />
                   Headline & About Auditor
                 </CardTitle>
               </CardHeader>
@@ -284,7 +284,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                   </div>
                   <div className="grid gap-2 sm:grid-cols-2">
                     <div className="bg-neutral-50 p-2.5 rounded-lg border text-center">
-                      <div className="text-xs font-bold text-teal-700">{parsed.data.headline_analysis.hook_strength_score}%</div>
+                      <div className="text-xs font-bold text-blue-700">{parsed.data.headline_analysis.hook_strength_score}%</div>
                       <div className="text-[9px] text-neutral-400 font-bold uppercase mt-0.5">Headline Hook Score</div>
                     </div>
                     <div className="bg-neutral-50 p-2.5 rounded-lg border text-center">
@@ -294,20 +294,20 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                   </div>
                   <div className="space-y-1.5 text-[11px] text-neutral-600 font-medium">
                     <div className="flex items-center gap-1.5">
-                      <div className={`size-2 rounded-full ${parsed.data.headline_analysis.has_value_prop ? "bg-teal-500" : "bg-neutral-300"}`} />
+                      <div className={`size-2 rounded-full ${parsed.data.headline_analysis.has_value_prop ? "bg-blue-500" : "bg-neutral-300"}`} />
                       Value proposition or objective hook present
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <div className={`size-2 rounded-full ${parsed.data.headline_analysis.has_outcome_metrics ? "bg-teal-500" : "bg-neutral-300"}`} />
+                      <div className={`size-2 rounded-full ${parsed.data.headline_analysis.has_outcome_metrics ? "bg-blue-500" : "bg-neutral-300"}`} />
                       Outcome metrics or credentials included
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <div className={`size-2 rounded-full ${parsed.data.headline_analysis.mobile_visible ? "bg-teal-500" : "bg-rose-500"}`} />
+                      <div className={`size-2 rounded-full ${parsed.data.headline_analysis.mobile_visible ? "bg-blue-500" : "bg-blue-500"}`} />
                       Mobile preview visible (&lt; 70 chars limit warning)
                     </div>
                   </div>
                   {parsed.data.headline_analysis.suggestions.length > 0 && (
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-[10px] text-amber-800 font-semibold">
+                    <div className="bg-sky-50 border border-sky-200 rounded-lg p-3 text-[10px] text-sky-800 font-semibold">
                       {parsed.data.headline_analysis.suggestions.map((s, idx) => (
                         <div key={idx} className="flex gap-1 items-start">
                           <AlertTriangle className="size-3.5 shrink-0 mt-0.5" />
@@ -332,20 +332,20 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                   </div>
                   <div className="space-y-1.5 text-[11px] text-neutral-600 font-medium">
                     <div className="flex items-center gap-1.5">
-                      <div className={`size-2 rounded-full ${parsed.data.about_analysis.has_cta ? "bg-teal-500" : "bg-rose-500"}`} />
+                      <div className={`size-2 rounded-full ${parsed.data.about_analysis.has_cta ? "bg-blue-500" : "bg-blue-500"}`} />
                       Clear Call to Action (CTA) included at the end
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <Info className="size-3.5 text-teal-600" />
+                      <Info className="size-3.5 text-blue-600" />
                       <span>{parsed.data.about_analysis.pronoun_balance}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <CheckCircle className="size-3.5 text-teal-600" />
+                      <CheckCircle className="size-3.5 text-blue-600" />
                       <span>{parsed.data.about_analysis.story_arc}</span>
                     </div>
                   </div>
                   {parsed.data.about_analysis.suggestions.length > 0 && (
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-[10px] text-amber-800 font-semibold">
+                    <div className="bg-sky-50 border border-sky-200 rounded-lg p-3 text-[10px] text-sky-800 font-semibold">
                       {parsed.data.about_analysis.suggestions.map((s, idx) => (
                         <div key={idx} className="flex gap-1 items-start">
                           <AlertTriangle className="size-3.5 shrink-0 mt-0.5" />
@@ -362,7 +362,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
             <Card className="bg-white border-neutral-200 shadow-sm rounded-xl overflow-hidden">
               <CardHeader className="py-4 border-b bg-neutral-50/50">
                 <CardTitle className="text-sm font-bold text-neutral-950 flex items-center gap-2">
-                  <Sparkles className="size-4 text-teal-700" />
+                  <Sparkles className="size-4 text-blue-700" />
                   {t("missingKeywords")}
                 </CardTitle>
               </CardHeader>
@@ -375,7 +375,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                         <Badge 
                           variant="outline" 
                           className={`text-[9px] uppercase font-bold px-1.5 py-0.5 rounded-sm ${
-                            keyword.priority === "HIGH" ? "border-rose-300 text-rose-800 bg-rose-50" : "border-amber-300 text-amber-800 bg-amber-50"
+                            keyword.priority === "HIGH" ? "border-blue-300 text-blue-800 bg-blue-50" : "border-sky-300 text-sky-800 bg-sky-50"
                           }`}
                         >
                           {keyword.priority}
@@ -395,21 +395,21 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
           {/* Right Column: Sri Lanka Moat, Social Proof & Rewriter */}
           <div className="space-y-6">
             {/* Sri Lanka Moat Panel */}
-            <Card className="bg-gradient-to-br from-teal-900 to-cyan-950 text-white shadow-md rounded-xl overflow-hidden border-0">
-              <CardHeader className="py-4 border-b border-teal-800 bg-black/10">
+            <Card className="bg-gradient-to-br from-blue-900 to-cyan-950 text-white shadow-md rounded-xl overflow-hidden border-0">
+              <CardHeader className="py-4 border-b border-blue-800 bg-black/10">
                 <CardTitle className="text-sm font-bold flex items-center gap-2">
-                  <Landmark className="size-4 text-teal-300" />
+                  <Landmark className="size-4 text-blue-300" />
                   Sri Lankan Market Localization (Moat Sprints)
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6 space-y-5">
                 {/* NIC Warning Alert */}
                 {parsed.data.sri_lanka_moat.has_nic_warning && (
-                  <div className="bg-rose-500/20 border border-rose-500/50 rounded-xl p-3.5 flex gap-2.5 items-start">
-                    <AlertTriangle className="size-5 text-rose-300 shrink-0 mt-0.5" />
+                  <div className="bg-blue-500/20 border border-blue-500/50 rounded-xl p-3.5 flex gap-2.5 items-start">
+                    <AlertTriangle className="size-5 text-blue-300 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-xs font-bold text-rose-100">National Identity Card (NIC) Detected!</h4>
-                      <p className="text-[10px] text-rose-200 mt-1 leading-4">
+                      <h4 className="text-xs font-bold text-blue-100">National Identity Card (NIC) Detected!</h4>
+                      <p className="text-[10px] text-blue-200 mt-1 leading-4">
                         We detected a raw Sri Lankan NIC number. Publicly exposing NIC details is a safety risk. Mask it before recruiters view.
                       </p>
                     </div>
@@ -418,55 +418,55 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
 
                 {/* Local Phone check */}
                 {parsed.data.sri_lanka_moat.lk_phone_normalized && (
-                  <div className="bg-teal-950/40 border border-teal-800 rounded-xl p-3 flex justify-between items-center text-xs">
+                  <div className="bg-blue-950/40 border border-blue-800 rounded-xl p-3 flex justify-between items-center text-xs">
                     <div>
-                      <div className="text-[9px] font-bold text-teal-400 uppercase">Sri Lankan Phone Formatting</div>
-                      <div className="font-mono mt-0.5 text-teal-100">{parsed.data.sri_lanka_moat.lk_phone_normalized}</div>
+                      <div className="text-[9px] font-bold text-blue-400 uppercase">Sri Lankan Phone Formatting</div>
+                      <div className="font-mono mt-0.5 text-blue-100">{parsed.data.sri_lanka_moat.lk_phone_normalized}</div>
                     </div>
-                    <Badge className="bg-teal-700 text-[10px]">Normalized LK Format</Badge>
+                    <Badge className="bg-blue-700 text-[10px]">Normalized LK Format</Badge>
                   </div>
                 )}
 
                 {/* University and Employer badges */}
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <div className="bg-teal-950/40 border border-teal-800 rounded-xl p-3.5 space-y-2">
-                    <div className="text-[9px] font-bold text-teal-400 uppercase tracking-wider">SL Universities Recognized</div>
+                  <div className="bg-blue-950/40 border border-blue-800 rounded-xl p-3.5 space-y-2">
+                    <div className="text-[9px] font-bold text-blue-400 uppercase tracking-wider">SL Universities Recognized</div>
                     {parsed.data.sri_lanka_moat.local_universities_matched.length ? (
                       <div className="flex flex-wrap gap-1.5">
                         {parsed.data.sri_lanka_moat.local_universities_matched.map(uni => (
-                          <Badge key={uni} className="bg-teal-800 text-[9px] uppercase font-bold text-teal-100">
+                          <Badge key={uni} className="bg-blue-800 text-[9px] uppercase font-bold text-blue-100">
                             {uni}
                           </Badge>
                         ))}
                       </div>
                     ) : (
-                      <p className="text-[10px] text-teal-300/60 italic">No top SL universities detected.</p>
+                      <p className="text-[10px] text-blue-300/60 italic">No top SL universities detected.</p>
                     )}
                   </div>
 
-                  <div className="bg-teal-950/40 border border-teal-800 rounded-xl p-3.5 space-y-2">
-                    <div className="text-[9px] font-bold text-teal-400 uppercase tracking-wider">SL Employers Recognized</div>
+                  <div className="bg-blue-950/40 border border-blue-800 rounded-xl p-3.5 space-y-2">
+                    <div className="text-[9px] font-bold text-blue-400 uppercase tracking-wider">SL Employers Recognized</div>
                     {parsed.data.sri_lanka_moat.local_companies_matched.length ? (
                       <div className="flex flex-wrap gap-1.5">
                         {parsed.data.sri_lanka_moat.local_companies_matched.map(comp => (
-                          <Badge key={comp} className="bg-teal-800 text-[9px] uppercase font-bold text-teal-100">
+                          <Badge key={comp} className="bg-blue-800 text-[9px] uppercase font-bold text-blue-100">
                             {comp}
                           </Badge>
                         ))}
                       </div>
                     ) : (
-                      <p className="text-[10px] text-teal-300/60 italic">No recognized SL employers detected.</p>
+                      <p className="text-[10px] text-blue-300/60 italic">No recognized SL employers detected.</p>
                     )}
                   </div>
                 </div>
 
                 {/* Local Certifications */}
                 {parsed.data.sri_lanka_moat.local_certs_matched.length > 0 && (
-                  <div className="bg-teal-950/40 border border-teal-800 rounded-xl p-3">
-                    <div className="text-[9px] font-bold text-teal-400 uppercase">Local Certifications</div>
+                  <div className="bg-blue-950/40 border border-blue-800 rounded-xl p-3">
+                    <div className="text-[9px] font-bold text-blue-400 uppercase">Local Certifications</div>
                     <div className="flex flex-wrap gap-1.5 mt-1.5">
                       {parsed.data.sri_lanka_moat.local_certs_matched.map(cert => (
-                        <Badge key={cert} className="bg-emerald-800 text-[9px] text-emerald-100">
+                        <Badge key={cert} className="bg-blue-800 text-[9px] text-blue-100">
                           {cert}
                         </Badge>
                       ))}
@@ -475,31 +475,31 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                 )}
 
                 {/* Bilingual and Hashtags */}
-                <div className="space-y-3 pt-3 border-t border-teal-800 text-xs">
+                <div className="space-y-3 pt-3 border-t border-blue-800 text-xs">
                   {parsed.data.sri_lanka_moat.bilingual_support && (
-                    <div className="flex items-center gap-2 text-teal-200">
-                      <CheckCircle2 className="size-4 text-emerald-400 shrink-0" />
+                    <div className="flex items-center gap-2 text-blue-200">
+                      <CheckCircle2 className="size-4 text-blue-400 shrink-0" />
                       <span>{parsed.data.sri_lanka_moat.bilingual_support}</span>
                     </div>
                   )}
 
-                  <div className="flex items-center gap-2 text-teal-200">
-                    <Globe className="size-4 text-teal-400 shrink-0" />
+                  <div className="flex items-center gap-2 text-blue-200">
+                    <Globe className="size-4 text-blue-400 shrink-0" />
                     <span>{parsed.data.sri_lanka_moat.diaspora_leverage}</span>
                   </div>
 
                   {parsed.data.sri_lanka_moat.compliance_mode_warning && (
-                    <div className="flex items-center gap-2 text-rose-300">
-                      <AlertTriangle className="size-4 text-rose-400 shrink-0" />
+                    <div className="flex items-center gap-2 text-blue-300">
+                      <AlertTriangle className="size-4 text-blue-400 shrink-0" />
                       <span>{parsed.data.sri_lanka_moat.compliance_mode_warning}</span>
                     </div>
                   )}
 
                   <div className="space-y-1 pt-1">
-                    <div className="text-[9px] font-bold text-teal-400 uppercase">Colombo & Local Hashtag Package:</div>
+                    <div className="text-[9px] font-bold text-blue-400 uppercase">Colombo & Local Hashtag Package:</div>
                     <div className="flex flex-wrap gap-1.5 pt-1">
                       {parsed.data.sri_lanka_moat.local_hashtags.map(tag => (
-                        <span key={tag} className="font-mono text-xs text-teal-300 font-semibold">{tag}</span>
+                        <span key={tag} className="font-mono text-xs text-blue-300 font-semibold">{tag}</span>
                       ))}
                     </div>
                   </div>
@@ -512,7 +512,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
               <CardHeader className="py-4 border-b bg-neutral-50/50">
                 <CardTitle className="text-sm font-bold text-neutral-950 flex items-center justify-between">
                   <span className="flex items-center gap-2">
-                    <ShieldCheck className="size-4 text-teal-700" />
+                    <ShieldCheck className="size-4 text-blue-700" />
                     Social Proof & Recommendations
                   </span>
                   <Badge variant="outline" className="text-[9px]">
@@ -533,8 +533,8 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                 </div>
 
                 <div className="text-xs space-y-2 text-neutral-600 font-medium pt-1.5">
-                  <div className="flex items-start gap-2 bg-teal-50/50 border border-teal-100 rounded-lg p-3 text-[11px] text-teal-950">
-                    <Info className="size-3.5 text-teal-600 shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2 bg-blue-50/50 border border-blue-100 rounded-lg p-3 text-[11px] text-blue-950">
+                    <Info className="size-3.5 text-blue-600 shrink-0 mt-0.5" />
                     <span>{parsed.data.rec_endorsement_analysis.endorsement_feedback}</span>
                   </div>
 
@@ -546,7 +546,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                   )}
 
                   <div className="flex items-center gap-2 pt-1">
-                    <div className={`size-2 rounded-full ${parsed.data.featured_audit.is_populated ? "bg-teal-500" : "bg-neutral-300"}`} />
+                    <div className={`size-2 rounded-full ${parsed.data.featured_audit.is_populated ? "bg-blue-500" : "bg-neutral-300"}`} />
                     <span>Featured Section: {parsed.data.featured_audit.is_populated ? "Populated" : "Not populated / Missing links"}</span>
                   </div>
 
@@ -562,7 +562,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
             <Card className="bg-white border-neutral-200 shadow-sm rounded-xl overflow-hidden">
               <CardHeader className="py-4 border-b bg-neutral-50/50">
                 <CardTitle className="text-sm font-bold text-neutral-950 flex items-center gap-2">
-                  <Globe className="size-4 text-teal-700" />
+                  <Globe className="size-4 text-blue-700" />
                   Activity, Skills & Benchmark
                 </CardTitle>
               </CardHeader>
@@ -581,7 +581,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                     <div className="text-[9px] uppercase font-bold text-neutral-400">Engagement score</div>
                   </div>
                 </div>
-                <div className="rounded-lg border border-teal-100 bg-teal-50/40 p-3 text-[11px] leading-5 text-teal-950">
+                <div className="rounded-lg border border-blue-100 bg-blue-50/40 p-3 text-[11px] leading-5 text-blue-950">
                   <strong>{parsed.data.activity_analysis.cadence_label}.</strong> {parsed.data.activity_analysis.best_time_to_post}
                 </div>
                 {parsed.data.activity_analysis.hashtag_feedback.length > 0 ? (
@@ -589,7 +589,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                     <div className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">Hashtag feedback</div>
                     <ul className="space-y-1 text-[11px] leading-5 text-neutral-700">
                       {parsed.data.activity_analysis.hashtag_feedback.slice(0, 5).map((tip) => (
-                        <li key={tip} className="flex gap-1.5"><span className="text-teal-700">•</span><span>{tip}</span></li>
+                        <li key={tip} className="flex gap-1.5"><span className="text-blue-700">•</span><span>{tip}</span></li>
                       ))}
                     </ul>
                   </div>
@@ -632,12 +632,12 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                   <div className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">{parsed.data.benchmark.peer_label}</div>
                   {parsed.data.benchmark.gaps.slice(0, 3).map((gap) => (
                     <div key={gap} className="flex items-start gap-2 text-[11px] text-neutral-600">
-                      <AlertTriangle className="mt-0.5 size-3.5 shrink-0 text-amber-600" />
+                      <AlertTriangle className="mt-0.5 size-3.5 shrink-0 text-sky-600" />
                       <span>{gap}</span>
                     </div>
                   ))}
                   {parsed.data.benchmark.reaudit_recommended_on ? (
-                    <p className="text-[10px] font-semibold text-teal-700">Re-audit reminder target: {parsed.data.benchmark.reaudit_recommended_on}</p>
+                    <p className="text-[10px] font-semibold text-blue-700">Re-audit reminder target: {parsed.data.benchmark.reaudit_recommended_on}</p>
                   ) : null}
                 </div>
               </CardContent>
@@ -647,14 +647,14 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
             <Card className="bg-white border-neutral-200 shadow-sm rounded-xl overflow-hidden">
               <CardHeader className="py-4 border-b bg-neutral-50/50">
                 <CardTitle className="text-sm font-bold text-neutral-950 flex items-center gap-2">
-                  <CheckCircle2 className="size-4 text-teal-700" />
+                  <CheckCircle2 className="size-4 text-blue-700" />
                   {t("checklist")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6 space-y-3">
                 {parsed.data.checklist_items.map((item) => (
                   <div key={item.id} className="flex gap-3 rounded-xl border border-neutral-100 bg-neutral-50/30 p-3 shadow-2xs">
-                    <CheckCircle2 className={`mt-0.5 size-4 shrink-0 ${item.completed ? "text-teal-600" : "text-neutral-300"}`} />
+                    <CheckCircle2 className={`mt-0.5 size-4 shrink-0 ${item.completed ? "text-blue-600" : "text-neutral-300"}`} />
                     <div>
                       <div className="font-semibold text-neutral-900 text-xs">{item.label}</div>
                       <div className="mt-0.5 text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Impact: {item.impact}</div>
@@ -668,7 +668,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
             <Card className="bg-white border-neutral-200 shadow-sm rounded-xl overflow-hidden print:hidden">
               <CardHeader className="py-4 border-b bg-neutral-50/50">
                 <CardTitle className="text-sm font-bold text-neutral-950 flex items-center gap-2">
-                  <Sparkles className="size-4 text-teal-700" />
+                  <Sparkles className="size-4 text-blue-700" />
                   {t("rewriteTitle")}
                 </CardTitle>
               </CardHeader>
@@ -684,17 +684,17 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
                     <option value="PUNCHY">{t("punchy")}</option>
                     <option value="LEADERSHIP">{t("leadership")}</option>
                   </select>
-                  <Button type="submit" className="bg-teal-750 text-white hover:bg-teal-855 text-xs font-bold shadow-xs">
+                  <Button type="submit" className="bg-blue-750 text-white hover:bg-blue-855 text-xs font-bold shadow-xs">
                     <Sparkles className="size-3.5 mr-1" />
                     {t("rewrite")}
                   </Button>
                 </form>
                 {rewrites.map((rewrite) => (
-                  <div key={rewrite.id} className="rounded-xl border border-teal-100 bg-teal-50/30 p-4 shadow-2xs">
-                    <div className="mb-2 text-[10px] font-bold uppercase tracking-wider text-teal-800">
+                  <div key={rewrite.id} className="rounded-xl border border-blue-100 bg-blue-50/30 p-4 shadow-2xs">
+                    <div className="mb-2 text-[10px] font-bold uppercase tracking-wider text-blue-800">
                       {rewrite.sectionType} ({rewrite.tone})
                     </div>
-                    <p className="whitespace-pre-wrap text-xs leading-5 text-teal-950 font-medium">{rewrite.rewritten}</p>
+                    <p className="whitespace-pre-wrap text-xs leading-5 text-blue-950 font-medium">{rewrite.rewritten}</p>
                   </div>
                 ))}
               </CardContent>
@@ -704,7 +704,7 @@ export default async function LinkedInAuditPage({ params }: LinkedInAuditPagePro
       ) : (
         <Card className="bg-white">
           <CardContent className="p-8 text-sm text-neutral-600 text-center flex flex-col items-center justify-center gap-2">
-            <Loader2 className="size-8 text-teal-600 animate-spin" />
+            <Loader2 className="size-8 text-blue-600 animate-spin" />
             <span>Analyzing Profile Audits...</span>
           </CardContent>
         </Card>

@@ -113,7 +113,7 @@ export default async function AdminPage({ params }: AdminPageProps) {
                 <p className="mt-3 whitespace-pre-wrap text-sm leading-6 text-neutral-700">{comment.content}</p>
                 <div className="mt-3 flex gap-2">
                   <form action={moderateBlogCommentAction.bind(null, locale, comment.id, "approve")}>
-                    <Button type="submit" size="sm" className="bg-teal-700 text-white hover:bg-teal-800">{t("approve")}</Button>
+                    <Button type="submit" size="sm" className="bg-blue-700 text-white hover:bg-blue-800">{t("approve")}</Button>
                   </form>
                   <form action={moderateBlogCommentAction.bind(null, locale, comment.id, "reject")}>
                     <Button type="submit" size="sm" variant="outline">{t("reject")}</Button>
@@ -162,7 +162,7 @@ export default async function AdminPage({ params }: AdminPageProps) {
                 <p className="mt-3 whitespace-pre-wrap text-sm leading-6 text-neutral-700">{flag.reason}</p>
                 <div className="mt-3 flex gap-2">
                   <form action={updateForumFlagAction.bind(null, locale, flag.id, "reviewed")}>
-                    <Button type="submit" size="sm" className="bg-teal-700 text-white hover:bg-teal-800">{t("reviewed")}</Button>
+                    <Button type="submit" size="sm" className="bg-blue-700 text-white hover:bg-blue-800">{t("reviewed")}</Button>
                   </form>
                   <form action={updateForumFlagAction.bind(null, locale, flag.id, "dismissed")}>
                     <Button type="submit" size="sm" variant="outline">{t("dismiss")}</Button>
@@ -189,7 +189,7 @@ export default async function AdminPage({ params }: AdminPageProps) {
                     <span className="text-xs text-neutral-500">@{talent.user.username || "anonymous"}</span>
                   </div>
                   {talent.headline && (
-                    <p className="text-xs text-teal-800 font-medium mt-1">{talent.headline}</p>
+                    <p className="text-xs text-blue-800 font-medium mt-1">{talent.headline}</p>
                   )}
                   <p className="text-xs text-neutral-600 mt-2 line-clamp-2">
                     {talent.bio || "No biography provided."}
@@ -203,9 +203,9 @@ export default async function AdminPage({ params }: AdminPageProps) {
                     name="badge"
                     type="text"
                     placeholder={t("badge")}
-                    className="flex-1 rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs placeholder:text-neutral-400 focus:border-teal-700 focus:outline-none focus:ring-1 focus:ring-teal-700"
+                    className="flex-1 rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs placeholder:text-neutral-400 focus:border-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700"
                   />
-                  <Button type="submit" size="sm" className="bg-teal-700 text-white hover:bg-teal-800">
+                  <Button type="submit" size="sm" className="bg-blue-700 text-white hover:bg-blue-800">
                     {t("verify")}
                   </Button>
                 </form>
@@ -240,7 +240,7 @@ export default async function AdminPage({ params }: AdminPageProps) {
                 <form action={verifyRecruiterProfileAction.bind(null, locale, recruiter.id, true)} className="mt-4 flex gap-2">
                   <select
                     name="accessLevel"
-                    className="flex-1 rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs focus:border-teal-700 focus:outline-none focus:ring-1 focus:ring-teal-700"
+                    className="flex-1 rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs focus:border-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700"
                     defaultValue="verified"
                   >
                     <option value="guest">Guest</option>
@@ -248,7 +248,7 @@ export default async function AdminPage({ params }: AdminPageProps) {
                     <option value="premium">Premium</option>
                     <option value="enterprise">Enterprise</option>
                   </select>
-                  <Button type="submit" size="sm" className="bg-teal-700 text-white hover:bg-teal-800">
+                  <Button type="submit" size="sm" className="bg-blue-700 text-white hover:bg-blue-800">
                     {t("verify")}
                   </Button>
                 </form>
@@ -266,7 +266,7 @@ function QueueStat({ icon: Icon, label, value }: { icon: typeof ShieldCheck; lab
   return (
     <Card className="bg-white">
       <CardContent className="flex items-center gap-4 p-5">
-        <div className="flex size-11 items-center justify-center rounded-md bg-teal-100 text-teal-800">
+        <div className="flex size-11 items-center justify-center rounded-md bg-blue-100 text-blue-800">
           <Icon className="size-5" />
         </div>
         <div>

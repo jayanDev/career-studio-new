@@ -43,7 +43,7 @@ export function SaveSearchButton() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-2 text-teal-700 bg-teal-50 border-teal-200 hover:bg-teal-100">
+        <Button variant="outline" size="sm" className="gap-2 text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100">
           <BookmarkPlus className="size-4" />
           <span className="font-medium">Save Search</span>
         </Button>
@@ -70,7 +70,7 @@ export function SaveSearchButton() {
           </div>
           <DialogFooter>
             <Button type="button" variant="ghost" onClick={() => setIsOpen(false)}>Cancel</Button>
-            <Button type="submit" disabled={isSaving} className="bg-teal-700 text-white hover:bg-teal-800">
+            <Button type="submit" disabled={isSaving} className="bg-blue-700 text-white hover:bg-blue-800">
               {isSaving && <Loader2 className="mr-2 size-4 animate-spin" />}
               Save & Create Alert
             </Button>

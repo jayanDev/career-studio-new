@@ -12,10 +12,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { CompareEntry, CompareResult } from "@/server/actions/ats/compare";
 
 const bandClass: Record<CompareEntry["bandKey"], string> = {
-  excellent: "bg-emerald-600",
-  good: "bg-teal-700",
-  fair: "bg-amber-600",
-  poor: "bg-rose-600",
+  excellent: "bg-blue-600",
+  good: "bg-blue-700",
+  fair: "bg-sky-600",
+  poor: "bg-blue-600",
 };
 
 function Delta({ value, invertColour = false }: { value: number | null; invertColour?: boolean }) {
@@ -28,7 +28,7 @@ function Delta({ value, invertColour = false }: { value: number | null; invertCo
   const positive = value > 0;
   // For "formatting hazards" higher is worse — invert the colour.
   const good = invertColour ? !positive : positive;
-  const cls = good ? "text-emerald-700" : "text-rose-700";
+  const cls = good ? "text-blue-700" : "text-blue-700";
   const Icon = positive ? ArrowUp : ArrowDown;
   return (
     <span className={`inline-flex items-center gap-1 text-xs font-semibold ${cls}`}>
@@ -181,9 +181,9 @@ export function ComparePanel({ result }: { result: CompareResult }) {
 function KeywordList({ title, items, tone }: { title: string; items: string[]; tone: "good" | "bad" | "neutral" }) {
   const cls =
     tone === "good"
-      ? "bg-emerald-100 text-emerald-900"
+      ? "bg-blue-100 text-blue-900"
       : tone === "bad"
-        ? "bg-rose-100 text-rose-900"
+        ? "bg-blue-100 text-blue-900"
         : "bg-neutral-100 text-neutral-800";
   return (
     <div>

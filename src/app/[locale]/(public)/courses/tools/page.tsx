@@ -31,7 +31,7 @@ export default async function CourseToolsPage({ params }: LocaleParams) {
 
   return (
     <div className="bg-white">
-      <section className="border-b bg-gradient-to-br from-teal-50 via-white to-rose-50">
+      <section className="border-b bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="mx-auto max-w-7xl px-4 py-16">
           <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
           <div className="mt-8">
@@ -45,11 +45,11 @@ export default async function CourseToolsPage({ params }: LocaleParams) {
             <Card key={tool.name} className="bg-white">
               <CardHeader>
                 <div className="flex items-start justify-between gap-3">
-                  <div className="flex size-11 items-center justify-center rounded-md bg-rose-100 text-rose-800">
+                  <div className="flex size-11 items-center justify-center rounded-md bg-blue-100 text-blue-800">
                     <WandSparkles className="size-5" />
                   </div>
                   {tool.verified ? (
-                    <Badge variant="outline" className="rounded-md border-teal-200 text-teal-800">
+                    <Badge variant="outline" className="rounded-md border-blue-200 text-blue-800">
                       <BadgeCheck className="size-3" />
                       {t("verified")}
                     </Badge>

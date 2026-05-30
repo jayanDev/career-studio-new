@@ -42,7 +42,7 @@ export function AiUnavailableBanner({
   return (
     <div
       role="status"
-      className={`flex gap-3 rounded-md border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900 ${className}`}
+      className={`flex gap-3 rounded-md border border-sky-200 bg-sky-50 p-3 text-sm text-sky-900 ${className}`}
     >
       <Info className="mt-0.5 size-4 shrink-0" />
       <div>
