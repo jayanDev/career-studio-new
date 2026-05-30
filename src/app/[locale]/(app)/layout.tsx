@@ -21,12 +21,12 @@ export default async function AuthenticatedLayout({
   const planTier = session?.user.planTier ?? "basic";
 
   return (
-    <div className="flex min-h-screen bg-slate-50">
+    <div className="bg-brand-wash flex min-h-screen">
       <AppSidebar locale={locale} planTier={planTier} />
       <div className="min-w-0 flex-1">
-        <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b bg-background/95 px-4 backdrop-blur">
+        <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-white/60 bg-white/70 px-4 backdrop-blur-xl lg:px-6">
           <div className="flex items-center gap-3">
-            <div className="font-semibold">{t("Dashboard")}</div>
+            <div className="font-semibold tracking-tight">{t("Dashboard")}</div>
             <PlanTierBadge planTier={planTier} label={t(`phase2.plans.${planTier}`)} />
           </div>
           <div className="flex items-center gap-2">
